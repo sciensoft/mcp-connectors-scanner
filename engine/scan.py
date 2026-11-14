@@ -20,6 +20,7 @@ import tempfile
 import time
 import urllib.request
 
+from . import gates
 from .extract import Target
 from .grade import Findings
 
@@ -38,6 +39,19 @@ def run(cmd, cwd=None, timeout=TIMEOUT):
 
 
 _VERSION_CACHE = {}
+
+
+def run_gated(registry, cmd, cwd=None, timeout=TIMEOUT):
+    """run() inside the registry's gate. A rate-limit answer pauses that registry
+    for everyone and the command is retried once, instead of failing the connector."""
+    for attempt in (1, 2):
+        with gates.gate(registry):
+            code, out, err = run(cmd, cwd=cwd, timeout=timeout)
+        if code != 0 and attempt == 1 and gates.looks_rate_limited(err):
+            gates.back_off(registry)
+            continue
+        return code, out, err
+    return code, out, err
 
 
 def _mark_ran(f: Findings, tool: str) -> None:
@@ -143,7 +157,7 @@ def _guarddog(eco, package, version, f: Findings):
     cmd = ["guarddog", eco, "scan", package, "--output-format", "json"]
     if version:
         cmd += ["--version", version]
-    code, out, err = run(cmd)
+    code, out, err = run_gated(eco if eco in ("npm",) else "pypi", cmd)
     if code != 0:
         f.errors.append(f"guarddog: {err.strip()[:200] or code}")
         return
@@ -160,7 +174,7 @@ def _guarddog(eco, package, version, f: Findings):
 
 def _resolve_npm(t: Target, work: str, f: Findings) -> bool:
     spec = f"{t.package}@{t.version}" if t.version else t.package
-    code, _, err = run(["npm", "install", spec, "--package-lock-only",
+    code, _, err = run_gated("npm", ["npm", "install", spec, "--package-lock-only",
                         "--ignore-scripts", "--no-audit", "--no-fund"], cwd=work)
     if code != 0:
         f.errors.append(f"npm resolve: {err.strip()[:200] or code}")
@@ -173,7 +187,7 @@ def _resolve_pypi(t: Target, work: str, f: Findings) -> bool:
     req = f"{t.package}=={t.version}" if t.version else t.package
     with open(os.path.join(work, "requirements.in"), "w") as fh:
         fh.write(req + "\n")
-    code, out, err = run(["uv", "pip", "compile", "requirements.in",
+    code, out, err = run_gated("pypi", ["uv", "pip", "compile", "requirements.in",
                           "-o", "requirements.txt"], cwd=work)
     if code != 0:
         f.errors.append(f"uv resolve: {err.strip()[:200] or code}")
@@ -187,12 +201,12 @@ def _clone(t: Target, work: str, f: Findings) -> bool:
         f.errors.append("no repository to clone")
         return False
     url = t.repo if "://" in t.repo else f"https://github.com/{t.repo}.git"
-    code, _, err = run(["git", "clone", "--quiet", "--depth", "1", url, "src"], cwd=work)
+    code, _, err = run_gated("git", ["git", "clone", "--quiet", "--depth", "1", url, "src"], cwd=work)
     if code != 0:
         f.errors.append(f"git clone: {err.strip()[:200] or code}")
         return False
     if t.ref:
-        run(["git", "fetch", "--quiet", "--depth", "1", "origin", t.ref], cwd=os.path.join(work, "src"))
+        run_gated("git", ["git", "fetch", "--quiet", "--depth", "1", "origin", t.ref], cwd=os.path.join(work, "src"))
         run(["git", "checkout", "--quiet", "FETCH_HEAD"], cwd=os.path.join(work, "src"))
     return True
 
@@ -207,7 +221,7 @@ def _resolve_maven(t: Target, work: str, f: Findings) -> bool:
     path = f"{group.replace('.', '/')}/{artifact}/{t.version}/{artifact}-{t.version}.pom"
     url = f"https://repo1.maven.org/maven2/{path}"
     try:
-        with urllib.request.urlopen(url, timeout=60) as r, open(os.path.join(work, "pom.xml"), "wb") as fh:
+        with gates.gate("maven"), urllib.request.urlopen(url, timeout=60) as r, open(os.path.join(work, "pom.xml"), "wb") as fh:
             fh.write(r.read())
     except Exception as e:  # noqa: BLE001 - recorded, never raised
         f.errors.append(f"maven pom fetch: {e}")

@@ -17,6 +17,7 @@ Environment:
   SCANNER_API_ADDR       address the read API listens on, default :9090
   SCANNER_API_TOKEN      bearer token the server presents to the API
   SCAN_INTERVAL_HOURS    hours between sweeps, default 168 (weekly); 0 = run once
+  SCAN_CONCURRENCY       connectors scanned at the same time, default 10 (1 = one by one)
   SCAN_WORK_DIR          ephemeral work dir, wiped around every scan
 """
 import json
@@ -31,6 +32,7 @@ from . import api, store
 from .coverage import matrix
 from .extract import extract
 from .grade import grade
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from .scan import cleanup_stale, scan
 
 
@@ -83,21 +85,35 @@ def sweep():
     run_id = store.start_run(started)
     log(f"sweep {run_id} start: {len(entries)} catalog entries")
 
-    counts = {}
-    for entry in entries:
+    workers = max(1, int(os.environ.get("SCAN_CONCURRENCY", "10")))
+    log(f"scanning with {workers} at a time")
+
+    def work(entry: dict) -> dict:
         eid = entry.get("id", "?")
         try:
-            result = scan_one(entry)
+            return scan_one(entry)
         except Exception as e:  # noqa: BLE001 - one connector must not stop the sweep
             log(f"{eid}: scanner error: {e}")
-            result = {"entry_id": eid, "grade": "?", "reason": f"scanner error: {e}",
-                      "errors": [str(e)], "scanned_at": datetime.now(timezone.utc)}
-        try:
-            store.save_result(run_id, result)
-        except Exception as e:  # noqa: BLE001 - a DB hiccup must not stop the sweep either
-            log(f"{eid}: could not save result: {e}")
-        counts[result["grade"]] = counts.get(result["grade"], 0) + 1
-        log(f"{eid}: {result['grade']} ({result['reason']})")
+            return {"entry_id": eid, "grade": "?", "reason": f"scanner error: {e}",
+                    "errors": [str(e)], "scanned_at": datetime.now(timezone.utc)}
+
+    # Only this (main) thread saves, logs and counts, so there is no shared state to
+    # lock. Each scan has its own work dir; the wipe-everything cleanup runs only
+    # before and after the pool, never while scans are in flight.
+    counts = {}
+    done = 0
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        futures = [pool.submit(work, entry) for entry in entries]
+        for fut in as_completed(futures):
+            result = fut.result()
+            eid = result["entry_id"]
+            try:
+                store.save_result(run_id, result)
+            except Exception as e:  # noqa: BLE001 - a DB hiccup must not stop the sweep either
+                log(f"{eid}: could not save result: {e}")
+            counts[result["grade"]] = counts.get(result["grade"], 0) + 1
+            done += 1
+            log(f"[{done}/{len(entries)}] {eid}: {result['grade']} ({result['reason']})")
 
     store.finish_run(run_id, len(entries), counts)
     log(f"sweep {run_id} done: {counts}")

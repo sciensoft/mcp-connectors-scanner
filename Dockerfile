@@ -34,6 +34,15 @@ COPY --from=osv /osv-scanner /usr/local/bin/osv-scanner
 # analyzer works offline), and uv for resolving PyPI trees without installing.
 RUN pip install guarddog cisco-ai-mcp-scanner uv "psycopg[binary]>=3.2"
 
+# GuardDog refreshes its list of popular packages (used for typosquatting
+# checks) by writing into its own install directory. The runtime filesystem is
+# read-only, so prime both lists here, while it is still writable. One scan of
+# a tiny well-known package per ecosystem triggers the download. This also
+# removes a scan-time dependency on GitHub.
+RUN guarddog npm scan is-odd --version 3.0.1 >/dev/null 2>&1 || true; \
+    guarddog pypi scan six --version 1.16.0 >/dev/null 2>&1 || true; \
+    ls /usr/local/lib/python3.12/site-packages/guarddog/analyzer/metadata/resources/ | grep -c top_ || true
+
 RUN useradd --create-home --uid 10002 scanner && \
     mkdir -p /work /out && chown scanner:scanner /work /out
 
