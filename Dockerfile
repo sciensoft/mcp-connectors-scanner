@@ -32,7 +32,7 @@ COPY --from=osv /osv-scanner /usr/local/bin/osv-scanner
 
 # GuardDog (malicious-code heuristics), Cisco mcp-scanner (tool poisoning, YARA
 # analyzer works offline), and uv for resolving PyPI trees without installing.
-RUN pip install guarddog cisco-ai-mcp-scanner uv
+RUN pip install guarddog cisco-ai-mcp-scanner uv "psycopg[binary]>=3.2"
 
 RUN useradd --create-home --uid 10002 scanner && \
     mkdir -p /work /out && chown scanner:scanner /work /out
@@ -45,5 +45,7 @@ USER scanner
 # Scan work happens under /work (ephemeral), results land in /out.
 ENV SCAN_WORK_DIR=/work \
     SCAN_OUT_DIR=/out
+
+EXPOSE 9090
 
 CMD ["python3", "-m", "engine.main"]
