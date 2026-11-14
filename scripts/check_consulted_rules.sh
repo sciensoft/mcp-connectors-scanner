@@ -11,10 +11,10 @@ if [ ${#staged[@]} -eq 0 ]; then exit 0; fi
 # amending / continuing a task. Missing = soft-skip.
 prompt_file=""
 for f in "${staged[@]}"; do
-  case "$f" in .docs/prompts/*.md) prompt_file="$f"; break ;; esac
+  case "$f" in docs/prompts/*.md) prompt_file="$f"; break ;; esac
 done
 if [ -z "$prompt_file" ]; then
-  prompt_file=$(ls -1t .docs/prompts/*.md 2>/dev/null | head -n 1 || true)
+  prompt_file=$(ls -1t docs/prompts/*.md 2>/dev/null | head -n 1 || true)
 fi
 if [ -z "$prompt_file" ] || [ ! -f "$prompt_file" ]; then
   echo "check_consulted_rules: no prompt file staged or on disk — soft-skip"

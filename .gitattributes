@@ -33,4 +33,4 @@ Cargo.lock          linguist-generated=true
 go.sum              linguist-generated=true
 
 # Markdown docs aren't "code" — keep them out of language stats too.
-.docs/**           linguist-documentation=true
+docs/**           linguist-documentation=true

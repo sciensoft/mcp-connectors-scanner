@@ -1,6 +1,6 @@
 # Connector security scanner
 
-**Audience**: anyone who wants to understand or run the scanner. Read it once to learn it, then use the headings as a reference. Why it is built this way: [ADR 0001](../.docs/adrs/0001-connector-security-scanner-service.md).
+**Audience**: anyone who wants to understand or run the scanner. Read it once to learn it, then use the headings as a reference. Why it is built this way: [ADR 0001](../docs/adrs/0001-connector-security-scanner-service.md).
 
 ## What it is
 

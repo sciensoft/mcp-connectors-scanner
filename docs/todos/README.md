@@ -9,4 +9,4 @@ The discipline for managing this directory is documented in `.agents/rules/workf
 - **Add proactively** when the user defers something.
 - **Sweep on every commit** for entries the change satisfies; `git rm` to remove (no archive — git log is canonical).
 
-`ls .docs/todos/` is the index — files are individually-addressable artifacts.
+`ls docs/todos/` is the index — files are individually-addressable artifacts.

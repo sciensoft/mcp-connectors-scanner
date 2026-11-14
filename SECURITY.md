@@ -37,6 +37,6 @@ Out of scope:
 
 ## Security posture
 
-The project's overall security methodology, rubric, and the dated audit history live under [`.docs/security/`](./.docs/security/). See [`.docs/security/methodology.md`](./.docs/security/methodology.md) for the playbook reviewers follow.
+The project's overall security methodology, rubric, and the dated audit history live under [`docs/security/`](./docs/security/). See [`docs/security/methodology.md`](./docs/security/methodology.md) for the playbook reviewers follow.
 
 The companion workflow rule at [`.agents/rules/workflow-security.md`](./.agents/rules/workflow-security.md) describes how security-sensitive changes are reviewed during day-to-day development.

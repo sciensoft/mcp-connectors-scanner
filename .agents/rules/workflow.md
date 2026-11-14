@@ -1,12 +1,12 @@
 # Workflow
 
-This rule defines the naming, contents, and ordering of the per-task artifacts so `git log`, `ls .docs/prompts/`, and `ls .docs/adrs/` together reconstruct the project's history — and the *why* behind it — from the repository alone.
+This rule defines the naming, contents, and ordering of the per-task artifacts so `git log`, `ls docs/prompts/`, and `ls docs/adrs/` together reconstruct the project's history — and the *why* behind it — from the repository alone.
 
 Every user **task** in this repository produces, over one or more turns:
 
-- **One prompt file** under `.docs/prompts/` capturing what was asked and why, amended across turns as the task continues (see § *Task boundaries* below for what closes a task).
+- **One prompt file** under `docs/prompts/` capturing what was asked and why, amended across turns as the task continues (see § *Task boundaries* below for what closes a task).
 - **The code, config, or docs** the task produced.
-- When the change is architecturally significant — a new module, library, layer, or pattern, or a meaningful change to one — a **new or updated ADR** under `.docs/adrs/`.
+- When the change is architecturally significant — a new module, library, layer, or pattern, or a meaningful change to one — a **new or updated ADR** under `docs/adrs/`.
 - **Telemetry** kept current — new behaviour gets new logs, changed behaviour gets existing logs updated, deleted behaviour gets its logs removed, at log levels that match each event's signal (DEBUG / INFO / WARNING / ERROR / CRITICAL), with sensitive-data redaction discipline (credentials, PII, request bodies — anything that shouldn't ride a wire to a third-party log service).
 - **At least one git commit** on the current branch bundling all of the above (often one per task, sometimes two when refinements deserve separation — granularity to judgement).
 - **A push** of the commit(s) to the remote.
@@ -50,7 +50,7 @@ If a conversation starts as chitchat but later produces an artifact, the rule ki
 
 ## 1. Create (or amend) a prompt file
 
-For a **new** task, write a file to `.docs/prompts/` using the pattern:
+For a **new** task, write a file to `docs/prompts/` using the pattern:
 
 ```
 <unix-timestamp>.<snake_case_slug>.md
@@ -85,7 +85,7 @@ Write the prompt file **before** or **alongside** the changes on the task's firs
 
 ## 2. Create or update an ADR
 
-ADRs (Architecture Decision Records) live under `.docs/adrs/` and capture the **why** behind structural choices: which framework, which layer pattern, which library, which interaction model. Each is a single file in slim Nygard format and is indexed by `.docs/adrs/README.md`.
+ADRs (Architecture Decision Records) live under `docs/adrs/` and capture the **why** behind structural choices: which framework, which layer pattern, which library, which interaction model. Each is a single file in slim Nygard format and is indexed by `docs/adrs/README.md`.
 
 The prompt file records *what happened in this request*; the ADR records *what shape the project now has and why*. Many requests produce a prompt without touching an ADR — that's expected. The ADR question is only "did the architectural picture change?"
 
@@ -97,7 +97,7 @@ A request introduces a new ADR when it adds something the existing ADRs don't al
 - A new module, layer, or pattern that future code is expected to follow.
 - A decision with trade-offs worth recording — alternatives considered, constraints, deferred follow-ups.
 
-Filename pattern: `.docs/adrs/<NNNN>-<kebab-case-slug>.md`. `NNNN` is the next free four-digit number; numbers never get reused. Append the new ADR's row to the table in `.docs/adrs/README.md` so the index stays current.
+Filename pattern: `docs/adrs/<NNNN>-<kebab-case-slug>.md`. `NNNN` is the next free four-digit number; numbers never get reused. Append the new ADR's row to the table in `docs/adrs/README.md` so the index stays current.
 
 ### When to update an existing ADR
 
@@ -358,7 +358,7 @@ Add or update logs on any of these triggers:
 - **New failure mode** — anywhere a `try/except` is added, the `except` branch needs at least one log call before re-raising or returning. Silent catches are observability bugs.
 - **A field's meaning shifts** — if a `user_id` becomes a `session_id`, all log payloads using the old name follow. Same for renames and type changes.
 
-If telemetry is genuinely needed but truly out of scope for the current change, capture the gap as a new file under `.docs/todos/` so it's not forgotten (rules in `workflow-todos.md`).
+If telemetry is genuinely needed but truly out of scope for the current change, capture the gap as a new file under `docs/todos/` so it's not forgotten (rules in `workflow-todos.md`).
 
 ### Conventions
 
@@ -401,14 +401,14 @@ In auth, billing, admin, or any flow handling personal data, do the redaction ch
 
 ### Security checks
 
-Security has its own companion rule: `workflow-security.md`. The short version: changes that touch a security-sensitive surface (auth, input validation, SQL, output encoding, transport headers, secrets, logging, rate limits, dependency adds/upgrades, LLM context) walk the rubric in `.docs/security/methodology.md` *before commit*, the same way telemetry coherence is checked. The rubric is grouped by surface — read only the sub-sections that match what your change touched. Full audits remain dated sibling files under `.docs/security/<YYYY-MM-DD>-<slug>.md` on a cadence.
+Security has its own companion rule: `workflow-security.md`. The short version: changes that touch a security-sensitive surface (auth, input validation, SQL, output encoding, transport headers, secrets, logging, rate limits, dependency adds/upgrades, LLM context) walk the rubric in `docs/security/methodology.md` *before commit*, the same way telemetry coherence is checked. The rubric is grouped by surface — read only the sub-sections that match what your change touched. Full audits remain dated sibling files under `docs/security/<YYYY-MM-DD>-<slug>.md` on a cadence.
 
 ## 4. Commit the result
 
 Commit granularity is a judgement call, not a per-turn rule. Often one commit per task at the end; sometimes two when refinements deserve to be separated in `git log`. Each commit includes:
 
-- The prompt file (`.docs/prompts/<ts>.<slug>.md`).
-- Any new or updated ADR file under `.docs/adrs/` (and the README index entry, if a new ADR was added).
+- The prompt file (`docs/prompts/<ts>.<slug>.md`).
+- Any new or updated ADR file under `docs/adrs/` (and the README index entry, if a new ADR was added).
 - The tests that cover the change (per [`workflow-testing.md`](./workflow-testing.md) — same commit as the behaviour they prove; bug fixes start with a failing regression test).
 - Every other file produced or modified while handling the request.
 
@@ -420,14 +420,14 @@ Commit message conventions:
 
 Stage files by explicit path (`git add <paths>`). Never `git add -A` or `git add .` — the prompt file, ADR, and outputs are a curated set, not everything dirty in the tree.
 
-## 5. Capture do-later ideas under `.docs/todos/`
+## 5. Capture do-later ideas under `docs/todos/`
 
-Deferred ideas — features the agent (or the user) suggested but didn't ship in the moment, follow-ups noted in commit messages or ADR consequence sections, scope cuts surfaced during implementation — live as **one file per idea** under `.docs/todos/`. The dedicated rule `workflow-todos.md` owns the full discipline (filename pattern, file content structure, when-to-add triggers, sweep-and-remove safeguards); this section names the per-commit obligation so the rest of `workflow.md` doesn't have to duplicate it.
+Deferred ideas — features the agent (or the user) suggested but didn't ship in the moment, follow-ups noted in commit messages or ADR consequence sections, scope cuts surfaced during implementation — live as **one file per idea** under `docs/todos/`. The dedicated rule `workflow-todos.md` owns the full discipline (filename pattern, file content structure, when-to-add triggers, sweep-and-remove safeguards); this section names the per-commit obligation so the rest of `workflow.md` doesn't have to duplicate it.
 
 Manage the directory as part of every workflow turn:
 
-- **Add** when a deferral happens. A new file at `.docs/todos/<kebab-slug>.md` with the title + Area + Refs + Context + Deferred because + Revisit when shape from `workflow-todos.md`. Surface the draft inline in your response — *"I'll capture this in `.docs/todos/<slug>.md` as: …"* — so the user sees what lands. Add in the same commit as the related work unless the deferral is the only thing the turn produced (then it's its own commit).
-- **Sweep** before staging files. Scan `.docs/todos/` for entries this change satisfies. If an entry's *Revisit when* trigger has fired, `git rm` the file in the same commit. There is no archive directory; git log is canonical.
+- **Add** when a deferral happens. A new file at `docs/todos/<kebab-slug>.md` with the title + Area + Refs + Context + Deferred because + Revisit when shape from `workflow-todos.md`. Surface the draft inline in your response — *"I'll capture this in `docs/todos/<slug>.md` as: …"* — so the user sees what lands. Add in the same commit as the related work unless the deferral is the only thing the turn produced (then it's its own commit).
+- **Sweep** before staging files. Scan `docs/todos/` for entries this change satisfies. If an entry's *Revisit when* trigger has fired, `git rm` the file in the same commit. There is no archive directory; git log is canonical.
 - **Remove safely** using the three-layer safeguard from `workflow-todos.md` — scope test, cite the closing change, announce inline before pushing. When in doubt, leave the entry; cost of a stale file is small, cost of dropping in-progress work is high.
 - **Update** when reality drifts — edit the file in place; its `git log` is the audit trail.
 
@@ -447,9 +447,9 @@ Exception: if the push is destructive (force-push to a shared branch, rewriting 
 
 ## Why this rule exists
 
-The `.docs/prompts/` history doubles as a per-task decision log and a reconstruction aid: reading the prompts in timestamp order tells the story of what the project has done, and each file maps to one coherent task (usually one commit, sometimes two) so `git log` and `ls .docs/prompts/` stay aligned as *task*-scoped units rather than *turn*-scoped noise. A prompt file per turn produced a directory too noisy to read after two weeks; a prompt file per task keeps the log honest.
+The `docs/prompts/` history doubles as a per-task decision log and a reconstruction aid: reading the prompts in timestamp order tells the story of what the project has done, and each file maps to one coherent task (usually one commit, sometimes two) so `git log` and `ls docs/prompts/` stay aligned as *task*-scoped units rather than *turn*-scoped noise. A prompt file per turn produced a directory too noisy to read after two weeks; a prompt file per task keeps the log honest.
 
-The ADRs in `.docs/adrs/` distill the architecturally significant subset — the decisions worth re-reading at scale, with their alternatives and trade-offs preserved. Reading the ADRs answers *"what is this project shaped like, and why?"*; reading the prompts answers *"what task ran on day N?"*.
+The ADRs in `docs/adrs/` distill the architecturally significant subset — the decisions worth re-reading at scale, with their alternatives and trade-offs preserved. Reading the ADRs answers *"what is this project shaped like, and why?"*; reading the prompts answers *"what task ran on day N?"*.
 
 Breaking any of the pairings — task without prompt file, ADR-worthy change without ADR, commit without push, or a task-continuation that spawns a new file instead of amending — erodes that guarantee.
 

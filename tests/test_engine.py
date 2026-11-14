@@ -5,7 +5,7 @@ from the scanner/ directory (the CI image already has Python).
 
 The heuristic-to-D rule is deliberately NOT asserted here. Whether a GuardDog hit
 should ever cost a full letter grade is an open calibration question (see
-.docs/todos/build-connector-security-scan-engine.md), to be settled with data
+docs/todos/build-connector-security-scan-engine.md), to be settled with data
 from a full sweep. These tests pin only the behaviour that is intended.
 """
 import os

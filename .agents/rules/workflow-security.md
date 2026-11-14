@@ -1,6 +1,6 @@
 # Workflow: keeping security checks honest
 
-This rule supplements `workflow.md` for changes that touch a security-sensitive surface. The discipline: a lightweight per-request rubric pass before commit, full audits as dated sibling files re-run on cadence, findings that introduce a new mitigation pattern promoted to an ADR. The rubric, severity scale, and framework references all live in [`.docs/security/methodology.md`](../../.docs/security/methodology.md) — this rule says *when and how* to use it, not *what* it contains.
+This rule supplements `workflow.md` for changes that touch a security-sensitive surface. The discipline: a lightweight per-request rubric pass before commit, full audits as dated sibling files re-run on cadence, findings that introduce a new mitigation pattern promoted to an ADR. The rubric, severity scale, and framework references all live in [`docs/security/methodology.md`](../../docs/security/methodology.md) — this rule says *when and how* to use it, not *what* it contains.
 
 ## When this rule applies
 
@@ -30,7 +30,7 @@ If your change touches any of these surfaces, walk the matching `§5.X` block of
 The rubric in `methodology.md §5` is grouped by surface. For each surface your change touches:
 
 1. Locate the matching `§5.X` block.
-2. Walk each bullet and ask: *"does my change still satisfy this?"*. If yes, fine. If no, the change either fixes the regression *before* commit or includes a same-commit `.docs/todos/` entry citing the gap with a severity assessed per `§4` of `methodology.md`.
+2. Walk each bullet and ask: *"does my change still satisfy this?"*. If yes, fine. If no, the change either fixes the regression *before* commit or includes a same-commit `docs/todos/` entry citing the gap with a severity assessed per `§4` of `methodology.md`.
 3. The pass is a self-review — no separate artefact is produced. The discipline is the act of walking the rubric, not a file you generate.
 
 If your change introduces a *new* security-sensitive surface not yet covered (a new dependency layer, a new untrusted input source, a new tool the LLM can call), update `methodology.md §5` in the same commit so the next change has something to grep against. Treat that update like any other rule edit.
@@ -40,7 +40,7 @@ If your change introduces a *new* security-sensitive surface not yet covered (a 
 A full audit is a dated sibling file:
 
 ```text
-.docs/security/<YYYY-MM-DD>-<slug>.md
+docs/security/<YYYY-MM-DD>-<slug>.md
 ```
 
 The audit:
@@ -63,7 +63,7 @@ Previous audits stay where they are; the new audit is a sibling. The diff betwee
 
 ## Findings → ADRs
 
-When a finding's fix introduces a *pattern future code is expected to follow* — a new middleware, a new repository-layer check, a new sanitiser, a new dependency convention — promote the decision to an ADR under `.docs/adrs/`. The ADR captures the pattern; the audit file captures the finding that motivated it. Cross-link both ways.
+When a finding's fix introduces a *pattern future code is expected to follow* — a new middleware, a new repository-layer check, a new sanitiser, a new dependency convention — promote the decision to an ADR under `docs/adrs/`. The ADR captures the pattern; the audit file captures the finding that motivated it. Cross-link both ways.
 
 When a finding is fixed *without* introducing a load-bearing pattern (a one-off config tweak, a one-off bug fix), the audit file plus the regular workflow.md commit are enough — no ADR needed.
 

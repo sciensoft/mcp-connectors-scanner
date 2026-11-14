@@ -82,6 +82,6 @@ What follows from this — both positive and negative. Bulleted list works well:
 - Positive consequence one.
 - Positive consequence two.
 - Cost or trade-off accepted.
-- Deferred follow-up (capture under `.docs/todos/` if actionable).
+- Deferred follow-up (capture under `docs/todos/` if actionable).
 
 Cross-link to related ADRs by number.

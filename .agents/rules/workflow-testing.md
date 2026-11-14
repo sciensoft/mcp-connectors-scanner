@@ -80,7 +80,7 @@ When TDD genuinely doesn't: trivial helpers, configuration plumbing, generated c
 A flaky test is a broken test — it just hasn't decided which failure mode it prefers yet. Treat them as P1:
 
 - **First flake**: investigate the same day. Time / order / race / network non-determinism. Fix the underlying cause.
-- **Can't fix immediately**: quarantine (skip with a clear `Flaky: <reason>` annotation) and file a `.docs/todos/<ts>.<slug>.md` entry per `workflow-todos.md` so the quarantine is visible and dated.
+- **Can't fix immediately**: quarantine (skip with a clear `Flaky: <reason>` annotation) and file a `docs/todos/<ts>.<slug>.md` entry per `workflow-todos.md` so the quarantine is visible and dated.
 - **Never** disable a flaky test silently. A skipped flake with no entry is technical debt that compounds.
 
 ## Test data and fixtures
@@ -102,7 +102,7 @@ If the agent commits code without tests when this rule applies, the commit is in
 ## Cross-references
 
 - **Security findings** (per `workflow-security.md`): every finding's fix must include a regression test that proves the vulnerability is closed and won't return. That test is part of the same commit as the fix.
-- **Bug fixes** triggered by a `.docs/todos/` entry: the regression test lives in the commit that closes the entry.
+- **Bug fixes** triggered by a `docs/todos/` entry: the regression test lives in the commit that closes the entry.
 - **Metering changes** (per `workflow-metrics.md`, if installed): tests cover the catalog entry, the emit site, and the read side — at integration level where they actually exercise the wiring.
 - **Product-surface changes** (per `workflow-changes.md`, if installed): the test layer that matches the surface — UI components → component tests, public API → contract tests, docs → link / build checks.
 

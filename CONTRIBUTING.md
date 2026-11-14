@@ -22,9 +22,9 @@ Tests: `make test`. Run: build the image (`podman build -t mcp-connectors-scanne
 ## Filing issues
 
 - **Bug reports**: include the steps to reproduce, the expected behaviour, the actual behaviour, and the environment (OS, language version, relevant deps).
-- **Feature requests**: explain the use case before the implementation. The decision-record style at [`.docs/adrs/0000-adr-template.md`](./.docs/adrs/0000-adr-template.md) is a good frame for "what shape is the change, and what are the trade-offs?".
-- **Security**: do not file public issues for vulnerabilities. Report them privately by following [`SECURITY.md`](./SECURITY.md). See [`.docs/security/methodology.md`](./.docs/security/methodology.md) for the project's overall security posture.
+- **Feature requests**: explain the use case before the implementation. The decision-record style at [`docs/adrs/0000-adr-template.md`](./docs/adrs/0000-adr-template.md) is a good frame for "what shape is the change, and what are the trade-offs?".
+- **Security**: do not file public issues for vulnerabilities. Report them privately by following [`SECURITY.md`](./SECURITY.md). See [`docs/security/methodology.md`](./docs/security/methodology.md) for the project's overall security posture.
 
 ## Architecture decisions
 
-Significant structural changes (a new library, a new layer, a new pattern, a shift in tier or pricing behaviour) need a new ADR under [`.docs/adrs/`](./.docs/adrs/) in the same PR. The discipline is described in [`.agents/rules/workflow.md`](./.agents/rules/workflow.md).
+Significant structural changes (a new library, a new layer, a new pattern, a shift in tier or pricing behaviour) need a new ADR under [`docs/adrs/`](./docs/adrs/) in the same PR. The discipline is described in [`.agents/rules/workflow.md`](./.agents/rules/workflow.md).
