@@ -1,0 +1,119 @@
+# Nightly scan: collect the grades and publish them.
+#
+# WHERE THINGS RUN
+#   The scan itself runs on the maintainer's own machine, on a systemd timer
+#   (deploy/systemd). This workflow does NOT scan and cannot start containers.
+#   It runs on a self-hosted runner on that same machine, reads the finished
+#   grades from the scanner's read-only API, and publishes them.
+#
+# WHAT IT PUBLISHES
+#   - a release with the full results file (about 11 MB), one per run
+#   - a compact summary committed to the `scan-results` branch, which also counts
+#     as repository activity, so GitHub never switches this schedule off
+#
+# SAFETY (this job runs on a production machine, in a PUBLIC repository)
+#   - triggers are ONLY the schedule and a manual run. Never pull_request, never
+#     push, never issue events: a stranger's code must not reach this runner.
+#   - the job refuses to run on forks and on any ref other than main.
+#   - the token is scoped to this job and can only write contents.
+#   - collect.py scrubs internal paths, hosts and credentials, then a guard refuses
+#     to write the files if anything suspicious is left.
+
+name: nightly-scan
+
+on:
+  schedule:
+    - cron: "30 4 * * *"   # after the 02:30 scan has finished; GitHub may start a few minutes late
+  workflow_dispatch: {}
+
+permissions: {}
+
+concurrency:
+  group: nightly-scan
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    # Belt and braces: even if someone edits the triggers above, these conditions
+    # keep the job off forks and off everything except scheduled/manual runs on main.
+    if: >-
+      github.repository == 'sciensoft/mcp-connectors-scanner' &&
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
+    runs-on: [self-hosted, linux, scanner]
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    env:
+      SCANNER_URL: http://mcp-scanner:9090
+    steps:
+      - name: Check out main (scripts only)
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          ref: main
+          persist-credentials: false
+
+      - name: Confirm a recent scan exists
+        env:
+          SCANNER_API_TOKEN: ${{ secrets.SCANNER_API_TOKEN }}
+        run: |
+          python3 - <<'PY'
+          import json, os, sys, urllib.request
+          from datetime import datetime, timezone, timedelta
+          r = urllib.request.Request(os.environ["SCANNER_URL"] + "/v1/grades",
+                                     headers={"Authorization": "Bearer " + os.environ["SCANNER_API_TOKEN"]})
+          d = json.load(urllib.request.urlopen(r, timeout=30))
+          rows = d.get("grades") or next((v for v in d.values() if isinstance(v, list)), [])
+          newest = max(datetime.fromisoformat(x["scanned_at"]) for x in rows)
+          age = datetime.now(timezone.utc) - newest
+          print(f"{len(rows)} connectors, newest scan {age} ago")
+          if age > timedelta(hours=30):
+              sys.exit("newest scan is older than 30 hours: the nightly sweep did not run. Not publishing stale data as new.")
+          PY
+
+      - name: Collect and scrub
+        env:
+          SCANNER_API_TOKEN: ${{ secrets.SCANNER_API_TOKEN }}
+        run: python3 deploy/collect.py "$RUNNER_TEMP/out"
+
+      - name: Publish release with the full results
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="scan-$(date -u +%Y-%m-%d)"
+          if gh release view "$tag" >/dev/null 2>&1; then
+            gh release upload "$tag" "$RUNNER_TEMP/out/full.json" --clobber
+          else
+            gh release create "$tag" "$RUNNER_TEMP/out/full.json" \
+              --title "Scan results $(date -u +%Y-%m-%d)" \
+              --notes "Full scanner output for every catalog connector. Internal paths, hosts and credentials are removed before publishing. The compact version is on the scan-results branch."
+          fi
+
+      - name: Commit the summary to scan-results
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO_URL: ${{ github.server_url }}/${{ github.repository }}.git
+        run: |
+          set -euo pipefail
+          work="$RUNNER_TEMP/results"
+          rm -rf "$work"
+          auth="Authorization: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"
+          if git -c http.extraheader="$auth" ls-remote --exit-code --heads "$REPO_URL" scan-results >/dev/null 2>&1; then
+            git -c http.extraheader="$auth" clone --quiet --depth 1 --branch scan-results "$REPO_URL" "$work"
+          else
+            git init --quiet "$work"
+            git -C "$work" checkout --quiet -b scan-results
+            git -C "$work" remote add origin "$REPO_URL"
+          fi
+          cp "$RUNNER_TEMP/out/summary.json" "$work/summary.json"
+          cd "$work"
+          git config user.name "scanner-results[bot]"
+          git config user.email "scanner-results@users.noreply.github.com"
+          git add summary.json
+          if git diff --cached --quiet; then
+            # Nothing changed, but a commit keeps the schedule alive.
+            git commit --quiet --allow-empty -m "scan results: unchanged $(date -u +%Y-%m-%d)"
+          else
+            git commit --quiet -m "scan results $(date -u +%Y-%m-%d)"
+          fi
+          git -c http.extraheader="$auth" push --quiet origin scan-results

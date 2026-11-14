@@ -1,0 +1,9 @@
+[Unit]
+Description=MCP connector scanner: one full sweep
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/proj/mcp-connectors-scanner/deploy/sweep-once.sh
+TimeoutStartSec=3h
+Nice=10
