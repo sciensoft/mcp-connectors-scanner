@@ -41,14 +41,31 @@ def run(cmd, cwd=None, timeout=TIMEOUT):
 _VERSION_CACHE = {}
 
 
+TRANSIENT_MARKERS = ("timeout", "timed out", "could not connect", "failed to connect",
+                     "connection reset", "connection refused", "temporary failure",
+                     "econnreset", "etimedout", "eai_again", "network is unreachable")
+RETRY_PAUSE = float(os.environ.get("SCAN_RETRY_PAUSE", "5"))
+
+
+def _transient(err: str) -> bool:
+    e = (err or "").lower()
+    return any(m in e for m in TRANSIENT_MARKERS)
+
+
 def run_gated(registry, cmd, cwd=None, timeout=TIMEOUT):
-    """run() inside the registry's gate. A rate-limit answer pauses that registry
-    for everyone and the command is retried once, instead of failing the connector."""
+    """run() inside the registry's gate. Retried once, outside the gate, when the
+    registry says slow down (that registry then pauses for everyone) or the network
+    step timed out or dropped. Anything else, like a 404, fails straight away."""
     for attempt in (1, 2):
         with gates.gate(registry):
             code, out, err = run(cmd, cwd=cwd, timeout=timeout)
-        if code != 0 and attempt == 1 and gates.looks_rate_limited(err):
+        if code == 0 or attempt == 2:
+            return code, out, err
+        if gates.looks_rate_limited(err):
             gates.back_off(registry)
+            continue
+        if _transient(err):
+            time.sleep(RETRY_PAUSE)
             continue
         return code, out, err
     return code, out, err
@@ -76,6 +93,19 @@ def _add_vuln(f: Findings, v: dict) -> None:
         f.critical_with_fix = True
 
 
+def _add_package(f: Findings, name: str, version: str, source: str) -> None:
+    """Record a resolved package once. Trivy and OSV overlap, and some lockfiles
+    are read by only one of them, so both feed the same list."""
+    if not name:
+        return
+    pid = f"{name}@{version}"
+    if pid in f.seen_packages:
+        return
+    f.seen_packages.add(pid)
+    f.packages.append({"id": pid, "name": name, "version": version, "license": "",
+                       "direct": False, "source": source})
+
+
 def _trivy(path, f: Findings, mode="fs"):
     code, out, err = run(["trivy", mode, "--quiet", "--format", "json",
                           "--scanners", "vuln", "--list-all-pkgs", path])
@@ -93,6 +123,7 @@ def _trivy(path, f: Findings, mode="fs"):
         target = res.get("Target", "")
         for pkg in res.get("Packages") or []:
             pid = pkg.get("ID") or f"{pkg.get('Name', '')}@{pkg.get('Version', '')}"
+            f.seen_packages.add(f"{pkg.get('Name', '')}@{pkg.get('Version', '')}")
             f.packages.append({
                 "id": pid,
                 "name": pkg.get("Name", ""),
@@ -131,6 +162,8 @@ def _osv(path, f: Findings):
     for r in data.get("results") or []:
         for pkg in r.get("packages") or []:
             info = pkg.get("package") or {}
+            _add_package(f, info.get("name", ""), info.get("version", ""),
+                         (r.get("source") or {}).get("path", "osv-scanner"))
             for v in pkg.get("vulnerabilities") or []:
                 vid = v.get("id", "")
                 if vid.startswith("MAL-"):

@@ -76,6 +76,65 @@ class GateTests(unittest.TestCase):
         self.assertEqual(len(calls), 1)
 
 
+class RetryTests(unittest.TestCase):
+    def setUp(self):
+        gates._gates.clear()
+        self._pause = scan.RETRY_PAUSE
+        scan.RETRY_PAUSE = 0.05
+        self._run = scan.run
+
+    def tearDown(self):
+        scan.RETRY_PAUSE = self._pause
+        scan.run = self._run
+        gates._gates.clear()
+
+    def _fake(self, results):
+        calls = []
+
+        def fake_run(cmd, cwd=None, timeout=300):
+            calls.append(1)
+            return results[min(len(calls), len(results)) - 1]
+
+        scan.run = fake_run
+        return calls
+
+    def test_timeout_is_retried_once_and_can_succeed(self):
+        calls = self._fake([(-1, "", "timeout after 300s: git clone"), (0, "ok", "")])
+        code, _, _ = scan.run_gated("git", ["git", "clone"])
+        self.assertEqual((code, len(calls)), (0, 2))
+
+    def test_connection_failure_is_retried_once_then_gives_up(self):
+        err = "fatal: Failed to connect to github.com port 443: Could not connect to server"
+        calls = self._fake([(128, "", err), (128, "", err), (0, "never", "")])
+        code, _, _ = scan.run_gated("git", ["git", "clone"])
+        self.assertEqual((code, len(calls)), (128, 2))
+
+    def test_missing_package_is_not_retried(self):
+        calls = self._fake([(1, "", "npm ERR! code E404 not found")])
+        code, _, _ = scan.run_gated("npm", ["npm", "install"])
+        self.assertEqual((code, len(calls)), (1, 1))
+
+
+class PackageEvidenceTests(unittest.TestCase):
+    def test_osv_alone_fills_the_package_list_and_dedupes(self):
+        import json
+        from engine.grade import Findings
+        osv = json.dumps({"results": [{"source": {"path": "/w/src/package-lock.json"}, "packages": [
+            {"package": {"name": "lodash", "version": "4.17.20"}, "vulnerabilities": [], "groups": []},
+            {"package": {"name": "lodash", "version": "4.17.20"}, "vulnerabilities": [], "groups": []},
+            {"package": {"name": "left-pad", "version": "1.3.0"}, "vulnerabilities": [], "groups": []},
+        ]}]})
+        real_run, real_mark = scan.run, scan._mark_ran
+        scan.run = lambda cmd, cwd=None, timeout=300: (0, osv, "")
+        scan._mark_ran = lambda f, tool: f.tools.__setitem__(tool, "test")
+        try:
+            f = Findings()
+            scan._osv("/w/src", f)
+        finally:
+            scan.run, scan._mark_ran = real_run, real_mark
+        self.assertEqual(sorted(p["id"] for p in f.packages), ["left-pad@1.3.0", "lodash@4.17.20"])
+
+
 class SweepTests(unittest.TestCase):
     def test_parallel_sweep_saves_everything_once_and_survives_errors(self):
         entries = [{"id": f"c{i}"} for i in range(30)]

@@ -48,26 +48,98 @@ class GradeTests(unittest.TestCase):
         self.assertEqual(grade(Findings(scanned=False)).letter, "?")
 
     def test_clean_scan_is_a(self):
-        self.assertEqual(grade(Findings(scanned=True)).letter, "A")
+        self.assertEqual(grade(Findings(scanned=True, packages=[{"id": "a@1"}])).letter, "A")
+
+    def test_empty_tree_is_never_a_or_b(self):
+        # Scanners ran, found nothing, because there was nothing to look at.
+        g = grade(Findings(scanned=True))
+        self.assertEqual(g.letter, "?")
+        self.assertIn("nothing was resolved", g.reason)
+        self.assertEqual(grade(Findings(scanned=True, cve_counts={"LOW": 1})).letter, "?")
+
+    def test_a_requires_packages_and_names_the_count(self):
+        g = grade(Findings(scanned=True, packages=[{"id": "a@1"}, {"id": "b@2"}]))
+        self.assertEqual(g.letter, "A")
+        self.assertIn("2 package(s) checked", g.reason)
+
+    def test_no_evidence_means_no_grade_for_any_letter(self):
+        # Findings with no resolved package behind them are not graded: no basis.
+        for f in (Findings(scanned=True, cve_counts={"HIGH": 1}),
+                  Findings(scanned=True, cve_counts={"CRITICAL": 2}, critical_with_fix=True),
+                  Findings(scanned=True, heuristic_hits=["capability-network-outbound"]),
+                  Findings(scanned=True)):
+            g = grade(f)
+            self.assertEqual(g.letter, "?")
+            self.assertIn("not yet assessed", g.reason)
+
+    def test_a_named_malicious_advisory_is_its_own_evidence(self):
+        # F does not need a package list: the advisory names the package.
+        self.assertEqual(grade(Findings(scanned=True, mal_advisories=["MAL-2026-1"])).letter, "F")
+
+    def test_capability_findings_never_lower_a_grade(self):
+        f = Findings(scanned=True, packages=[{"id": "a@1"}],
+                     heuristic_hits=["capability-network-outbound", "capability-process-spawn",
+                                     "threat-runtime-environment-read"])
+        g = grade(f)
+        self.assertEqual(g.letter, "A")
+        self.assertIn("3 capability note(s) listed", g.reason)
+
+    def test_strong_signal_gives_d_and_names_the_rule(self):
+        for rule in ("threat-runtime-obfuscation-base64exec", "threat-runtime-obfuscation",
+                     "threat-process-download-exec"):
+            f = Findings(scanned=True, packages=[{"id": "a@1"}], heuristic_hits=["capability-network-outbound", rule])
+            g = grade(f)
+            self.assertEqual(g.letter, "D", rule)
+            self.assertIn(rule, g.reason)
+
+    def test_weak_hits_do_not_hide_a_real_cve_grade(self):
+        f = Findings(scanned=True, packages=[{"id": "a@1"}], cve_counts={"HIGH": 1},
+                     heuristic_hits=["capability-network-outbound"])
+        self.assertEqual(grade(f).letter, "C")
+
+    def test_heuristic_hit_with_packages_is_d(self):
+        f = Findings(scanned=True, packages=[{"id": "a@1"}], heuristic_hits=["threat-process-download-exec"])
+        self.assertEqual(grade(f).letter, "D")
+
+    def test_scanner_crash_never_yields_a(self):
+        # The real case: Trivy ran, OSV-Scanner panicked, nothing was found.
+        f = Findings(scanned=True, packages=[{"id": "a@1"}], errors=["osv-scanner: panic: nil pointer dereference"])
+        g = grade(f)
+        self.assertEqual(g.letter, "?")
+        self.assertIn("partially scanned", g.reason)
+
+    def test_scanner_error_never_yields_b(self):
+        f = Findings(scanned=True, packages=[{"id": "a@1"}], cve_counts={"LOW": 2}, errors=["guarddog: timeout"])
+        self.assertEqual(grade(f).letter, "?")
+
+    def test_bad_grades_stand_even_when_a_scanner_errored(self):
+        # More data can only make a bad result worse, never better.
+        high = Findings(scanned=True, packages=[{"id": "a@1"}], cve_counts={"HIGH": 1}, errors=["osv-scanner: crash"])
+        self.assertEqual(grade(high).letter, "C")
+        crit = Findings(scanned=True, packages=[{"id": "a@1"}], cve_counts={"CRITICAL": 1}, critical_with_fix=True,
+                        errors=["osv-scanner: crash"])
+        self.assertEqual(grade(crit).letter, "D")
+        mal = Findings(scanned=True, mal_advisories=["MAL-2026-1"], errors=["trivy: crash"])
+        self.assertEqual(grade(mal).letter, "F")
 
     def test_low_only_is_b(self):
-        self.assertEqual(grade(Findings(scanned=True, cve_counts={"LOW": 4})).letter, "B")
+        self.assertEqual(grade(Findings(scanned=True, packages=[{"id": "a@1"}], cve_counts={"LOW": 4})).letter, "B")
 
     def test_one_or_two_medium_is_b(self):
-        self.assertEqual(grade(Findings(scanned=True, cve_counts={"MEDIUM": 2})).letter, "B")
+        self.assertEqual(grade(Findings(scanned=True, packages=[{"id": "a@1"}], cve_counts={"MEDIUM": 2})).letter, "B")
 
     def test_three_medium_is_c(self):
-        self.assertEqual(grade(Findings(scanned=True, cve_counts={"MEDIUM": 3})).letter, "C")
+        self.assertEqual(grade(Findings(scanned=True, packages=[{"id": "a@1"}], cve_counts={"MEDIUM": 3})).letter, "C")
 
     def test_any_high_is_c(self):
-        self.assertEqual(grade(Findings(scanned=True, cve_counts={"HIGH": 1})).letter, "C")
+        self.assertEqual(grade(Findings(scanned=True, packages=[{"id": "a@1"}], cve_counts={"HIGH": 1})).letter, "C")
 
     def test_critical_with_fix_is_d(self):
-        f = Findings(scanned=True, cve_counts={"CRITICAL": 1}, critical_with_fix=True)
+        f = Findings(scanned=True, packages=[{"id": "a@1"}], cve_counts={"CRITICAL": 1}, critical_with_fix=True)
         self.assertEqual(grade(f).letter, "D")
 
     def test_critical_without_fix_is_c(self):
-        f = Findings(scanned=True, cve_counts={"CRITICAL": 1}, critical_with_fix=False)
+        f = Findings(scanned=True, packages=[{"id": "a@1"}], cve_counts={"CRITICAL": 1}, critical_with_fix=False)
         self.assertEqual(grade(f).letter, "C")
 
     def test_reason_is_always_present(self):
