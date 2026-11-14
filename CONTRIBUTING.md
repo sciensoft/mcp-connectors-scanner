@@ -15,7 +15,7 @@ Tests: `make test`. Run: build the image (`podman build -t mcp-connectors-scanne
 
 ## Code style
 
-- Follow [`.agents/rules/best-practices.md`](./.agents/rules/best-practices.md) — naming, dependency injection, repository / service patterns, language idioms.
+- Follow [`.agents/rules/best-practices.md`](./.agents/rules/best-practices.md) — the flat module layout, naming, and language idioms. Keep pure logic free of I/O so it can be tested without a database or network.
 - Run the project's formatter and linter before opening the PR (`make lint`, `ruff check`, `eslint`, `gofmt`, `cargo fmt` — whichever applies).
 - Tests for new behaviour live next to the existing tests; the smoke test is the entry point.
 
@@ -23,7 +23,7 @@ Tests: `make test`. Run: build the image (`podman build -t mcp-connectors-scanne
 
 - **Bug reports**: include the steps to reproduce, the expected behaviour, the actual behaviour, and the environment (OS, language version, relevant deps).
 - **Feature requests**: explain the use case before the implementation. The decision-record style at [`.docs/adrs/0000-adr-template.md`](./.docs/adrs/0000-adr-template.md) is a good frame for "what shape is the change, and what are the trade-offs?".
-- **Security**: do not file public issues for vulnerabilities. Contact the maintainers privately (see `SECURITY.md` if present, otherwise email the repository owner). See [`.docs/security/methodology.md`](./.docs/security/methodology.md) for the project's overall security posture.
+- **Security**: do not file public issues for vulnerabilities. Report them privately by following [`SECURITY.md`](./SECURITY.md). See [`.docs/security/methodology.md`](./.docs/security/methodology.md) for the project's overall security posture.
 
 ## Architecture decisions
 
