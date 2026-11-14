@@ -1,0 +1,98 @@
+# mcp-connectors-scanner: standalone compose file.
+#
+# The scanner shares an existing Postgres rather than running its own, so the
+# database service below is commented out. It joins the same external network as
+# the main application, so the two stacks reach each other by name: the scanner
+# reads the connector catalog from the server and the server reads grades back.
+#
+# Start (secrets from a gitignored env file, never committed):
+#
+#   cp .env.example .env.scanner      # then fill in real values
+#   set -a; . ./.env.scanner; set +a
+#   podman-compose -f docker-compose.yaml up -d scanner-init scanner
+#
+# Needs SCANNER_DB_PASSWORD, SCANNER_API_TOKEN and SCAN_FEED_TOKEN.
+#
+# The scanner reads untrusted third-party packages, so it runs hardened: read-only
+# filesystem, no capabilities, unprivileged user, in-memory work space, no
+# published ports, and a database login that can open only its own database.
+
+services:
+  # ---- database: NOT started here -------------------------------------------
+  # The scanner uses a separate database inside an already-running Postgres (the
+  # main application's). Uncomment this block only to run the scanner on its own
+  # with a private Postgres, and point SCANNER_DATABASE_URL at it.
+  #
+  # scanner-db:
+  #   image: postgres:16-alpine
+  #   container_name: scanner-db
+  #   environment:
+  #     POSTGRES_USER: scanner
+  #     POSTGRES_PASSWORD: ${SCANNER_DB_PASSWORD:?set SCANNER_DB_PASSWORD}
+  #     POSTGRES_DB: scanner
+  #   volumes:
+  #     - scanner_pgdata:/var/lib/postgresql/data
+  #   networks: [mcpc_vnet]
+
+  # One-shot and idempotent: creates the scanner's own role and database inside the
+  # shared Postgres, then exits. Needs the Postgres ADMIN login, which the scanner
+  # itself never receives. Skip it if the database already exists.
+  scanner-init:
+    image: postgres:16-alpine
+    container_name: mcpc-scanner-init
+    restart: "no"
+    environment:
+      PGHOST: ${SCANNER_PG_HOST:-mcp-db}
+      PGUSER: ${SCANNER_PG_ADMIN_USER:?set SCANNER_PG_ADMIN_USER}
+      PGPASSWORD: ${SCANNER_PG_ADMIN_PASSWORD:?set SCANNER_PG_ADMIN_PASSWORD}
+      SCANNER_DB_PASSWORD: ${SCANNER_DB_PASSWORD:?set SCANNER_DB_PASSWORD}
+    volumes:
+      - ./init-db.sh:/init-db.sh:ro
+    entrypoint: ["sh", "/init-db.sh"]
+    networks:
+      - mcpc_vnet
+
+  scanner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: localhost/mcp-connectors-scanner:latest
+    pull_policy: never
+    container_name: mcpc-scanner
+    restart: unless-stopped
+    environment:
+      SCANNER_DATABASE_URL: postgres://scanner:${SCANNER_DB_PASSWORD:?set SCANNER_DB_PASSWORD}@${SCANNER_PG_HOST:-mcp-db}:5432/scanner?sslmode=disable
+      # Read-only catalog feed on the application server, with a shared bearer token.
+      SCAN_FEED_URL: ${SCAN_FEED_URL:-http://mcp-server:8080/internal/scanner/catalog}
+      SCAN_FEED_TOKEN: ${SCAN_FEED_TOKEN:?set SCAN_FEED_TOKEN}
+      # The scanner's own read-only API. Same idea, other direction.
+      SCANNER_API_ADDR: ":9090"
+      SCANNER_API_TOKEN: ${SCANNER_API_TOKEN:?set SCANNER_API_TOKEN}
+      SCAN_INTERVAL_HOURS: ${SCAN_INTERVAL_HOURS:-168}
+      # Connectors scanned at once, and the per-registry limit (default 5 each).
+      SCAN_CONCURRENCY: ${SCAN_CONCURRENCY:-32}
+      HOME: /home/scanner
+    read_only: true
+    user: "10002:10002"
+    tmpfs:
+      - /work:size=6g,mode=1777
+      - /tmp:size=512m,mode=1777
+    volumes:
+      # Vulnerability-database and package caches: public data only, never secrets.
+      - scanner_cache:/home/scanner
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - mcpc_vnet
+
+networks:
+  # The network the main application already created. Joined, not created, so both
+  # stacks can talk. Name matches the main repo's compose network.
+  mcpc_vnet:
+    external: true
+
+volumes:
+  scanner_cache:
+  # scanner_pgdata:   # only if the commented-out scanner-db above is enabled

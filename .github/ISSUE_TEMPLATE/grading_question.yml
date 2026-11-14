@@ -1,0 +1,25 @@
+name: Question about a grade
+description: You think a grade is wrong, unfair, or unclear. The rules are public, so challenge them.
+labels: ["grading"]
+body:
+  - type: input
+    id: connector
+    attributes:
+      label: Connector
+      description: The connector id.
+    validations:
+      required: true
+  - type: dropdown
+    id: grade
+    attributes:
+      label: Grade shown
+      options: ["A", "B", "C", "D", "F", "? (not yet assessed)"]
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why you think it is wrong or unclear
+      description: Point at the rule in `engine/grade.py` or the finding you disagree with. Evidence beats opinion.
+    validations:
+      required: true

@@ -1,0 +1,33 @@
+name: Bug report
+description: Something produced a wrong result, crashed, or behaved unexpectedly.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Security vulnerability?** Stop and use private reporting instead (see the issue chooser, or SECURITY.md). Public issues are visible to everyone.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you saw, and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: How to reproduce
+      description: The connector or input involved, and the steps. For a wrong grade, give the connector id and the grade you got.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Commit SHA or release tag.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log lines
+      description: Redact tokens, passwords and internal addresses before pasting.
+      render: text

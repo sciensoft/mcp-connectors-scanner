@@ -1,0 +1,20 @@
+name: Idea or feature request
+description: A new check, a new ecosystem, a clearer report.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What can the scanner not tell you today?
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What you would like
+  - type: textarea
+    id: evidence
+    attributes:
+      label: How would we know it works
+      description: A grade needs evidence. What evidence would this check produce?

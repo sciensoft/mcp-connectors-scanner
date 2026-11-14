@@ -1,0 +1,23 @@
+[project]
+name = "mcp-connectors-scanner"
+version = "0.1.0"
+description = "Grades MCP connectors from A to F from real evidence (known vulnerabilities, known-malicious packages, suspicious code patterns), publishes the full dependency tree, and states what it does not check. Open source so anyone can audit exactly how a grade is produced."
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "ruff>=0.6",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra -q"
+
+[tool.ruff]
+line-length = 100

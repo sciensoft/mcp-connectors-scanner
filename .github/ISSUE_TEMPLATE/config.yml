@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security vulnerability (private)
+    url: https://github.com/sciensoft/mcp-connectors-scanner/security/advisories/new
+    about: Do NOT open a public issue for a vulnerability. Use private reporting so it can be fixed before it is disclosed.
+  - name: Contact Sciensoft
+    url: https://sciensoft.dev/contact
+    about: Anything that is not a bug or a feature idea.

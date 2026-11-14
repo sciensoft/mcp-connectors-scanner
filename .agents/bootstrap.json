@@ -1,0 +1,30 @@
+{
+  "bootstrap_version": "2026-09-16",
+  "last_run_at": "2026-11-14T13:11:41+00:00",
+  "interview_status": "done",
+  "answers": {
+    "PROJECT_NAME": "mcp-connectors-scanner",
+    "ONE_LINE_PURPOSE": "Grades MCP connectors from A to F from real evidence (known vulnerabilities, known-malicious packages, suspicious code patterns), publishes the full dependency tree, and states what it does not check. Open source so anyone can audit exactly how a grade is produced.",
+    "AGENTS_USED": [
+      "CLAUDE"
+    ],
+    "LAYOUT": "agents",
+    "POSTURE": "TRUSTED_DEV",
+    "LANG": "Python",
+    "ARCH": "FLAT",
+    "WEB": false,
+    "LLM": false,
+    "ENV_VARS": true,
+    "CHANGES": false,
+    "UI_COMPONENTS": false,
+    "METRICS": false,
+    "TESTING": true,
+    "FRONTEND": false,
+    "BEST_PRACTICES_REFINED": false,
+    "LICENSE": "APACHE_2_0",
+    "COPYRIGHT_HOLDER": "Sciensoft Technologies B.V.",
+    "CONTRIB": true,
+    "RUN_INSTRUCTIONS": "Tests: `make test`. Run: build the image (`podman build -t mcp-connectors-scanner .`) and start it with the compose file. It needs a Postgres database (its own role and database, created by `init-db.sh`), a catalog feed URL and token, and an API token. The scanner executes inside its container only, never on the host.",
+    "ADDITIONAL_SECTIONS_FROM_INTERVIEW": ""
+  }
+}
