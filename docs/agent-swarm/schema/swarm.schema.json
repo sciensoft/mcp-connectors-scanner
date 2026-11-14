@@ -1,0 +1,446 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "swarm.schema.json",
+  "title": "Agent swarm registry",
+  "description": "One registry file per swarm run. A swarm is N headless Claude CLI workers, each with a private sandbox and a task list. Workers are generic: nothing in the schema is specific to one job. The number of workers and tasks is whatever the operator asks for.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "swarm_id",
+    "created_at",
+    "defaults",
+    "workers"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "swarm_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$",
+      "description": "Kebab-case id, also the run folder name under runs/."
+    },
+    "title": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "brief_path": {
+      "type": "string",
+      "description": "Shared rules file every worker must read first (for example the no-guessing rules)."
+    },
+    "defaults": {
+      "$ref": "#/$defs/runtime"
+    },
+    "workers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/worker"
+      }
+    }
+  },
+  "$defs": {
+    "runtime": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "model": {
+          "type": "string",
+          "default": "sonnet",
+          "description": "Alias passed to claude --model. Always pass it explicitly; never rely on the CLI default. Verified on CLI 2.1.224: sonnet resolves to claude-sonnet-5, haiku resolves to claude-haiku-4-5-20251001, fable and opus also exist and are expensive."
+        },
+        "effort": {
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ],
+          "default": "medium"
+        },
+        "max_turns": {
+          "type": "integer",
+          "minimum": 1,
+          "default": 200
+        },
+        "max_budget_usd": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Passed to --max-budget-usd. Optional hard stop per worker."
+        },
+        "permission_mode": {
+          "type": "string",
+          "default": "bypassPermissions",
+          "description": "Safe only because the sandbox is a private folder and deny rules protect everything else."
+        },
+        "add_dirs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Extra directories the worker may read."
+        },
+        "deny_tools": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Passed to --disallowedTools. Note: write protection uses Edit(path) rules, Write(path) is not matched."
+        }
+      }
+    },
+    "worker": {
+      "type": "object",
+      "required": [
+        "id",
+        "sandbox",
+        "status",
+        "tasks"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "title": {
+          "type": "string"
+        },
+        "sandbox": {
+          "type": "string",
+          "description": "Absolute path of the only folder this worker may write to. Persistent: a later task reuses the same folder and its clones and notes."
+        },
+        "runtime": {
+          "$ref": "#/$defs/runtime",
+          "description": "Overrides swarm defaults for this worker."
+        },
+        "status": {
+          "$ref": "#/$defs/workerStatus"
+        },
+        "state_detail": {
+          "type": "string",
+          "description": "Short human text for what the worker is doing right now, derived from its last event."
+        },
+        "pid": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "session_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Claude session UUID, lets a later task resume with --resume."
+        },
+        "model_seen": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Model name read from the stream events, to verify the requested model was really used."
+        },
+        "started_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "last_event_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "ended_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "exit_code": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "cost_usd": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "turns": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "stream_log": {
+          "type": "string",
+          "description": "Full raw event stream, one JSON event per line. Nothing is dropped. Use it to reassess a worker after the fact or while it is still running."
+        },
+        "activities": {
+          "type": "array",
+          "maxItems": 12,
+          "description": "Live activity feed: rolling window of the latest human-readable steps taken from the worker stream (reasoning, tool calls, tool results, text), newest last. Capped so the registry stays small. The complete stream is in stream_log.",
+          "items": {
+            "type": "object",
+            "required": [
+              "at",
+              "kind",
+              "text"
+            ],
+            "properties": {
+              "at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "kind": {
+                "enum": [
+                  "thinking",
+                  "text",
+                  "tool_call",
+                  "tool_result",
+                  "rate_limit",
+                  "error",
+                  "system"
+                ]
+              },
+              "text": {
+                "type": "string",
+                "maxLength": 300
+              }
+            }
+          }
+        },
+        "tasks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/task"
+          }
+        },
+        "_offset": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Watcher bookkeeping: byte offset already consumed from the stream log."
+        },
+        "_result_error": {
+          "type": "boolean",
+          "description": "Watcher bookkeeping: the final result event reported is_error."
+        },
+        "_result_text": {
+          "type": "string",
+          "description": "Watcher bookkeeping: first 300 chars of the final result text."
+        },
+        "stream_format": {
+          "enum": [
+            "stream-json",
+            "plain-text"
+          ],
+          "default": "stream-json",
+          "description": "plain-text marks legacy logs from before the watcher existed; they are never parsed."
+        }
+      }
+    },
+    "workerStatus": {
+      "enum": [
+        "idle",
+        "starting",
+        "researching",
+        "thinking",
+        "writing",
+        "waiting",
+        "stalled",
+        "rate_limited",
+        "done",
+        "failed",
+        "stopped"
+      ],
+      "description": "idle: no task running, sandbox kept. starting: process launched, no event yet. researching: tool calls in flight (search, fetch, shell, git). thinking: model reasoning. writing: writing a file. waiting: blocked on rate limit or retry. stalled: no event for stall_after_seconds. rate_limited: provider said stop. done/failed/stopped: terminal for the current task, worker can accept a new task."
+    },
+    "task": {
+      "type": "object",
+      "required": [
+        "id",
+        "prompt",
+        "status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "title": {
+          "type": "string"
+        },
+        "prompt": {
+          "type": "string",
+          "description": "Exactly what the worker is told for this task. Include inputs (paths) and the expected output file."
+        },
+        "expected_outputs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Paths, relative to the sandbox. The task is only marked done when they exist and are non-empty."
+        },
+        "status": {
+          "enum": [
+            "queued",
+            "running",
+            "done",
+            "partial",
+            "failed",
+            "blocked",
+            "unknown",
+            "skipped"
+          ],
+          "description": "queued: waiting. running: current task. done: outputs exist and verified. partial: ended with some outputs or hit a limit. failed: ended with error. blocked: cannot start (dependency or limit). unknown: process gone, outcome not verified yet. skipped: operator cancelled."
+        },
+        "depends_on": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "attempts": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 0
+        },
+        "started_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "ended_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "result_note": {
+          "type": "string",
+          "description": "One or two lines: what was verified, what is missing."
+        },
+        "qa": {
+          "$ref": "#/$defs/qa",
+          "description": "Independent quality check of this task's output, done by the operator's own session and not by the worker. Optional. A task whose qa.status is complete is skipped when the operator asks to validate; only pending or in_progress tasks are checked."
+        }
+      }
+    },
+    "qa": {
+      "type": "object",
+      "required": [
+        "status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "pending",
+            "in_progress",
+            "complete"
+          ],
+          "description": "pending: not checked yet. in_progress: some checks recorded, more planned. complete: no more checks will be done for this task."
+        },
+        "checked_by": {
+          "type": "string",
+          "description": "Who ran the checks, for example the model name of the operator session."
+        },
+        "checked_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "tally": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Counts of check verdicts. Score = confirmed / (confirmed + corrected + wrong). Inconclusive checks are excluded from the denominator because they reflect a limit of the checker (rate limit, no access), not an error by the worker.",
+          "properties": {
+            "confirmed": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "corrected": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "wrong": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "inconclusive": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "checks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/qaCheck"
+          }
+        }
+      }
+    },
+    "qaCheck": {
+      "type": "object",
+      "required": [
+        "claim",
+        "verdict"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "entry": {
+          "type": "string",
+          "description": "Which item of the task output this check is about, for example a catalog entry name."
+        },
+        "claim": {
+          "type": "string",
+          "description": "What the worker asserted, in one line."
+        },
+        "worker_value": {
+          "type": "string"
+        },
+        "observed_value": {
+          "type": "string",
+          "description": "What the operator's independent check actually found."
+        },
+        "verdict": {
+          "enum": [
+            "confirmed",
+            "corrected",
+            "wrong",
+            "inconclusive"
+          ],
+          "description": "confirmed: matches. corrected: partly right, a detail needed fixing. wrong: the claim was false. inconclusive: could not be checked."
+        },
+        "evidence": {
+          "type": "string",
+          "description": "Command, URL or file the check used, so it can be repeated."
+        }
+      }
+    }
+  }
+}

@@ -37,6 +37,8 @@ Tests: `make test`. Run: build the image (`podman build -t mcp-connectors-scanne
 - [Guide](./docs/guide.md): how it works, how to run it, what to do when something looks wrong.
 - [Decision log](./docs/decision-log.md): what we saw, what we decided, and why. Every change to the grading rules is recorded here.
 - [Architecture decision](./docs/adrs/0001-connector-security-scanner-service.md): why it is a separate, isolated service.
+- [Research](./docs/security/connector-scan-engine-research.md): which tools we looked at, which we chose, and the three-phase design (fixed checks first, then agent triage, then human QA).
+- [Agent swarm](./docs/agent-swarm/README.md): the tool that runs many headless Claude workers from one registry. It is the planned triage phase, and it is not built into the scanner yet.
 - **For contributors and agents**: [`AGENTS.md`](./AGENTS.md) is the cold-start brief, with the rules under [`.agents/rules/`](./.agents/rules/).
 
 ## Reporting problems
