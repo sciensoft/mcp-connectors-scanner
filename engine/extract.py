@@ -113,8 +113,30 @@ def extract(entry: dict, docs_url: str = "") -> Target:
             t.ecosystem, t.image = "container", imgs[-1]
         return t
 
-    if kind in ("node", "python", "jbang"):
-        t.ecosystem = "git" if kind != "jbang" else "manual"
+    if kind == "jbang":
+        # Args[1] is whatever `jbang run <X>` accepts (ADR-0018): a GitHub repo,
+        # a Maven coordinate groupId:artifactId:version, a gist, or an https URL.
+        spec = next((a for a in args if a not in ("run",) and not a.startswith("-")), "")
+        if re.fullmatch(r"[\w.\-]+:[\w.\-]+(:[\w.\-]+)?", spec):
+            parts = spec.split(":")
+            t.ecosystem = "maven"
+            t.package = parts[0] + ":" + parts[1]
+            t.version = parts[2] if len(parts) > 2 else ""
+            t.repo = _github_repo(docs_url)
+        elif "github.com" in spec:
+            t.ecosystem = "git"
+            t.repo = _github_repo(spec)
+        elif _github_repo(docs_url):
+            t.ecosystem = "git"
+            t.repo = _github_repo(docs_url)
+            t.notes.append("jbang spec not a repo, scanning docs_url repository")
+        else:
+            t.ecosystem = "manual"
+            t.notes.append("jbang spec is a gist or URL with no known repository")
+        return t
+
+    if kind in ("node", "python"):
+        t.ecosystem = "git"
         t.repo = next((_github_repo(a) for a in args if "github.com" in a), "") or _github_repo(docs_url)
         return t
 

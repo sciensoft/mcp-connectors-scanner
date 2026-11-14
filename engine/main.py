@@ -24,7 +24,7 @@ from datetime import datetime, timezone
 
 from .extract import extract
 from .grade import grade
-from .scan import scan
+from .scan import cleanup_stale, scan
 
 OUT_DIR = os.environ.get("SCAN_OUT_DIR", "/out")
 
@@ -67,6 +67,10 @@ def push(results: list) -> bool:
 
 def sweep():
     started = datetime.now(timezone.utc)
+    # Leftovers from a crash or restart: remove them before doing anything else.
+    stale = cleanup_stale(max_age_seconds=0)
+    if stale:
+        log(f"removed {stale} stale work dir(s) from a previous run")
     entries = fetch_catalog()
     log(f"sweep start: {len(entries)} catalog entries")
     results = []
@@ -103,6 +107,9 @@ def sweep():
     for r in results:
         counts[r["grade"]] = counts.get(r["grade"], 0) + 1
     log(f"sweep done: {counts}")
+    leftover = cleanup_stale(max_age_seconds=0)
+    if leftover:
+        log(f"end-of-sweep cleanup removed {leftover} leftover work dir(s)")
 
 
 def main():

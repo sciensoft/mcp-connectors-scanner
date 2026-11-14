@@ -15,7 +15,10 @@ import json
 import os
 import shutil
 import subprocess
+import stat
 import tempfile
+import time
+import urllib.request
 
 from .extract import Target
 from .grade import Findings
@@ -128,6 +131,61 @@ def _clone(t: Target, work: str, f: Findings) -> bool:
     return True
 
 
+def _resolve_maven(t: Target, work: str, f: Findings) -> bool:
+    """Fetch the package's pom.xml from Maven Central. No build, no execution:
+    Trivy and OSV read the declared dependencies straight from the pom."""
+    group, _, artifact = t.package.partition(":")
+    if not (group and artifact and t.version):
+        f.errors.append("maven coordinate needs groupId:artifactId:version")
+        return False
+    path = f"{group.replace('.', '/')}/{artifact}/{t.version}/{artifact}-{t.version}.pom"
+    url = f"https://repo1.maven.org/maven2/{path}"
+    try:
+        with urllib.request.urlopen(url, timeout=60) as r, open(os.path.join(work, "pom.xml"), "wb") as fh:
+            fh.write(r.read())
+    except Exception as e:  # noqa: BLE001 - recorded, never raised
+        f.errors.append(f"maven pom fetch: {e}")
+        return False
+    return True
+
+
+def _remove_tree(path: str) -> None:
+    """Delete a work dir and PROVE it is gone. Read-only files (git packs, npm
+    caches) can make rmtree fail silently, so fix permissions and retry."""
+    def _force(func, p, _exc):
+        try:
+            os.chmod(p, stat.S_IRWXU)
+            func(p)
+        except OSError:
+            pass
+    shutil.rmtree(path, onerror=_force)
+    if os.path.exists(path):
+        subprocess.run(["rm", "-rf", path], check=False)
+    if os.path.exists(path):
+        print(f"WARNING: could not remove work dir {path}", flush=True)
+
+
+def cleanup_stale(max_age_seconds: int = 3600) -> int:
+    """Remove work dirs left behind by a crash or restart. Called at the start of
+    every sweep so garbage can never accumulate across runs."""
+    base = os.environ.get("SCAN_WORK_DIR", tempfile.gettempdir())
+    removed = 0
+    now = time.time()
+    try:
+        names = os.listdir(base)
+    except OSError:
+        return 0
+    for name in names:
+        p = os.path.join(base, name)
+        try:
+            if os.path.isdir(p) and now - os.path.getmtime(p) > max_age_seconds:
+                _remove_tree(p)
+                removed += 1
+        except OSError:
+            continue
+    return removed
+
+
 def scan(t: Target) -> Findings:
     f = Findings()
     if t.ecosystem in ("manual", "unknown"):
@@ -149,11 +207,15 @@ def scan(t: Target) -> Findings:
                 _trivy(work, f)
                 _osv(work, f)
             _guarddog("pypi", t.package, t.version, f)
+        elif t.ecosystem == "maven":
+            if _resolve_maven(t, work, f):
+                _trivy(work, f)
+                _osv(work, f)
         elif t.ecosystem in ("go", "git"):
             if _clone(t, work, f):
                 src = os.path.join(work, "src")
                 _trivy(src, f)
                 _osv(src, f)
     finally:
-        shutil.rmtree(work, ignore_errors=True)
+        _remove_tree(work)
     return f
