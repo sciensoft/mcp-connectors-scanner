@@ -17,8 +17,9 @@ The owner also wants this to need very little ongoing involvement: results shoul
 2. **Isolation.** The scanner runs in its own container image (later possibly its own Kubernetes pod). It gets no database credentials, no `env_file`, and no user secrets. Executing untrusted packages happens only inside this boundary, and black-box scans of connectors need a further sandbox (no network, no HOME), decided in a follow-up.
 3. **Scheduled and hands-off.** A timer triggers the run (monthly full scan as the baseline, weekly feasible for the deterministic phase). Connectors with zero findings are graded by script alone. Human involvement is limited to reviewing F grades.
 4. **One-way reporting.** The scanner pushes signed results to a narrow ingest endpoint on the server. The server never calls into the scanner. Reading the catalog is through a read-only feed, not database access.
-5. **Simple server side.** The server only stores and displays grades. A `security_scans` table holds the history, with the latest grade and last-scanned time denormalized onto the catalog entry for badges on the catalogs page.
-6. **Grades are advisory.** An F flags the connector for human review and may produce a draft migration, but nothing is auto-removed, so a false positive cannot silently pull a connector.
+5. **Simple server side.** The server only stores and displays grades. A `security_scans` table holds the history (grade, findings, and the dependency tree as JSONB), with the latest grade and last-scanned time denormalized onto the catalog entry for badges on the catalogs page.
+6. **Full transparency: store the evidence, not just the grade.** Alongside the letter grade, the scanner reports the complete resolved dependency tree (every direct and transitive package with its version) and the per-finding detail (advisory id, severity, affected package, fixed-in version, which scanner reported it). The server stores both and exposes them so users can see exactly what a connector contains and why it was graded as it was. The product goal is to show the whole truth, including for connectors that grade badly, rather than only a score.
+7. **Grades are advisory.** An F flags the connector for human review and may produce a draft migration, but nothing is auto-removed, so a false positive cannot silently pull a connector.
 
 ## Consequences
 

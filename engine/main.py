@@ -22,6 +22,7 @@ import time
 import urllib.request
 from datetime import datetime, timezone
 
+from .coverage import matrix
 from .extract import extract
 from .grade import grade
 from .scan import cleanup_stale, scan
@@ -90,6 +91,12 @@ def sweep():
                 "mal_advisories": findings.mal_advisories,
                 "heuristic_hits": findings.heuristic_hits,
                 "errors": findings.errors,
+                # Full evidence for the transparency page (ADR-0026, decision 6)
+                "vulnerabilities": findings.vulnerabilities,
+                "packages": findings.packages,
+                "dependency_edges": findings.dependency_edges,
+                "tools": findings.tools,
+                "coverage": matrix(target.ecosystem, list(findings.tools)),
                 "scanned_at": datetime.now(timezone.utc).isoformat(),
             })
             log(f"{eid}: {g.letter} ({g.reason})")

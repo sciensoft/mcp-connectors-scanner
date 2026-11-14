@@ -31,6 +31,13 @@ class Findings:
     poisoning_hits: list = field(default_factory=list)   # mcp-scanner findings
     heuristic_hits: list = field(default_factory=list)   # guarddog findings
     errors: list = field(default_factory=list)
+    # Evidence kept for transparency (ADR-0026 decision 6): the grade alone is
+    # never the whole story, users can see what is inside and why.
+    vulnerabilities: list = field(default_factory=list)  # one dict per finding
+    packages: list = field(default_factory=list)         # flat resolved package list
+    dependency_edges: list = field(default_factory=list) # {"from": id, "to": [ids]}
+    tools: dict = field(default_factory=dict)            # scanner name -> version
+    seen_vulns: set = field(default_factory=set)         # dedupe keys, internal
 
 
 @dataclass

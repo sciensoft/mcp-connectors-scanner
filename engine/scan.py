@@ -37,24 +37,69 @@ def run(cmd, cwd=None, timeout=TIMEOUT):
         return -2, "", f"tool not found: {cmd[0]}"
 
 
+_VERSION_CACHE = {}
+
+
+def _mark_ran(f: Findings, tool: str) -> None:
+    """Record that a scanner really ran, with its version, so the coverage
+    matrix never claims a check that was skipped or failed."""
+    if tool not in _VERSION_CACHE:
+        code, out, _ = run([tool, "--version"], timeout=30)
+        _VERSION_CACHE[tool] = (out.strip().splitlines() or ["unknown"])[0][:80] if code == 0 else "unknown"
+    f.tools[tool] = _VERSION_CACHE[tool]
+
+
+def _add_vuln(f: Findings, v: dict) -> None:
+    """Record one finding once. Trivy and OSV overlap, so dedupe by package+id."""
+    key = (v.get("package", ""), v.get("installed", ""), v.get("id", ""))
+    if key in f.seen_vulns:
+        return
+    f.seen_vulns.add(key)
+    f.vulnerabilities.append(v)
+    sev = v.get("severity", "UNKNOWN")
+    f.cve_counts[sev] = f.cve_counts.get(sev, 0) + 1
+    if sev == "CRITICAL" and v.get("fixed_in"):
+        f.critical_with_fix = True
+
+
 def _trivy(path, f: Findings, mode="fs"):
     code, out, err = run(["trivy", mode, "--quiet", "--format", "json",
-                          "--scanners", "vuln", path])
+                          "--scanners", "vuln", "--list-all-pkgs", path])
     if code not in (0,):
         f.errors.append(f"trivy {mode}: {err.strip()[:200] or code}")
         return
     f.scanned = True
+    _mark_ran(f, "trivy")
     try:
         data = json.loads(out or "{}")
     except json.JSONDecodeError:
         f.errors.append("trivy: unparseable output")
         return
     for res in data.get("Results") or []:
+        target = res.get("Target", "")
+        for pkg in res.get("Packages") or []:
+            pid = pkg.get("ID") or f"{pkg.get('Name', '')}@{pkg.get('Version', '')}"
+            f.packages.append({
+                "id": pid,
+                "name": pkg.get("Name", ""),
+                "version": pkg.get("Version", ""),
+                "license": ", ".join(pkg.get("Licenses") or []),
+                "direct": pkg.get("Relationship") == "direct",
+                "source": target,
+            })
+            if pkg.get("DependsOn"):
+                f.dependency_edges.append({"from": pid, "to": list(pkg["DependsOn"])})
         for v in res.get("Vulnerabilities") or []:
-            sev = (v.get("Severity") or "UNKNOWN").upper()
-            f.cve_counts[sev] = f.cve_counts.get(sev, 0) + 1
-            if sev == "CRITICAL" and v.get("FixedVersion"):
-                f.critical_with_fix = True
+            _add_vuln(f, {
+                "id": v.get("VulnerabilityID", ""),
+                "severity": (v.get("Severity") or "UNKNOWN").upper(),
+                "package": v.get("PkgName", ""),
+                "installed": v.get("InstalledVersion", ""),
+                "fixed_in": v.get("FixedVersion", ""),
+                "title": (v.get("Title") or "")[:200],
+                "url": v.get("PrimaryURL", ""),
+                "source": "trivy",
+            })
 
 
 def _osv(path, f: Findings):
@@ -64,16 +109,34 @@ def _osv(path, f: Findings):
         f.errors.append(f"osv-scanner: {err.strip()[:200] or code}")
         return
     f.scanned = True
+    _mark_ran(f, "osv-scanner")
     try:
         data = json.loads(out or "{}")
     except json.JSONDecodeError:
         return
     for r in data.get("results") or []:
         for pkg in r.get("packages") or []:
+            info = pkg.get("package") or {}
             for v in pkg.get("vulnerabilities") or []:
                 vid = v.get("id", "")
                 if vid.startswith("MAL-"):
                     f.mal_advisories.append(vid)
+                sev = "UNKNOWN"
+                for grp in pkg.get("groups") or []:
+                    if vid in (grp.get("ids") or []) and grp.get("max_severity"):
+                        score = float(grp["max_severity"])
+                        sev = ("CRITICAL" if score >= 9 else "HIGH" if score >= 7
+                               else "MEDIUM" if score >= 4 else "LOW")
+                _add_vuln(f, {
+                    "id": vid,
+                    "severity": "CRITICAL" if vid.startswith("MAL-") else sev,
+                    "package": info.get("name", ""),
+                    "installed": info.get("version", ""),
+                    "fixed_in": "",
+                    "title": (v.get("summary") or "")[:200],
+                    "url": f"https://osv.dev/{vid}" if vid else "",
+                    "source": "osv-scanner",
+                })
 
 
 def _guarddog(eco, package, version, f: Findings):
@@ -85,6 +148,7 @@ def _guarddog(eco, package, version, f: Findings):
         f.errors.append(f"guarddog: {err.strip()[:200] or code}")
         return
     f.scanned = True
+    _mark_ran(f, "guarddog")
     try:
         data = json.loads(out or "{}")
     except json.JSONDecodeError:
@@ -101,6 +165,7 @@ def _resolve_npm(t: Target, work: str, f: Findings) -> bool:
     if code != 0:
         f.errors.append(f"npm resolve: {err.strip()[:200] or code}")
         return False
+    f.tools["engine"] = "resolve-without-execution"
     return True
 
 
@@ -113,6 +178,7 @@ def _resolve_pypi(t: Target, work: str, f: Findings) -> bool:
     if code != 0:
         f.errors.append(f"uv resolve: {err.strip()[:200] or code}")
         return False
+    f.tools["engine"] = "resolve-without-execution"
     return True
 
 
@@ -146,6 +212,7 @@ def _resolve_maven(t: Target, work: str, f: Findings) -> bool:
     except Exception as e:  # noqa: BLE001 - recorded, never raised
         f.errors.append(f"maven pom fetch: {e}")
         return False
+    f.tools["engine"] = "resolve-without-execution"
     return True
 
 
