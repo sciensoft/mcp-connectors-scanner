@@ -60,9 +60,11 @@ flowchart TD
     G -- no --> GA[A]
 ```
 
-D and F go on the review list. `?` means nothing could be scanned.
+D and F go on the review list. `?` means not yet assessed: no evidence to grade on.
 
-**Known issue:** the first full sweep gave 27 A, 4 B, 40 C, 223 D, 6 unknown. Nearly all the D's are GuardDog heuristic hits on legitimate packages, because any hit means D today. The grader is deliberately not tuned until a full sweep has been judged.
+Every grade needs evidence: with no resolved package there is no grade, and the result reads "not yet assessed". A crashed scanner can never produce an A or B.
+
+**Known issue:** the latest sweep gave 11 A, 4 B, 38 C, 215 D, 32 not assessed. Most D's come from code-heuristic hits on legitimate packages. How we got here and what we plan to change is in the [decision log](./scanner-decision-log.md).
 
 ## What it does not check
 
