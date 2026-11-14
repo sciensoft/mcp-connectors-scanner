@@ -64,7 +64,7 @@ D and F go on the review list. `?` means not yet assessed: no evidence to grade 
 
 Every grade needs evidence: with no resolved package there is no grade, and the result reads "not yet assessed". A crashed scanner can never produce an A or B.
 
-**Known issue:** the latest sweep gave 11 A, 4 B, 38 C, 215 D, 32 not assessed. Most D's come from code-heuristic hits on legitimate packages. How we got here and what we plan to change is in the [decision log](./scanner-decision-log.md).
+**Known issue:** the latest sweep gave 11 A, 4 B, 38 C, 215 D, 32 not assessed. Most D's come from code-heuristic hits on legitimate packages. How we got here and what we plan to change is in the [decision log](./decision-log.md).
 
 ## What it does not check
 

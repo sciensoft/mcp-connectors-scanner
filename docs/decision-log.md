@@ -1,6 +1,6 @@
 # Scanner decision log
 
-**Audience**: anyone who wants to know *why* the scanner grades the way it does. Each entry is what we saw, what we decided, and why. Newest at the bottom. How the scanner works is in [the guide](./connector-scanner.md); the founding decision is [ADR 0001](../docs/adrs/0001-connector-security-scanner-service.md).
+**Audience**: anyone who wants to know *why* the scanner grades the way it does. Each entry is what we saw, what we decided, and why. Newest at the bottom. How the scanner works is in [the guide](./guide.md); the founding decision is [ADR 0001](./adrs/0001-connector-security-scanner-service.md).
 
 **How we decide**: run it on the whole catalog, look at the real data, change one thing, run again and compare. We do not tune on a hunch or on a handful of examples.
 
@@ -11,6 +11,7 @@
 | 1 | First version, one connector at a time | 20 min 58 s | 27 | 4 | 40 | 223 | 6 |
 | 2 | Ten-plus at once, per-registry limits | 4 min 41 s | 28 | 4 | 39 | 222 | 7 |
 | 3 | Evidence rules (below) | 4 min 8 s | 11 | 4 | 38 | 215 | 32 |
+| 4 | Only strong signals lower a grade (below) | 4 min 20 s | 86 | 4 | 106 | 74 | 30 |
 
 ## 1. Scan in parallel, but politely
 
@@ -38,3 +39,5 @@ The heuristic rules are of two kinds. *Capability* rules say what a package can 
 **Decided**: capability findings never lower a grade. Only three signals give a D: obfuscated code, obfuscated base64 execution, and download-and-execute. Everything else is still recorded, and an A states how many capability notes it carries, so nothing is hidden.
 **Checked first**: we replayed the saved run-3 data with the new rule before changing code. D would fall from 215 to 74, with 75 moving to A and 66 to C.
 **Caveat**: the heuristic tool is not perfectly repeatable between runs, so the strong-signal list should be reviewed against more than one sweep.
+**Result (run 4)**: D fell from 215 to 74, matching the replay. A rose from 11 to 86, C from 38 to 106. Not assessed went from 32 to 30. The replay predicted the outcome, so we trust the method as much as the number.
+**Still open**: many of the not-assessed connectors run from a pinned code commit with no lockfile, so the scanner has no package list to examine. Resolving packages from their manifests is the next job.
