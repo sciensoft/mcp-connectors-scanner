@@ -1,4 +1,4 @@
-"""Per-registry concurrency gates (ADR-0026).
+"""Per-registry concurrency gates (ADR 0001).
 
 Every registry rate-limits per client, so each one gets its own small gate: a scan
 holds a slot only while it is actually talking to that registry, and the CPU-heavy

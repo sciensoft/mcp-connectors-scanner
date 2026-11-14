@@ -1,6 +1,6 @@
 """Scanner entrypoint: scheduled full sweep plus the read-only API.
 
-The scanner is a microservice with its own database (ADR-0026, decision 4).
+The scanner is a microservice with its own database (ADR 0001, decision 3).
 One process does two things:
   - a background thread serves the read-only API (api.py) that the server calls
   - the main thread runs a scheduled sweep of the whole catalog
@@ -64,7 +64,7 @@ def scan_one(entry: dict) -> dict:
         "mal_advisories": findings.mal_advisories,
         "heuristic_hits": findings.heuristic_hits,
         "errors": findings.errors,
-        # Full evidence for the transparency page (ADR-0026, decision 6)
+        # Full evidence for the transparency page (ADR 0001, decision 6)
         "vulnerabilities": findings.vulnerabilities,
         "packages": findings.packages,
         "dependency_edges": findings.dependency_edges,

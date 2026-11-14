@@ -1,6 +1,6 @@
 #!/bin/sh
 # Create the scanner's own role and database inside the existing Postgres
-# (ADR-0026). Idempotent: safe to run on every `up`.
+# (ADR 0001). Idempotent: safe to run on every `up`.
 #
 # The scanner gets a SEPARATE database and a SEPARATE login that owns only that
 # database. It never receives the server's credentials, so a compromised scanner

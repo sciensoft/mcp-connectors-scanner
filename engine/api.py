@@ -1,4 +1,4 @@
-"""Read-only HTTP API of the scanner (ADR-0026, decisions 4 and 5).
+"""Read-only HTTP API of the scanner (ADR 0001, decision 3).
 
 The server is a thin consumer of this API. It stores nothing about scans.
 Nothing here writes: results only enter the database through the sweep.

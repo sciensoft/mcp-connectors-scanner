@@ -9,7 +9,7 @@ the whole sweep.
 v1 scope: Trivy and OSV-Scanner on resolved dependency trees, GuardDog
 heuristics on npm and PyPI packages, Trivy image scan for containers.
 The Cisco mcp-scanner stdio mode executes the connector, so it is deliberately
-NOT wired in here until the sandbox decision in ADR-0026 is made.
+NOT wired in here until the sandbox decision (see ADR 0001, Consequences) is made.
 """
 import json
 import os

@@ -3,7 +3,7 @@
 # Everything the scanner needs lives in this image so that NOTHING is installed
 # or executed on the host. The scanner resolves and inspects untrusted
 # third-party packages, so it runs as an unprivileged user, with no database
-# credentials and no .env (see ADR-0026).
+# credentials and no .env (see ADR 0001).
 #
 # Tool versions are pinned build args so a rebuild is reproducible. Bump them
 # deliberately; the scan DBs (Trivy, OSV) refresh at runtime regardless.

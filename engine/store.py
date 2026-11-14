@@ -1,4 +1,4 @@
-"""The scanner's own database (ADR-0026, decision 4).
+"""The scanner's own database (ADR 0001, decision 3).
 
 Everything about scanning lives here and nowhere else: grades, findings, the
 dependency tree, the coverage matrix and the history. The server stores none

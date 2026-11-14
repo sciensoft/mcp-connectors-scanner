@@ -1,6 +1,6 @@
 # Scanner decision log
 
-**Audience**: anyone who wants to know *why* the scanner grades the way it does. Each entry is what we saw, what we decided, and why. Newest at the bottom. How the scanner works is in [the guide](./connector-scanner.md); the founding decision is [ADR-0026](../adrs/0026-connector-security-scanner-service.md).
+**Audience**: anyone who wants to know *why* the scanner grades the way it does. Each entry is what we saw, what we decided, and why. Newest at the bottom. How the scanner works is in [the guide](./connector-scanner.md); the founding decision is [ADR 0001](../.docs/adrs/0001-connector-security-scanner-service.md).
 
 **How we decide**: run it on the whole catalog, look at the real data, change one thing, run again and compare. We do not tune on a hunch or on a handful of examples.
 

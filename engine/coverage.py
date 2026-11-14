@@ -1,6 +1,6 @@
 """Coverage matrix: what a scan checks, and what it does not.
 
-Single source of truth for the transparency page (ADR-0026, decision 6). Every
+Single source of truth for the transparency page (ADR 0001, decision 6). Every
 scan result carries this matrix, so a user can see exactly what "scanned"
 means for a connector, including the limits. Keep it honest: when a check is
 added or removed in scan.py, change it here in the same commit.
@@ -55,7 +55,7 @@ CHECKS = [
         "applies_to": [],
         "status": "not_covered",
         "note": "Planned. It requires starting the connector, so it waits for the "
-                "sandbox decision in ADR-0026.",
+                "sandbox decision (see ADR 0001, Consequences).",
     },
     {
         "id": "install-time-execution",
