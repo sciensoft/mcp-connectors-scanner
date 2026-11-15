@@ -100,6 +100,8 @@ def main(outdir: str) -> int:
 
     meta = {"generated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
             "connectors": len(summary), "grade_counts": dict(sorted(counts.items()))}
+    # What the scan was made with, so a published result can be reproduced and compared.
+    meta["scanner"] = scrub(get("/v1/versions"))
     out_summary = json.dumps({"meta": meta, "grades": summary}, indent=1, sort_keys=True) + "\n"
     out_full = json.dumps({"meta": meta, "grades": full}, indent=1, sort_keys=True) + "\n"
 

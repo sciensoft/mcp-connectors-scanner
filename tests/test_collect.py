@@ -76,5 +76,50 @@ class GuardRefuses(unittest.TestCase):
         self.assertIsNone(collect._GUARD.search(str(out)))
 
 
+class MetaCarriesScannerVersions(unittest.TestCase):
+    """The published files say what the scan was made with, and the scrubber keeps it."""
+
+    VERSIONS = {
+        "tools": {"trivy": "0.58.1", "osv-scanner": "2.0.0", "guarddog": "3.2.0", "uv": "0.13.8"},
+        "databases": {
+            "trivy-db": {"Version": 2, "UpdatedAt": "2026-11-15T12:50:30Z",
+                         "DownloadedAt": "2026-11-15T15:06:40Z"},
+            "trivy-java-db": None,
+        },
+    }
+
+    def _run_main(self):
+        import json
+        import tempfile
+        row = {"entry_id": "demo", "version": "1.0", "ecosystem": "npm", "grade": "A",
+               "reason": "clean", "cve_counts": {}, "scanned_at": "2026-11-15T15:00:00Z"}
+        answers = {
+            "/v1/grades": {"grades": [row]},
+            "/v1/grades/demo": dict(row, id=7, run_id=9),
+            "/v1/versions": self.VERSIONS,
+        }
+        real = collect.get
+        collect.get = lambda path: answers[path]
+        out = tempfile.mkdtemp()
+        try:
+            self.assertEqual(collect.main(out), 0)
+        finally:
+            collect.get = real
+        loaded = {}
+        for name in ("summary.json", "full.json"):
+            with open(os.path.join(out, name), encoding="utf-8") as fh:
+                loaded[name] = json.load(fh)
+        return loaded
+
+    def test_both_published_files_carry_the_versions_unchanged(self):
+        for name, doc in self._run_main().items():
+            with self.subTest(file=name):
+                self.assertEqual(doc["meta"]["scanner"], self.VERSIONS)
+
+    def test_a_missing_database_stays_visible_as_null(self):
+        doc = self._run_main()["summary.json"]
+        self.assertIsNone(doc["meta"]["scanner"]["databases"]["trivy-java-db"])
+
+
 if __name__ == "__main__":
     unittest.main()

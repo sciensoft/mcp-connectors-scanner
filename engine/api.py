@@ -11,6 +11,7 @@ Endpoints (all GET, JSON):
   /v1/grades/{id}/history  previous scans, newest first
   /v1/review               connectors whose latest grade is D or F
   /v1/coverage             the published coverage matrix (what is and is not checked)
+  /v1/versions             scanner tool versions and vulnerability database dates
 
 Auth: bearer token in SCANNER_API_TOKEN. If the token is unset the API refuses
 everything except /healthz, so a misconfigured deploy fails closed.
@@ -24,7 +25,7 @@ import re
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse
 
-from . import store
+from . import store, versions
 from .coverage import CHECKS
 
 ID_RE = re.compile(r"^[A-Za-z0-9._\-]{1,100}$")
@@ -77,6 +78,8 @@ class Handler(BaseHTTPRequestHandler):
             return self._send(200, {"review": store.review_queue()})
         if path == "/v1/coverage":
             return self._send(200, {"checks": CHECKS})
+        if path == "/v1/versions":
+            return self._send(200, versions.collect())
         m = re.fullmatch(r"/v1/grades/([^/]+)(/history)?", path)
         if m:
             entry_id, want_history = m.group(1), bool(m.group(2))
