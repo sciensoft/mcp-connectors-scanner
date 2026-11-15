@@ -1,0 +1,3283 @@
+{
+ "grades": [
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "airbnb",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 122 package(s) checked; 4 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:31:37.424094+00:00",
+   "version": "0.3.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "airtable-1",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 93 package(s) checked; 3 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:19.565274+00:00",
+   "version": "1.14.0"
+  },
+  {
+   "cve_counts": {
+    "LOW": 1,
+    "UNKNOWN": 1
+   },
+   "ecosystem": "git",
+   "entry_id": "amazon-alexa",
+   "grade": "B",
+   "reason": "0 medium, 2 low CVE(s) only",
+   "scanned_at": "2026-11-15T15:31:29.969628+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 16,
+    "HIGH": 100,
+    "LOW": 8,
+    "MEDIUM": 68,
+    "UNKNOWN": 2
+   },
+   "ecosystem": "git",
+   "entry_id": "amazon-orders-personal",
+   "grade": "C",
+   "reason": "16 critical, 100 high, 68 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:31:00.702123+00:00",
+   "version": "a7817e489a81216a137203d3c4f8b7bc749e181c"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "git",
+   "entry_id": "amazon-seller-sp-api",
+   "grade": "?",
+   "reason": "not yet assessed: osv-scanner: Scanning dir <work-dir>\nNo package sources found, --help for usage information",
+   "scanned_at": "2026-11-15T15:31:00.454560+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 4,
+    "HIGH": 90,
+    "LOW": 24,
+    "MEDIUM": 98
+   },
+   "ecosystem": "git",
+   "entry_id": "amazon-shopping",
+   "grade": "D",
+   "reason": "4 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:29:21.862606+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "amplitude",
+   "grade": "D",
+   "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:28:32.240677+00:00",
+   "version": "0.16.5"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "anki",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 99 package(s) checked; 3 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:21.225131+00:00",
+   "version": "1.0.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "ansible",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 43 package(s) checked; 3 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:30:26.551159+00:00",
+   "version": "1.0.1"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1
+   },
+   "ecosystem": "npm",
+   "entry_id": "apache-superset",
+   "grade": "C",
+   "reason": "0 critical, 1 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:17.062917+00:00",
+   "version": "1.7.1"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "apple-health",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 96 package(s) checked; 4 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:00.468429+00:00",
+   "version": "0.8.0"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 2,
+    "HIGH": 30,
+    "LOW": 13,
+    "MEDIUM": 85
+   },
+   "ecosystem": "git",
+   "entry_id": "apple-maps",
+   "grade": "D",
+   "reason": "2 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:32:17.328179+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "apple-music",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 42 package(s) checked; 6 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:31:18.866467+00:00",
+   "version": "0.22.1"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "apple-notes",
+   "grade": "?",
+   "reason": "not yet assessed: npm resolve: npm ERR! code EBADPLATFORM\nnpm ERR! notsup Unsupported platform for apple-notes-mcp@2.16.4: wanted {\"os\":\"d",
+   "scanned_at": "2026-11-15T15:29:10.290472+00:00",
+   "version": "2.16.4"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1
+   },
+   "ecosystem": "npm",
+   "entry_id": "argocd",
+   "grade": "C",
+   "reason": "0 critical, 1 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:54.992141+00:00",
+   "version": "0.9.0"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 4,
+    "HIGH": 16,
+    "LOW": 2,
+    "MEDIUM": 14
+   },
+   "ecosystem": "git",
+   "entry_id": "arxiv",
+   "grade": "C",
+   "reason": "4 critical, 16 high, 14 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:30:48.644854+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "asana",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 224 package(s) checked; 3 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:26.102805+00:00",
+   "version": "1.8.0"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 21,
+    "LOW": 9,
+    "MEDIUM": 23
+   },
+   "ecosystem": "npm",
+   "entry_id": "astra-db",
+   "grade": "C",
+   "reason": "0 critical, 21 high, 23 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:31:38.894152+00:00",
+   "version": "1.3.4"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 7,
+    "MEDIUM": 6
+   },
+   "ecosystem": "npm",
+   "entry_id": "attio",
+   "grade": "C",
+   "reason": "0 critical, 7 high, 6 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:40.222039+00:00",
+   "version": "1.7.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "audible",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 93 package(s) checked; 5 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:12.357210+00:00",
+   "version": "1.0.1"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "aws",
+   "grade": "?",
+   "reason": "not yet assessed: uv resolve: error: No solution found when resolving dependencies\n  cause: Because awslabs-aws-diagram-mcp-server>=1.0.5 ",
+   "scanned_at": "2026-11-15T15:31:55.833979+00:00",
+   "version": "1.0.27"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "aws-s3",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 50 package(s) checked; 2 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:57.387614+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "azure",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 7 package(s) checked; 8 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:28:54.769091+00:00",
+   "version": "4.0.0-beta.6"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 4,
+    "HIGH": 22,
+    "LOW": 7,
+    "MEDIUM": 56
+   },
+   "ecosystem": "git",
+   "entry_id": "backblaze-b2",
+   "grade": "D",
+   "reason": "4 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:28:12.008357+00:00",
+   "version": "69a07cb9d6e7"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1
+   },
+   "ecosystem": "npm",
+   "entry_id": "basecamp",
+   "grade": "C",
+   "reason": "0 critical, 1 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:27.150654+00:00",
+   "version": "1.6.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "beehiiv",
+   "grade": "D",
+   "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:31:54.041283+00:00",
+   "version": "0.16.6"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 2,
+    "HIGH": 10,
+    "LOW": 6,
+    "MEDIUM": 36
+   },
+   "ecosystem": "git",
+   "entry_id": "bigcommerce",
+   "grade": "D",
+   "reason": "2 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:29:19.243793+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "bigquery-1",
+   "grade": "?",
+   "reason": "not yet assessed: uv resolve: error: No solution found when resolving dependencies\n  cause: Because the current Python version (3.12.16) d",
+   "scanned_at": "2026-11-15T15:29:44.528008+00:00",
+   "version": "0.3.3"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 20,
+    "HIGH": 110,
+    "LOW": 4,
+    "MEDIUM": 63,
+    "UNKNOWN": 1
+   },
+   "ecosystem": "git",
+   "entry_id": "bilibili",
+   "grade": "C",
+   "reason": "20 critical, 110 high, 63 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:31:03.778010+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {
+    "HIGH": 3,
+    "MEDIUM": 2
+   },
+   "ecosystem": "npm",
+   "entry_id": "bitbucket",
+   "grade": "C",
+   "reason": "0 critical, 3 high, 2 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:47.384546+00:00",
+   "version": "5.0.6"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "blender",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 31 package(s) checked",
+   "scanned_at": "2026-11-15T15:29:59.212366+00:00",
+   "version": "2.0.0"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 8,
+    "MEDIUM": 4
+   },
+   "ecosystem": "npm",
+   "entry_id": "bluesky",
+   "grade": "C",
+   "reason": "0 critical, 8 high, 4 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:30:09.987716+00:00",
+   "version": "0.4.1"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 10
+   },
+   "ecosystem": "git",
+   "entry_id": "booking-com",
+   "grade": "C",
+   "reason": "0 critical, 10 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:31:39.151891+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {
+    "HIGH": 8,
+    "MEDIUM": 4
+   },
+   "ecosystem": "npm",
+   "entry_id": "brave-search",
+   "grade": "C",
+   "reason": "0 critical, 8 high, 4 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:09.889318+00:00",
+   "version": "2.1.4"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 7,
+    "MEDIUM": 4
+   },
+   "ecosystem": "npm",
+   "entry_id": "brex",
+   "grade": "C",
+   "reason": "0 critical, 7 high, 4 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:15.615824+00:00",
+   "version": "0.4.0"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 4,
+    "HIGH": 12,
+    "LOW": 4,
+    "MEDIUM": 7
+   },
+   "ecosystem": "npm",
+   "entry_id": "bruno",
+   "grade": "D",
+   "reason": "4 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:28:50.266838+00:00",
+   "version": "0.1.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "buffer",
+   "grade": "D",
+   "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:29:05.067199+00:00",
+   "version": "0.16.6"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "bulkpublish-hub",
+   "grade": "D",
+   "reason": "1 strong malicious-code signal(s): threat-process-download-exec",
+   "scanned_at": "2026-11-15T15:30:00.797965+00:00",
+   "version": "1.53.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "canva",
+   "grade": "D",
+   "reason": "3 strong malicious-code signal(s): threat-process-download-exec, threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:28:47.946636+00:00",
+   "version": "2.19.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "git",
+   "entry_id": "cassandra",
+   "grade": "?",
+   "reason": "not yet assessed: osv-scanner: Scanning dir <work-dir>\nNo package sources found, --help for usage information.",
+   "scanned_at": "2026-11-15T15:28:11.676248+00:00",
+   "version": "ebe20185c06e"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 6,
+    "HIGH": 21
+   },
+   "ecosystem": "pypi",
+   "entry_id": "chroma",
+   "grade": "C",
+   "reason": "6 critical, 21 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:30:00.081534+00:00",
+   "version": "0.2.6"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1,
+    "MEDIUM": 2
+   },
+   "ecosystem": "npm",
+   "entry_id": "circleci",
+   "grade": "C",
+   "reason": "0 critical, 1 high, 2 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:49.897085+00:00",
+   "version": "0.20.0"
+  },
+  {
+   "cve_counts": {
+    "MEDIUM": 4
+   },
+   "ecosystem": "pypi",
+   "entry_id": "clickhouse",
+   "grade": "C",
+   "reason": "0 critical, 0 high, 4 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:31:26.025104+00:00",
+   "version": "0.7.0"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1
+   },
+   "ecosystem": "npm",
+   "entry_id": "clickup",
+   "grade": "C",
+   "reason": "0 critical, 1 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:31.343863+00:00",
+   "version": "0.14.6"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 15,
+    "LOW": 6,
+    "MEDIUM": 20
+   },
+   "ecosystem": "npm",
+   "entry_id": "cloudflare",
+   "grade": "C",
+   "reason": "0 critical, 15 high, 20 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:55.958801+00:00",
+   "version": "0.2.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "cloudflare-workers",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 196 package(s) checked; 4 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:28:50.475335+00:00",
+   "version": "0.0.13"
+  },
+  {
+   "cve_counts": {
+    "MEDIUM": 2
+   },
+   "ecosystem": "npm",
+   "entry_id": "cloudinary",
+   "grade": "D",
+   "reason": "1 strong malicious-code signal(s): threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:28:15.164304+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {
+    "HIGH": 16,
+    "LOW": 12,
+    "MEDIUM": 20,
+    "UNKNOWN": 60
+   },
+   "ecosystem": "go",
+   "entry_id": "cockroachdb",
+   "grade": "C",
+   "reason": "0 critical, 16 high, 20 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:31:47.891696+00:00",
+   "version": "v0.1.0"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 25,
+    "LOW": 2,
+    "MEDIUM": 41
+   },
+   "ecosystem": "npm",
+   "entry_id": "coda",
+   "grade": "C",
+   "reason": "0 critical, 25 high, 41 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:37.314252+00:00",
+   "version": "1.7.1"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "git",
+   "entry_id": "codeberg",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 1 package(s) checked",
+   "scanned_at": "2026-11-15T15:29:58.881831+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {
+    "HIGH": 12,
+    "LOW": 1,
+    "MEDIUM": 17
+   },
+   "ecosystem": "npm",
+   "entry_id": "coinbase",
+   "grade": "C",
+   "reason": "0 critical, 12 high, 17 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:36.489580+00:00",
+   "version": "0.2.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "comfyui",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 29 package(s) checked; 3 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:57.933300+00:00",
+   "version": "0.10.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "confluence",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 94 package(s) checked; 6 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:28:49.773181+00:00",
+   "version": "2.0.2"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 7,
+    "LOW": 2,
+    "MEDIUM": 4
+   },
+   "ecosystem": "npm",
+   "entry_id": "consul",
+   "grade": "C",
+   "reason": "0 critical, 7 high, 4 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:31:36.902346+00:00",
+   "version": "0.1.2"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 2,
+    "HIGH": 36,
+    "LOW": 15,
+    "MEDIUM": 97
+   },
+   "ecosystem": "git",
+   "entry_id": "crisp",
+   "grade": "D",
+   "reason": "2 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:28:09.171392+00:00",
+   "version": "2e850cef9f19"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "cronometer",
+   "grade": "?",
+   "reason": "not yet assessed: uv resolve: error: No solution found when resolving dependencies\n  cause: Because the current Python version (3.12.16) d",
+   "scanned_at": "2026-11-15T15:30:23.436481+00:00",
+   "version": "0.2.6"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "customer-io",
+   "grade": "D",
+   "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:29:05.986423+00:00",
+   "version": "0.16.6"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 8,
+    "MEDIUM": 6
+   },
+   "ecosystem": "npm",
+   "entry_id": "datadog",
+   "grade": "C",
+   "reason": "0 critical, 8 high, 6 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:58.933690+00:00",
+   "version": "1.8.0"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 6,
+    "LOW": 2,
+    "MEDIUM": 8
+   },
+   "ecosystem": "pypi",
+   "entry_id": "dbt",
+   "grade": "C",
+   "reason": "0 critical, 6 high, 8 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:42.711233+00:00",
+   "version": "2.10.1"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "deepgram",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 29 package(s) checked; 1 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:40.713490+00:00",
+   "version": "0.1.1"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 18,
+    "LOW": 12,
+    "MEDIUM": 19
+   },
+   "ecosystem": "npm",
+   "entry_id": "desktop-commander",
+   "grade": "D",
+   "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:28:18.726637+00:00",
+   "version": "0.3.3"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 25,
+    "LOW": 8,
+    "MEDIUM": 26
+   },
+   "ecosystem": "git",
+   "entry_id": "discord-dms",
+   "grade": "C",
+   "reason": "0 critical, 25 high, 26 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:01.121204+00:00",
+   "version": "39622af0333b"
+  },
+  {
+   "cve_counts": {
+    "LOW": 3
+   },
+   "ecosystem": "pypi",
+   "entry_id": "docker",
+   "grade": "B",
+   "reason": "0 medium, 3 low CVE(s) only",
+   "scanned_at": "2026-11-15T15:28:00.748590+00:00",
+   "version": "0.3.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "git",
+   "entry_id": "doordash",
+   "grade": "?",
+   "reason": "not yet assessed: osv-scanner: Scanning dir <work-dir>\nNo package sources found, --help for usage information.",
+   "scanned_at": "2026-11-15T15:29:19.879632+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "dropbox",
+   "grade": "D",
+   "reason": "1 strong malicious-code signal(s): threat-process-download-exec",
+   "scanned_at": "2026-11-15T15:28:39.167996+00:00",
+   "version": "1.0.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "duckdb",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 65 package(s) checked; 3 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:55.870507+00:00",
+   "version": "1.1.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "duckduckgo",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 93 package(s) checked; 3 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:38.845799+00:00",
+   "version": "1.0.1"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 12,
+    "MEDIUM": 13
+   },
+   "ecosystem": "pypi",
+   "entry_id": "dynamodb",
+   "grade": "C",
+   "reason": "0 critical, 12 high, 13 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:30:15.616305+00:00",
+   "version": "2.1.10"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1
+   },
+   "ecosystem": "npm",
+   "entry_id": "ebay",
+   "grade": "C",
+   "reason": "0 critical, 1 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:44.421678+00:00",
+   "version": "2.0.4"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "git",
+   "entry_id": "element-matrix",
+   "grade": "?",
+   "reason": "not yet assessed: osv-scanner: Scanning dir <work-dir>\nNo package sources found, --help for usage information.",
+   "scanned_at": "2026-11-15T15:28:00.713716+00:00",
+   "version": "88719f4da7d3"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "elevenlabs-1",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 49 package(s) checked; 3 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:59.181936+00:00",
+   "version": "0.12.2"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "git",
+   "entry_id": "emby",
+   "grade": "?",
+   "reason": "not yet assessed: git clone: fatal: could not read Username for 'https://github.com': No such device or address",
+   "scanned_at": "2026-11-15T15:30:30.851105+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "evernote",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 167 package(s) checked; 10 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:33.135407+00:00",
+   "version": "2.0.0"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 8,
+    "MEDIUM": 6
+   },
+   "ecosystem": "npm",
+   "entry_id": "exa",
+   "grade": "D",
+   "reason": "1 strong malicious-code signal(s): threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:29:41.469695+00:00",
+   "version": "3.4.3"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "excalidraw",
+   "grade": "D",
+   "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:28:45.635895+00:00",
+   "version": "0.16.6"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "facebook",
+   "grade": "?",
+   "reason": "not yet assessed: uv resolve: error: No solution found when resolving dependencies\n  cause: Because the current Python version (3.12.16) d",
+   "scanned_at": "2026-11-15T15:29:25.052623+00:00",
+   "version": "0.1.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "git",
+   "entry_id": "feedly",
+   "grade": "?",
+   "reason": "not yet assessed: osv-scanner: Scanning dir <work-dir>\nNo package sources found, --help for usage information.",
+   "scanned_at": "2026-11-15T15:30:35.426637+00:00",
+   "version": "32eae0a6f085"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "fetch",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 46 package(s) checked; 4 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:28:00.540580+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 31,
+    "HIGH": 178,
+    "LOW": 8,
+    "MEDIUM": 86,
+    "UNKNOWN": 4
+   },
+   "ecosystem": "git",
+   "entry_id": "ffmpeg",
+   "grade": "D",
+   "reason": "31 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:30:00.519881+00:00",
+   "version": "905549bab29c"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 39,
+    "LOW": 6,
+    "MEDIUM": 30
+   },
+   "ecosystem": "pypi",
+   "entry_id": "fhir-mychart-epic-cerner",
+   "grade": "C",
+   "reason": "0 critical, 39 high, 30 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:31:04.175686+00:00",
+   "version": "0.11.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "figma",
+   "grade": "D",
+   "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:28:46.110366+00:00",
+   "version": "0.16.6"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "filesystem",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 9 package(s) checked; 4 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:28:08.423418+00:00",
+   "version": "2.2.0"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1,
+    "MEDIUM": 1
+   },
+   "ecosystem": "npm",
+   "entry_id": "firebase",
+   "grade": "C",
+   "reason": "0 critical, 1 high, 1 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:51.923571+00:00",
+   "version": "1.4.9"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1
+   },
+   "ecosystem": "npm",
+   "entry_id": "firecrawl",
+   "grade": "C",
+   "reason": "0 critical, 1 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:39.650386+00:00",
+   "version": "3.39.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "fitbit",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 128 package(s) checked; 8 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:00.735580+00:00",
+   "version": "0.7.0"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 2
+   },
+   "ecosystem": "git",
+   "entry_id": "fivetran",
+   "grade": "C",
+   "reason": "2 critical, 0 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:41.789438+00:00",
+   "version": "v0.5.1"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "flux-black-forest-labs",
+   "grade": "D",
+   "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:28:10.670166+00:00",
+   "version": "0.16.5"
+  },
+  {
+   "cve_counts": {
+    "UNKNOWN": 61
+   },
+   "ecosystem": "go",
+   "entry_id": "fly-io",
+   "grade": "B",
+   "reason": "0 medium, 61 low CVE(s) only",
+   "scanned_at": "2026-11-15T15:31:38.892221+00:00",
+   "version": "25b36d9263a7"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 2,
+    "HIGH": 43,
+    "LOW": 6,
+    "MEDIUM": 59
+   },
+   "ecosystem": "git",
+   "entry_id": "freshbooks",
+   "grade": "D",
+   "reason": "2 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:28:55.233287+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "freshdesk",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 43 package(s) checked; 1 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:54.310659+00:00",
+   "version": "1.2.0"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 8,
+    "MEDIUM": 6
+   },
+   "ecosystem": "npm",
+   "entry_id": "freshservice",
+   "grade": "D",
+   "reason": "1 strong malicious-code signal(s): threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:28:36.917132+00:00",
+   "version": "0.3.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "garmin-connect",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 112 package(s) checked; 1 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:01.153925+00:00",
+   "version": "0.4.0"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 4,
+    "HIGH": 24,
+    "LOW": 2,
+    "MEDIUM": 17
+   },
+   "ecosystem": "npm",
+   "entry_id": "gcp",
+   "grade": "D",
+   "reason": "4 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:31:56.355858+00:00",
+   "version": "1.0.2"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "git",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 32 package(s) checked; 2 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:27:59.388760+00:00",
+   "version": "2026.11.4"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 8,
+    "MEDIUM": 6
+   },
+   "ecosystem": "npm",
+   "entry_id": "gitea",
+   "grade": "C",
+   "reason": "0 critical, 8 high, 6 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:51.557802+00:00",
+   "version": "0.0.10"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 3,
+    "LOW": 1,
+    "MEDIUM": 6,
+    "UNKNOWN": 3
+   },
+   "ecosystem": "go",
+   "entry_id": "github",
+   "grade": "C",
+   "reason": "0 critical, 3 high, 6 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:27:59.619329+00:00",
+   "version": "v2.1.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "gitlab",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 65 package(s) checked; 4 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:28:29.610063+00:00",
+   "version": "0.24.0"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 18,
+    "LOW": 3,
+    "MEDIUM": 26
+   },
+   "ecosystem": "npm",
+   "entry_id": "gmail",
+   "grade": "C",
+   "reason": "0 critical, 18 high, 26 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:28.731747+00:00",
+   "version": "1.7.4"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "google-analytics-ga4",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 64 package(s) checked; 1 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:42.078532+00:00",
+   "version": "1.1.0"
+  },
+  {
+   "cve_counts": {
+    "MEDIUM": 4
+   },
+   "ecosystem": "npm",
+   "entry_id": "google-calendar",
+   "grade": "C",
+   "reason": "0 critical, 0 high, 4 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:29.256821+00:00",
+   "version": "2.8.1"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 16,
+    "MEDIUM": 12
+   },
+   "ecosystem": "git",
+   "entry_id": "google-chat",
+   "grade": "C",
+   "reason": "0 critical, 16 high, 12 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:42.514158+00:00",
+   "version": "6abf4f1590c6"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 4,
+    "MEDIUM": 3
+   },
+   "ecosystem": "npm",
+   "entry_id": "google-drive",
+   "grade": "C",
+   "reason": "0 critical, 4 high, 3 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:41.713743+00:00",
+   "version": "2025.1.14"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 3,
+    "MEDIUM": 6
+   },
+   "ecosystem": "npm",
+   "entry_id": "google-maps",
+   "grade": "C",
+   "reason": "0 critical, 3 high, 6 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:30:30.343790+00:00",
+   "version": "0.0.69"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 11,
+    "LOW": 9,
+    "MEDIUM": 32
+   },
+   "ecosystem": "git",
+   "entry_id": "google-photos",
+   "grade": "C",
+   "reason": "0 critical, 11 high, 32 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:31:37.009709+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 14,
+    "HIGH": 46,
+    "LOW": 6,
+    "MEDIUM": 50
+   },
+   "ecosystem": "git",
+   "entry_id": "google-search",
+   "grade": "C",
+   "reason": "14 critical, 46 high, 50 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:15.808976+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "google-workspace",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 89 package(s) checked; 7 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:31:26.555656+00:00",
+   "version": "2.4.1"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "grafana",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 1 package(s) checked; 2 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:28:03.091601+00:00",
+   "version": "2.2.0"
+  },
+  {
+   "cve_counts": {
+    "LOW": 2,
+    "MEDIUM": 8
+   },
+   "ecosystem": "git",
+   "entry_id": "gtfs-transit-mta-caltrain",
+   "grade": "C",
+   "reason": "0 critical, 0 high, 8 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:31:36.610142+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "hacker-news",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 41 package(s) checked; 3 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:31:27.514370+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {
+    "HIGH": 3,
+    "MEDIUM": 30
+   },
+   "ecosystem": "npm",
+   "entry_id": "helm",
+   "grade": "C",
+   "reason": "0 critical, 3 high, 30 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:00.106372+00:00",
+   "version": "4.2.1"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "home-assistant",
+   "grade": "?",
+   "reason": "not yet assessed: uv resolve: error: No solution found when resolving dependencies\n  cause: Because the current Python version (3.12.16) d",
+   "scanned_at": "2026-11-15T15:30:59.756359+00:00",
+   "version": "8.7.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "hubspot-1",
+   "grade": "D",
+   "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:31:57.565479+00:00",
+   "version": "0.16.6"
+  },
+  {
+   "cve_counts": {
+    "MEDIUM": 2
+   },
+   "ecosystem": "npm",
+   "entry_id": "hugging-face",
+   "grade": "D",
+   "reason": "1 strong malicious-code signal(s): threat-process-download-exec",
+   "scanned_at": "2026-11-15T15:28:21.570717+00:00",
+   "version": "0.4.34"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 4,
+    "HIGH": 24,
+    "MEDIUM": 27
+   },
+   "ecosystem": "git",
+   "entry_id": "ikea-dirigera",
+   "grade": "C",
+   "reason": "4 critical, 24 high, 27 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:30:30.646070+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 6,
+    "HIGH": 38,
+    "LOW": 8,
+    "MEDIUM": 33
+   },
+   "ecosystem": "git",
+   "entry_id": "imdb",
+   "grade": "C",
+   "reason": "6 critical, 38 high, 33 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:30:33.379573+00:00",
+   "version": "05785b49a1ba"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "imessage",
+   "grade": "?",
+   "reason": "not yet assessed: npm resolve: npm WARN EBADENGINE Unsupported engine {\nnpm WARN EBADENGINE   package: 'imessage-mcp@3.3.2',\nnpm WARN EBAD",
+   "scanned_at": "2026-11-15T15:28:11.069018+00:00",
+   "version": "3.3.2"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 2,
+    "HIGH": 17,
+    "LOW": 23,
+    "MEDIUM": 49
+   },
+   "ecosystem": "container",
+   "entry_id": "immich",
+   "grade": "D",
+   "reason": "2 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:31:37.645401+00:00",
+   "version": "ghcr.io/barryw/immichmcp:v3.3.5"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "instacart",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 6 package(s) checked; 5 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:58.086240+00:00",
+   "version": "0.3.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "instagram",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 58 package(s) checked; 5 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:31:59.667816+00:00",
+   "version": "1.3.5"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 2,
+    "HIGH": 32,
+    "LOW": 8,
+    "MEDIUM": 20
+   },
+   "ecosystem": "git",
+   "entry_id": "instapaper",
+   "grade": "D",
+   "reason": "2 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:31:29.818513+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "intercom-1",
+   "grade": "D",
+   "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:29:06.926146+00:00",
+   "version": "0.16.6"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "git",
+   "entry_id": "intercom-local",
+   "grade": "?",
+   "reason": "not yet assessed: osv-scanner: Scanning dir <work-dir>\nNo package sources found, --help for usage information.",
+   "scanned_at": "2026-11-15T15:28:47.943328+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "iterable",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 208 package(s) checked; 5 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:11.638339+00:00",
+   "version": "1.9.1"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "jellyfin",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 73 package(s) checked; 2 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:31:14.092313+00:00",
+   "version": "2.3.8"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "jira",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 99 package(s) checked; 7 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:28:52.488198+00:00",
+   "version": "3.3.0"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 4,
+    "HIGH": 50,
+    "LOW": 6,
+    "MEDIUM": 24
+   },
+   "ecosystem": "git",
+   "entry_id": "kakaotalk",
+   "grade": "C",
+   "reason": "4 critical, 50 high, 24 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:42.908981+00:00",
+   "version": "896a049eba91"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 3,
+    "HIGH": 62,
+    "LOW": 4,
+    "MEDIUM": 57
+   },
+   "ecosystem": "git",
+   "entry_id": "keepa-price-tracker",
+   "grade": "C",
+   "reason": "3 critical, 62 high, 57 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:31:03.956257+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "git",
+   "entry_id": "kindle",
+   "grade": "?",
+   "reason": "not yet assessed: osv-scanner: Scanning dir <work-dir>\nNo package sources found, --help for usage information.",
+   "scanned_at": "2026-11-15T15:30:31.786254+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "kit-formerly-convertkit",
+   "grade": "D",
+   "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:29:07.070991+00:00",
+   "version": "0.16.6"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "klaviyo",
+   "grade": "?",
+   "reason": "not yet assessed: uv resolve: error: No solution found when resolving dependencies\n  cause: Because the current Python version (3.12.16) d",
+   "scanned_at": "2026-11-15T15:28:49.824981+00:00",
+   "version": "0.4.2"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 3,
+    "MEDIUM": 30
+   },
+   "ecosystem": "npm",
+   "entry_id": "kubernetes",
+   "grade": "C",
+   "reason": "0 critical, 3 high, 30 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:14.874920+00:00",
+   "version": "4.2.1"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "kustomer",
+   "grade": "D",
+   "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:28:38.890638+00:00",
+   "version": "0.16.5"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 6,
+    "MEDIUM": 14
+   },
+   "ecosystem": "npm",
+   "entry_id": "lancedb",
+   "grade": "C",
+   "reason": "0 critical, 6 high, 14 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:31:04.100683+00:00",
+   "version": "0.2.2"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "last-fm",
+   "grade": "D",
+   "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:29:12.349278+00:00",
+   "version": "0.16.6"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "launchdarkly",
+   "grade": "D",
+   "reason": "1 strong malicious-code signal(s): threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:28:31.672961+00:00",
+   "version": "0.7.2"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 2,
+    "HIGH": 89,
+    "LOW": 27,
+    "MEDIUM": 176
+   },
+   "ecosystem": "git",
+   "entry_id": "letterboxd",
+   "grade": "D",
+   "reason": "2 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:30:33.572101+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 2,
+    "HIGH": 16,
+    "LOW": 4,
+    "MEDIUM": 18
+   },
+   "ecosystem": "git",
+   "entry_id": "lifx",
+   "grade": "D",
+   "reason": "2 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:28:45.826026+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {
+    "HIGH": 7,
+    "LOW": 2,
+    "MEDIUM": 4
+   },
+   "ecosystem": "npm",
+   "entry_id": "line",
+   "grade": "C",
+   "reason": "0 critical, 7 high, 4 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:31.088138+00:00",
+   "version": "0.5.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "linear",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 105 package(s) checked; 4 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:28:53.450703+00:00",
+   "version": "1.2.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "linkedin",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 74 package(s) checked; 10 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:31:45.817473+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "logseq",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 94 package(s) checked; 3 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:28.955929+00:00",
+   "version": "0.8.1"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 13,
+    "HIGH": 29,
+    "LOW": 4,
+    "MEDIUM": 46
+   },
+   "ecosystem": "git",
+   "entry_id": "loom",
+   "grade": "C",
+   "reason": "13 critical, 29 high, 46 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:58.301779+00:00",
+   "version": "9d5f0ce5bfad"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "loops",
+   "grade": "D",
+   "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:29:07.971548+00:00",
+   "version": "0.16.6"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "mailchimp",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 41 package(s) checked",
+   "scanned_at": "2026-11-15T15:31:07.392716+00:00",
+   "version": "1.2.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "mailgun",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 95 package(s) checked; 5 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:10.372843+00:00",
+   "version": "2.3.1"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "mattermost",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 70 package(s) checked; 1 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:42.969852+00:00",
+   "version": "2.4.8"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "meilisearch",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 37 package(s) checked; 1 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:31:37.772340+00:00",
+   "version": "0.7.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "memory",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 4 package(s) checked; 6 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:28:06.849669+00:00",
+   "version": "2.1.0"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 3,
+    "MEDIUM": 2
+   },
+   "ecosystem": "npm",
+   "entry_id": "metabase",
+   "grade": "C",
+   "reason": "0 critical, 3 high, 2 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:22.834369+00:00",
+   "version": "2.2.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "microsoft-365-hub",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 206 package(s) checked; 7 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:28:28.896070+00:00",
+   "version": "0.182.2"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "microsoft-teams-standalone",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 221 package(s) checked; 6 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:32:03.259904+00:00",
+   "version": "1.0.1"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 21,
+    "HIGH": 62,
+    "LOW": 13,
+    "MEDIUM": 66
+   },
+   "ecosystem": "git",
+   "entry_id": "milvus",
+   "grade": "C",
+   "reason": "21 critical, 62 high, 66 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:31:16.679953+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {
+    "HIGH": 3,
+    "MEDIUM": 8
+   },
+   "ecosystem": "npm",
+   "entry_id": "minio",
+   "grade": "C",
+   "reason": "0 critical, 3 high, 8 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:40.346727+00:00",
+   "version": "0.1.0"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1
+   },
+   "ecosystem": "npm",
+   "entry_id": "miro",
+   "grade": "C",
+   "reason": "0 critical, 1 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:47.981204+00:00",
+   "version": "1.0.11"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1
+   },
+   "ecosystem": "npm",
+   "entry_id": "mixpanel",
+   "grade": "C",
+   "reason": "0 critical, 1 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:17.307889+00:00",
+   "version": "1.0.2"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 6,
+    "HIGH": 56,
+    "LOW": 17,
+    "MEDIUM": 45
+   },
+   "ecosystem": "git",
+   "entry_id": "monarch-money",
+   "grade": "C",
+   "reason": "6 critical, 56 high, 45 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:30:42.579804+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {
+    "HIGH": 12,
+    "MEDIUM": 22
+   },
+   "ecosystem": "npm",
+   "entry_id": "monday-com",
+   "grade": "C",
+   "reason": "0 critical, 12 high, 22 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:38.387616+00:00",
+   "version": "3.3.1"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 2,
+    "MEDIUM": 4
+   },
+   "ecosystem": "npm",
+   "entry_id": "mongodb",
+   "grade": "C",
+   "reason": "0 critical, 2 high, 4 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:47.300558+00:00",
+   "version": "3.3.0"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 2,
+    "MEDIUM": 4
+   },
+   "ecosystem": "npm",
+   "entry_id": "mongodb-atlas",
+   "grade": "C",
+   "reason": "0 critical, 2 high, 4 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:31:01.350861+00:00",
+   "version": "3.3.0"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 2,
+    "HIGH": 73,
+    "LOW": 28,
+    "MEDIUM": 142
+   },
+   "ecosystem": "git",
+   "entry_id": "myfitnesspal",
+   "grade": "D",
+   "reason": "2 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:31:27.149581+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "mysql",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 31 package(s) checked; 3 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:56.642502+00:00",
+   "version": "0.4.5"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 3,
+    "HIGH": 17,
+    "MEDIUM": 13
+   },
+   "ecosystem": "pypi",
+   "entry_id": "neo4j",
+   "grade": "D",
+   "reason": "3 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:29:56.345721+00:00",
+   "version": "0.6.0"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 35,
+    "HIGH": 333,
+    "LOW": 58,
+    "MEDIUM": 288,
+    "UNKNOWN": 10
+   },
+   "ecosystem": "git",
+   "entry_id": "nest-protect",
+   "grade": "D",
+   "reason": "35 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:30:32.557907+00:00",
+   "version": "f066a3b25bda"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 21,
+    "LOW": 1,
+    "MEDIUM": 8
+   },
+   "ecosystem": "npm",
+   "entry_id": "netlify",
+   "grade": "C",
+   "reason": "0 critical, 21 high, 8 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:57.322698+00:00",
+   "version": "1.21.0"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 10,
+    "HIGH": 42,
+    "LOW": 10,
+    "MEDIUM": 47,
+    "UNKNOWN": 1
+   },
+   "ecosystem": "git",
+   "entry_id": "new-york-times",
+   "grade": "C",
+   "reason": "10 critical, 42 high, 47 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:30:43.229740+00:00",
+   "version": "af6ca850bc4b"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "git",
+   "entry_id": "news-api-newsapi-org",
+   "grade": "?",
+   "reason": "not yet assessed: osv-scanner: Scanning dir <work-dir>\nNo package sources found, --help for usage information",
+   "scanned_at": "2026-11-15T15:28:52.602347+00:00",
+   "version": "388e3b00ce19"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "newsapi-ai-eventregistry",
+   "grade": "D",
+   "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:31:58.232517+00:00",
+   "version": "2.3.0"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 4,
+    "HIGH": 17,
+    "LOW": 8,
+    "MEDIUM": 19
+   },
+   "ecosystem": "git",
+   "entry_id": "noaa-ncei-climate-archive",
+   "grade": "C",
+   "reason": "4 critical, 17 high, 19 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:31:28.558646+00:00",
+   "version": "ba38e524ae89653c6129cfbc8523415b3266a216"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "notion",
+   "grade": "D",
+   "reason": "3 strong malicious-code signal(s): threat-process-download-exec, threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:29:34.389641+00:00",
+   "version": "2.6.1"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "notion-databases",
+   "grade": "D",
+   "reason": "3 strong malicious-code signal(s): threat-process-download-exec, threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:28:35.417905+00:00",
+   "version": "2.6.1"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1
+   },
+   "ecosystem": "npm",
+   "entry_id": "npm-registry",
+   "grade": "D",
+   "reason": "1 strong malicious-code signal(s): threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:28:53.972594+00:00",
+   "version": "2.1.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "ntfy",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 37 package(s) checked; 3 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:28:30.209897+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "nutritionix",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 46 package(s) checked",
+   "scanned_at": "2026-11-15T15:30:40.350668+00:00",
+   "version": "0.1.1"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "obsidian",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 5 package(s) checked; 4 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:32.896658+00:00",
+   "version": "2.0.1"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "onedrive",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 206 package(s) checked; 7 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:28:43.929917+00:00",
+   "version": "0.182.2"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "git",
+   "entry_id": "open-meteo",
+   "grade": "?",
+   "reason": "not yet assessed: no repository to clone",
+   "scanned_at": "2026-11-15T15:31:10.478928+00:00",
+   "version": "0.6.1"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "openai-api",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 68 package(s) checked; 1 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:40.858165+00:00",
+   "version": "0.1.4"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 3,
+    "HIGH": 30,
+    "LOW": 9,
+    "MEDIUM": 19,
+    "UNKNOWN": 88
+   },
+   "ecosystem": "go",
+   "entry_id": "openstreetmap",
+   "grade": "D",
+   "reason": "3 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:31:42.129613+00:00",
+   "version": "v0.1.2"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 2,
+    "MEDIUM": 4
+   },
+   "ecosystem": "npm",
+   "entry_id": "openweathermap",
+   "grade": "C",
+   "reason": "0 critical, 2 high, 4 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:30:29.226608+00:00",
+   "version": "0.1.3"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "oura",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 40 package(s) checked",
+   "scanned_at": "2026-11-15T15:30:33.670664+00:00",
+   "version": "0.1.3"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "outlook",
+   "grade": "?",
+   "reason": "not yet assessed: uv resolve: error: No solution found when resolving dependencies\n  cause: Because pywin32>=306 has no wheels with a matc",
+   "scanned_at": "2026-11-15T15:29:44.401547+00:00",
+   "version": "0.1.1"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 12,
+    "LOW": 3,
+    "MEDIUM": 8
+   },
+   "ecosystem": "npm",
+   "entry_id": "paypal",
+   "grade": "C",
+   "reason": "0 critical, 12 high, 8 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:20.707190+00:00",
+   "version": "1.8.1"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "peloton",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 95 package(s) checked; 2 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:02.617029+00:00",
+   "version": "1.0.1"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "penpot",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 56 package(s) checked; 3 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:31:35.849453+00:00",
+   "version": "0.1.2"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1
+   },
+   "ecosystem": "npm",
+   "entry_id": "perplexity",
+   "grade": "C",
+   "reason": "0 critical, 1 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:40.899695+00:00",
+   "version": "1.3.0"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1
+   },
+   "ecosystem": "npm",
+   "entry_id": "pexels",
+   "grade": "C",
+   "reason": "0 critical, 1 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:14.169604+00:00",
+   "version": "1.0.2"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "pgvector",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 30 package(s) checked; 2 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:32:00.780542+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {
+    "HIGH": 2,
+    "UNKNOWN": 73
+   },
+   "ecosystem": "go",
+   "entry_id": "philips-hue",
+   "grade": "C",
+   "reason": "0 critical, 2 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:31:41.605117+00:00",
+   "version": "d4aafaf"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 3
+   },
+   "ecosystem": "pypi",
+   "entry_id": "photoshop",
+   "grade": "C",
+   "reason": "0 critical, 3 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:30:30.240084+00:00",
+   "version": "0.1.14"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "pinecone",
+   "grade": "?",
+   "reason": "partially scanned, not graded: osv-scanner: Scanning dir <work-dir>\nFailed to resolve gitignore for <work-dir>: Rel: can't ma",
+   "scanned_at": "2026-11-15T15:31:24.833836+00:00",
+   "version": "0.4.0"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 2,
+    "HIGH": 11,
+    "LOW": 8,
+    "MEDIUM": 30
+   },
+   "ecosystem": "git",
+   "entry_id": "pipedrive",
+   "grade": "D",
+   "reason": "2 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:28:11.192877+00:00",
+   "version": "7ebefcf05f34"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1
+   },
+   "ecosystem": "npm",
+   "entry_id": "plausible",
+   "grade": "C",
+   "reason": "0 critical, 1 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:19.110000+00:00",
+   "version": "0.1.1"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "playwright",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 3 package(s) checked",
+   "scanned_at": "2026-11-15T15:29:40.472353+00:00",
+   "version": "0.0.85"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 5,
+    "HIGH": 79,
+    "LOW": 33,
+    "MEDIUM": 100,
+    "UNKNOWN": 2
+   },
+   "ecosystem": "pypi",
+   "entry_id": "plex",
+   "grade": "D",
+   "reason": "5 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:31:36.829285+00:00",
+   "version": "1.5.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "podcast-index",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 5 package(s) checked; 2 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:31:59.017988+00:00",
+   "version": "2.0.1"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1
+   },
+   "ecosystem": "npm",
+   "entry_id": "posteverywhere-hub",
+   "grade": "C",
+   "reason": "0 critical, 1 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:31:36.676118+00:00",
+   "version": "1.14.2"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "postgres",
+   "grade": "?",
+   "reason": "not yet assessed: uv resolve: error: No solution found when resolving dependencies\n  cause: Because there is no version of pglast==7.2.0 a",
+   "scanned_at": "2026-11-15T15:27:59.299531+00:00",
+   "version": "0.3.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "posthog",
+   "grade": "D",
+   "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:28:20.721537+00:00",
+   "version": "0.16.5"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 6,
+    "HIGH": 49,
+    "LOW": 13,
+    "MEDIUM": 41
+   },
+   "ecosystem": "npm",
+   "entry_id": "postman",
+   "grade": "D",
+   "reason": "6 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:28:56.256297+00:00",
+   "version": "2.15.0"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 8,
+    "MEDIUM": 6
+   },
+   "ecosystem": "npm",
+   "entry_id": "postmark",
+   "grade": "C",
+   "reason": "0 critical, 8 high, 6 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:09.731491+00:00",
+   "version": "2.1.1"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "prometheus",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 67 package(s) checked; 2 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:30:41.292638+00:00",
+   "version": "1.6.2"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "git",
+   "entry_id": "pubmed",
+   "grade": "?",
+   "reason": "not yet assessed: osv-scanner: Scanning dir <work-dir>\nNo package sources found, --help for usage information.",
+   "scanned_at": "2026-11-15T15:30:49.304197+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {
+    "HIGH": 10,
+    "MEDIUM": 6
+   },
+   "ecosystem": "npm",
+   "entry_id": "puppeteer",
+   "grade": "C",
+   "reason": "0 critical, 10 high, 6 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:26.461509+00:00",
+   "version": "2025.5.12"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "pushover",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 7 package(s) checked; 2 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:28:30.485038+00:00",
+   "version": "2.0.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "pypi",
+   "grade": "?",
+   "reason": "partially scanned, not graded: osv-scanner: Scanning dir <work-dir>\nFailed to resolve gitignore for <work-dir>: Rel: can't make /work",
+   "scanned_at": "2026-11-15T15:31:09.778059+00:00",
+   "version": "4.0.1"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 3,
+    "HIGH": 8,
+    "MEDIUM": 9
+   },
+   "ecosystem": "pypi",
+   "entry_id": "qdrant",
+   "grade": "D",
+   "reason": "3 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:31:38.755455+00:00",
+   "version": "0.8.1"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 4,
+    "HIGH": 36,
+    "LOW": 8,
+    "MEDIUM": 56
+   },
+   "ecosystem": "git",
+   "entry_id": "quickbooks-online",
+   "grade": "D",
+   "reason": "4 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:31:39.277311+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 2,
+    "HIGH": 16,
+    "MEDIUM": 6
+   },
+   "ecosystem": "npm",
+   "entry_id": "railway",
+   "grade": "D",
+   "reason": "2 critical CVE(s) with a fix available; 1 strong malicious-code signal(s): threat-process-download-exec",
+   "scanned_at": "2026-11-15T15:32:04.756098+00:00",
+   "version": "5.71.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "raindrop",
+   "grade": "D",
+   "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:29:33.488030+00:00",
+   "version": "0.16.6"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "rakuten",
+   "grade": "D",
+   "reason": "1 strong malicious-code signal(s): threat-runtime-obfuscation",
+   "scanned_at": "2026-11-15T15:29:56.014284+00:00",
+   "version": "1.3.0"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 6,
+    "HIGH": 16,
+    "LOW": 2,
+    "MEDIUM": 14
+   },
+   "ecosystem": "git",
+   "entry_id": "ramp",
+   "grade": "C",
+   "reason": "6 critical, 16 high, 14 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:30:44.311883+00:00",
+   "version": "b31c0b4"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "readwise",
+   "grade": "D",
+   "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:29:34.888920+00:00",
+   "version": "0.16.6"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "readwise-reader",
+   "grade": "D",
+   "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:29:13.703342+00:00",
+   "version": "0.16.6"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "reddit",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 30 package(s) checked; 2 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:32:04.592966+00:00",
+   "version": "0.2.1"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "redis",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 54 package(s) checked; 1 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:28:18.992104+00:00",
+   "version": "0.5.1"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "git",
+   "entry_id": "redis-stack",
+   "grade": "?",
+   "reason": "not yet assessed: no repository to clone",
+   "scanned_at": "2026-11-15T15:31:22.750359+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "reminders-macos",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 115 package(s) checked; 9 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:37.290669+00:00",
+   "version": "1.6.2"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1
+   },
+   "ecosystem": "npm",
+   "entry_id": "replicate",
+   "grade": "C",
+   "reason": "0 critical, 1 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:15.165880+00:00",
+   "version": "0.9.0"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 7,
+    "MEDIUM": 6
+   },
+   "ecosystem": "npm",
+   "entry_id": "resend",
+   "grade": "C",
+   "reason": "0 critical, 7 high, 6 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:13.999583+00:00",
+   "version": "2.28.1"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1
+   },
+   "ecosystem": "npm",
+   "entry_id": "revolut-business",
+   "grade": "C",
+   "reason": "0 critical, 1 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:17.848755+00:00",
+   "version": "0.1.6"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "git",
+   "entry_id": "ring",
+   "grade": "?",
+   "reason": "not yet assessed: git clone: fatal: could not read Username for 'https://github.com': No such device or address",
+   "scanned_at": "2026-11-15T15:31:27.356580+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {
+    "HIGH": 11,
+    "MEDIUM": 6
+   },
+   "ecosystem": "npm",
+   "entry_id": "roam-research",
+   "grade": "C",
+   "reason": "0 critical, 11 high, 6 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:36.838586+00:00",
+   "version": "5.1.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "git",
+   "entry_id": "robinhood",
+   "grade": "?",
+   "reason": "not yet assessed: no repository to clone",
+   "scanned_at": "2026-11-15T15:30:42.580227+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 1,
+    "HIGH": 25,
+    "LOW": 3,
+    "MEDIUM": 30,
+    "UNKNOWN": 4
+   },
+   "ecosystem": "container",
+   "entry_id": "rocket-chat",
+   "grade": "D",
+   "reason": "1 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:31:36.892685+00:00",
+   "version": "ghcr.io/enyonee/rocketchat-mcp:latest"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 6,
+    "MEDIUM": 5,
+    "UNKNOWN": 23
+   },
+   "ecosystem": "go",
+   "entry_id": "rss-atom-json-feed-generic",
+   "grade": "C",
+   "reason": "0 critical, 6 high, 5 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:31:39.984622+00:00",
+   "version": "v1.8.0"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 2,
+    "HIGH": 103,
+    "LOW": 28,
+    "MEDIUM": 133
+   },
+   "ecosystem": "npm",
+   "entry_id": "salesforce-dx",
+   "grade": "D",
+   "reason": "2 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:28:44.580509+00:00",
+   "version": "0.30.15"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 4,
+    "HIGH": 31,
+    "LOW": 8,
+    "MEDIUM": 23
+   },
+   "ecosystem": "git",
+   "entry_id": "samsung-smartthings",
+   "grade": "C",
+   "reason": "4 critical, 31 high, 23 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:30:31.105929+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 2,
+    "HIGH": 54,
+    "LOW": 5,
+    "MEDIUM": 50
+   },
+   "ecosystem": "git",
+   "entry_id": "sendgrid",
+   "grade": "D",
+   "reason": "2 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:28:52.297299+00:00",
+   "version": "aafb827"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "sentry",
+   "grade": "D",
+   "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:31:22.749969+00:00",
+   "version": "0.49.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "sequential-thinking",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 5 package(s) checked; 1 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:28:06.870639+00:00",
+   "version": "2.1.1"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "servicenow",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 65 package(s) checked",
+   "scanned_at": "2026-11-15T15:29:54.546678+00:00",
+   "version": "0.1.1"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 2,
+    "UNKNOWN": 3
+   },
+   "ecosystem": "go",
+   "entry_id": "shell",
+   "grade": "C",
+   "reason": "0 critical, 2 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:27:58.671235+00:00",
+   "version": "v1.1.1"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "git",
+   "entry_id": "signal",
+   "grade": "?",
+   "reason": "not yet assessed: osv-scanner: Scanning dir <work-dir>\nNo package sources found, --help for usage information.",
+   "scanned_at": "2026-11-15T15:29:42.887987+00:00",
+   "version": "3c5c82bdd63c"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 3,
+    "MEDIUM": 2
+   },
+   "ecosystem": "npm",
+   "entry_id": "slack",
+   "grade": "C",
+   "reason": "0 critical, 3 high, 2 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:08.721687+00:00",
+   "version": "2025.4.25"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 7,
+    "HIGH": 16,
+    "LOW": 8,
+    "MEDIUM": 35
+   },
+   "ecosystem": "pypi",
+   "entry_id": "snowflake-1",
+   "grade": "D",
+   "reason": "7 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:30:03.445014+00:00",
+   "version": "1.4.2"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 5,
+    "HIGH": 17,
+    "LOW": 2,
+    "MEDIUM": 14
+   },
+   "ecosystem": "git",
+   "entry_id": "sonos-1",
+   "grade": "C",
+   "reason": "5 critical, 17 high, 14 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:30:36.043547+00:00",
+   "version": "d2a532d3277c"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1
+   },
+   "ecosystem": "npm",
+   "entry_id": "sourcegraph",
+   "grade": "C",
+   "reason": "0 critical, 1 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:54.521220+00:00",
+   "version": "1.4.2"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "git",
+   "entry_id": "splitwise",
+   "grade": "?",
+   "reason": "not yet assessed: osv-scanner: Scanning dir <work-dir>\nNo package sources found, --help for usage information.",
+   "scanned_at": "2026-11-15T15:30:43.572867+00:00",
+   "version": "b171aa9"
+  },
+  {
+   "cve_counts": {
+    "MEDIUM": 4
+   },
+   "ecosystem": "git",
+   "entry_id": "spotify",
+   "grade": "C",
+   "reason": "0 critical, 0 high, 4 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:31:35.966866+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "sqlite",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 37 package(s) checked",
+   "scanned_at": "2026-11-15T15:27:59.296790+00:00",
+   "version": "2025.4.25"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1
+   },
+   "ecosystem": "npm",
+   "entry_id": "square",
+   "grade": "C",
+   "reason": "0 critical, 1 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:57.768279+00:00",
+   "version": "0.1.2"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 2,
+    "MEDIUM": 1
+   },
+   "ecosystem": "npm",
+   "entry_id": "stability-ai",
+   "grade": "D",
+   "reason": "1 strong malicious-code signal(s): threat-process-download-exec",
+   "scanned_at": "2026-11-15T15:28:20.187041+00:00",
+   "version": "0.2.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "statsig",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 34 package(s) checked; 1 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:43.357724+00:00",
+   "version": "1.0.0"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 3,
+    "HIGH": 52,
+    "LOW": 36,
+    "MEDIUM": 76
+   },
+   "ecosystem": "container",
+   "entry_id": "steam",
+   "grade": "D",
+   "reason": "3 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:31:39.194926+00:00",
+   "version": "ghcr.io/dsp/mcp-server-steam:0.2.2"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1
+   },
+   "ecosystem": "npm",
+   "entry_id": "strava",
+   "grade": "C",
+   "reason": "0 critical, 1 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:02.380341+00:00",
+   "version": "1.2.1"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "stripe",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 94 package(s) checked; 1 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:17.399076+00:00",
+   "version": "0.3.4"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 8,
+    "MEDIUM": 4
+   },
+   "ecosystem": "npm",
+   "entry_id": "substack",
+   "grade": "C",
+   "reason": "0 critical, 8 high, 4 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:13.902003+00:00",
+   "version": "1.3.2"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "supabase",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 78 package(s) checked; 4 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:30:30.591222+00:00",
+   "version": "0.4"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "tableau",
+   "grade": "D",
+   "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:28:22.162949+00:00",
+   "version": "0.16.6"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1
+   },
+   "ecosystem": "npm",
+   "entry_id": "tableau-self-hosted",
+   "grade": "D",
+   "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:28:26.496348+00:00",
+   "version": "6.0.4"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 7,
+    "MEDIUM": 6
+   },
+   "ecosystem": "npm",
+   "entry_id": "tavily",
+   "grade": "C",
+   "reason": "0 critical, 7 high, 6 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:41.861002+00:00",
+   "version": "0.2.22"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 14,
+    "HIGH": 35,
+    "MEDIUM": 37,
+    "UNKNOWN": 73
+   },
+   "ecosystem": "go",
+   "entry_id": "telegram",
+   "grade": "C",
+   "reason": "14 critical, 35 high, 37 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:31:41.494951+00:00",
+   "version": "52d7991146a5"
+  },
+  {
+   "cve_counts": {
+    "UNKNOWN": 2
+   },
+   "ecosystem": "go",
+   "entry_id": "terraform",
+   "grade": "B",
+   "reason": "0 medium, 2 low CVE(s) only",
+   "scanned_at": "2026-11-15T15:27:58.823875+00:00",
+   "version": "v1.4.1"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 15,
+    "HIGH": 88,
+    "LOW": 11,
+    "MEDIUM": 58
+   },
+   "ecosystem": "git",
+   "entry_id": "tesla",
+   "grade": "D",
+   "reason": "15 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:31:41.645520+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 2,
+    "HIGH": 22,
+    "LOW": 6,
+    "MEDIUM": 51
+   },
+   "ecosystem": "git",
+   "entry_id": "tiktok",
+   "grade": "D",
+   "reason": "2 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:29:27.832036+00:00",
+   "version": "7b98fd6"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "time",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 31 package(s) checked",
+   "scanned_at": "2026-11-15T15:27:59.169739+00:00",
+   "version": "2026.11.11"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 4,
+    "HIGH": 97,
+    "LOW": 22,
+    "MEDIUM": 82
+   },
+   "ecosystem": "git",
+   "entry_id": "tl-dv-hub",
+   "grade": "D",
+   "reason": "4 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:28:05.977286+00:00",
+   "version": "846483e2f7c4"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 4,
+    "MEDIUM": 3
+   },
+   "ecosystem": "npm",
+   "entry_id": "todoist",
+   "grade": "C",
+   "reason": "0 critical, 4 high, 3 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:39.460066+00:00",
+   "version": "0.2.5"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "toggl",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 35 package(s) checked; 1 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:13.395657+00:00",
+   "version": "0.1.8.2"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "tp-link-kasa",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 105 package(s) checked; 1 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:06.695349+00:00",
+   "version": "0.2.0"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1
+   },
+   "ecosystem": "npm",
+   "entry_id": "trello",
+   "grade": "D",
+   "reason": "1 strong malicious-code signal(s): threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:29:38.950786+00:00",
+   "version": "1.8.1"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1
+   },
+   "ecosystem": "npm",
+   "entry_id": "tripit",
+   "grade": "C",
+   "reason": "0 critical, 1 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:30:30.860174+00:00",
+   "version": "0.3.1"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1,
+    "MEDIUM": 2
+   },
+   "ecosystem": "npm",
+   "entry_id": "turbopuffer",
+   "grade": "C",
+   "reason": "0 critical, 1 high, 2 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:30:57.764508+00:00",
+   "version": "2.7.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "turso-libsql",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 40 package(s) checked; 3 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:28:45.606820+00:00",
+   "version": "0.0.11"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 5,
+    "HIGH": 84,
+    "LOW": 14,
+    "MEDIUM": 73
+   },
+   "ecosystem": "git",
+   "entry_id": "twilio-sms",
+   "grade": "D",
+   "reason": "5 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:29:55.452906+00:00",
+   "version": "5bff3758bd6c"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "typesense",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 110 package(s) checked; 1 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:31:57.468432+00:00",
+   "version": "1.1.0"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1
+   },
+   "ecosystem": "npm",
+   "entry_id": "uber",
+   "grade": "C",
+   "reason": "0 critical, 1 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:30:31.373516+00:00",
+   "version": "1.0.2"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "uber-eats",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 6 package(s) checked",
+   "scanned_at": "2026-11-15T15:31:59.591408+00:00",
+   "version": "0.2.1"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "umami",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 93 package(s) checked; 3 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:28:23.828776+00:00",
+   "version": "1.1.0"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "git",
+   "entry_id": "unity",
+   "grade": "?",
+   "reason": "not yet assessed: no repository to clone",
+   "scanned_at": "2026-11-15T15:29:57.387954+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "unsplash",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 93 package(s) checked; 3 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:28:15.817949+00:00",
+   "version": "1.0.2"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 3,
+    "LOW": 1,
+    "MEDIUM": 2
+   },
+   "ecosystem": "git",
+   "entry_id": "vercel",
+   "grade": "C",
+   "reason": "0 critical, 3 high, 2 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:32.241543+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 19,
+    "HIGH": 56,
+    "LOW": 14,
+    "MEDIUM": 72
+   },
+   "ecosystem": "git",
+   "entry_id": "wahoo-systm",
+   "grade": "C",
+   "reason": "19 critical, 56 high, 72 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:30:14.217221+00:00",
+   "version": "773ad0d73866"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 5,
+    "HIGH": 31,
+    "LOW": 9,
+    "MEDIUM": 65
+   },
+   "ecosystem": "git",
+   "entry_id": "walmart",
+   "grade": "D",
+   "reason": "5 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:29:23.158105+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "git",
+   "entry_id": "waze",
+   "grade": "?",
+   "reason": "not yet assessed: osv-scanner: Scanning dir <work-dir>\nNo package sources found, --help for usage information.",
+   "scanned_at": "2026-11-15T15:31:39.268090+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "weather-gov-noaa-weather-mcp",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 159 package(s) checked; 7 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:30:46.334357+00:00",
+   "version": "1.35.12"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "weaviate",
+   "grade": "D",
+   "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:31:38.939440+00:00",
+   "version": "0.16.6"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "weibo",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 66 package(s) checked; 1 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:31:36.861135+00:00",
+   "version": "1.3.4"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 20,
+    "HIGH": 50,
+    "LOW": 5,
+    "MEDIUM": 60,
+    "UNKNOWN": 91
+   },
+   "ecosystem": "git",
+   "entry_id": "whatsapp",
+   "grade": "C",
+   "reason": "20 critical, 50 high, 60 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:48.080484+00:00",
+   "version": "7d6a06dcdce1"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "whisper-local-whisper-cpp",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 63 package(s) checked; 1 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:28:01.159357+00:00",
+   "version": "1.1.3"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1
+   },
+   "ecosystem": "npm",
+   "entry_id": "whoop",
+   "grade": "C",
+   "reason": "0 critical, 1 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:31:49.473943+00:00",
+   "version": "0.0.5"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "wikipedia",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 37 package(s) checked; 1 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:42.505799+00:00",
+   "version": "0.3.1"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 16,
+    "HIGH": 57,
+    "LOW": 10,
+    "MEDIUM": 49,
+    "UNKNOWN": 1
+   },
+   "ecosystem": "git",
+   "entry_id": "wise",
+   "grade": "C",
+   "reason": "16 critical, 57 high, 49 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:31:10.478684+00:00",
+   "version": "71615eb"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 1,
+    "HIGH": 44,
+    "LOW": 3,
+    "MEDIUM": 38
+   },
+   "ecosystem": "git",
+   "entry_id": "withings",
+   "grade": "C",
+   "reason": "1 critical, 44 high, 38 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:48.768158+00:00",
+   "version": "e18650965463"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "wolfram-alpha",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 37 package(s) checked; 1 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:31:35.254027+00:00",
+   "version": "0.2.1"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 2,
+    "HIGH": 29,
+    "LOW": 2,
+    "MEDIUM": 39
+   },
+   "ecosystem": "git",
+   "entry_id": "woocommerce",
+   "grade": "D",
+   "reason": "2 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:29:23.365886+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1
+   },
+   "ecosystem": "npm",
+   "entry_id": "world-news-api",
+   "grade": "C",
+   "reason": "0 critical, 1 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:31:58.014554+00:00",
+   "version": "1.0.0"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1
+   },
+   "ecosystem": "npm",
+   "entry_id": "x-twitter",
+   "grade": "C",
+   "reason": "0 critical, 1 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:30:11.757006+00:00",
+   "version": "0.1.1"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1
+   },
+   "ecosystem": "npm",
+   "entry_id": "xero",
+   "grade": "C",
+   "reason": "0 critical, 1 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:28.807435+00:00",
+   "version": "0.0.18"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "git",
+   "entry_id": "xiaomi-mi-home",
+   "grade": "?",
+   "reason": "not yet assessed: osv-scanner: Scanning dir <work-dir>\nNo package sources found, --help for usage information.",
+   "scanned_at": "2026-11-15T15:31:39.387549+00:00",
+   "version": ""
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "ynab",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 102 package(s) checked; 4 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:29:19.348030+00:00",
+   "version": "0.8.0"
+  },
+  {
+   "cve_counts": {
+    "MEDIUM": 4
+   },
+   "ecosystem": "npm",
+   "entry_id": "youtube-1",
+   "grade": "C",
+   "reason": "0 critical, 0 high, 4 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:30:29.112683+00:00",
+   "version": "1.0.2"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "npm",
+   "entry_id": "zapier-hub",
+   "grade": "D",
+   "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
+   "scanned_at": "2026-11-15T15:29:24.003547+00:00",
+   "version": "0.16.6"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 6,
+    "HIGH": 29,
+    "LOW": 2,
+    "MEDIUM": 31
+   },
+   "ecosystem": "git",
+   "entry_id": "zendesk",
+   "grade": "C",
+   "reason": "6 critical, 29 high, 31 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:56.000543+00:00",
+   "version": "806d1ca734b4"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 1
+   },
+   "ecosystem": "npm",
+   "entry_id": "zeplin",
+   "grade": "C",
+   "reason": "0 critical, 1 high, 0 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:28:49.014574+00:00",
+   "version": "1.0.6"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "pypi",
+   "entry_id": "zilliz-cloud",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 66 package(s) checked; 4 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:31:45.099030+00:00",
+   "version": "1.0.0"
+  },
+  {
+   "cve_counts": {
+    "HIGH": 11,
+    "MEDIUM": 8
+   },
+   "ecosystem": "git",
+   "entry_id": "zoho-crm",
+   "grade": "C",
+   "reason": "0 critical, 11 high, 8 medium CVE(s)",
+   "scanned_at": "2026-11-15T15:29:55.821923+00:00",
+   "version": "c34151723df2"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 4,
+    "HIGH": 22,
+    "LOW": 5,
+    "MEDIUM": 20
+   },
+   "ecosystem": "git",
+   "entry_id": "zoom",
+   "grade": "D",
+   "reason": "4 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:28:07.845383+00:00",
+   "version": "771471e48c5a"
+  },
+  {
+   "cve_counts": {},
+   "ecosystem": "git",
+   "entry_id": "zulip",
+   "grade": "?",
+   "reason": "not yet assessed: osv-scanner: Scanning dir <work-dir>\nNo package sources found, --help for usage information.",
+   "scanned_at": "2026-11-15T15:29:43.585648+00:00",
+   "version": "72327e76a54a"
+  },
+  {
+   "cve_counts": {
+    "CRITICAL": 2,
+    "HIGH": 32,
+    "LOW": 13,
+    "MEDIUM": 101
+   },
+   "ecosystem": "git",
+   "entry_id": "zwift-workout-generator",
+   "grade": "D",
+   "reason": "2 critical CVE(s) with a fix available",
+   "scanned_at": "2026-11-15T15:31:27.911697+00:00",
+   "version": ""
+  }
+ ],
+ "meta": {
+  "connectors": 300,
+  "generated_at": "2026-11-15T15:49:04+00:00",
+  "grade_counts": {
+   "?": 32,
+   "A": 84,
+   "B": 4,
+   "C": 106,
+   "D": 74
+  }
+ }
+}
