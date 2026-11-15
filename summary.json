@@ -6,7 +6,7 @@
    "entry_id": "airbnb",
    "grade": "A",
    "reason": "clean across all scanners that ran, 122 package(s) checked; 4 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:31:37.424094+00:00",
+   "scanned_at": "2026-11-15T15:56:40.285235+00:00",
    "version": "0.3.0"
   },
   {
@@ -15,7 +15,7 @@
    "entry_id": "airtable-1",
    "grade": "A",
    "reason": "clean across all scanners that ran, 93 package(s) checked; 3 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:19.565274+00:00",
+   "scanned_at": "2026-11-15T15:55:27.878664+00:00",
    "version": "1.14.0"
   },
   {
@@ -27,7 +27,7 @@
    "entry_id": "amazon-alexa",
    "grade": "B",
    "reason": "0 medium, 2 low CVE(s) only",
-   "scanned_at": "2026-11-15T15:31:29.969628+00:00",
+   "scanned_at": "2026-11-15T15:58:00.686983+00:00",
    "version": ""
   },
   {
@@ -42,7 +42,7 @@
    "entry_id": "amazon-orders-personal",
    "grade": "C",
    "reason": "16 critical, 100 high, 68 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:31:00.702123+00:00",
+   "scanned_at": "2026-11-15T15:57:33.095076+00:00",
    "version": "a7817e489a81216a137203d3c4f8b7bc749e181c"
   },
   {
@@ -51,7 +51,7 @@
    "entry_id": "amazon-seller-sp-api",
    "grade": "?",
    "reason": "not yet assessed: osv-scanner: Scanning dir <work-dir>\nNo package sources found, --help for usage information",
-   "scanned_at": "2026-11-15T15:31:00.454560+00:00",
+   "scanned_at": "2026-11-15T15:57:26.055992+00:00",
    "version": ""
   },
   {
@@ -65,7 +65,7 @@
    "entry_id": "amazon-shopping",
    "grade": "D",
    "reason": "4 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:29:21.862606+00:00",
+   "scanned_at": "2026-11-15T15:55:29.813514+00:00",
    "version": ""
   },
   {
@@ -74,7 +74,7 @@
    "entry_id": "amplitude",
    "grade": "D",
    "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:28:32.240677+00:00",
+   "scanned_at": "2026-11-15T15:54:24.297855+00:00",
    "version": "0.16.5"
   },
   {
@@ -83,7 +83,7 @@
    "entry_id": "anki",
    "grade": "A",
    "reason": "clean across all scanners that ran, 99 package(s) checked; 3 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:21.225131+00:00",
+   "scanned_at": "2026-11-15T15:55:29.659747+00:00",
    "version": "1.0.0"
   },
   {
@@ -92,7 +92,7 @@
    "entry_id": "ansible",
    "grade": "A",
    "reason": "clean across all scanners that ran, 43 package(s) checked; 3 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:30:26.551159+00:00",
+   "scanned_at": "2026-11-15T15:57:41.981273+00:00",
    "version": "1.0.1"
   },
   {
@@ -103,7 +103,7 @@
    "entry_id": "apache-superset",
    "grade": "C",
    "reason": "0 critical, 1 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:17.062917+00:00",
+   "scanned_at": "2026-11-15T15:54:24.788435+00:00",
    "version": "1.7.1"
   },
   {
@@ -112,7 +112,7 @@
    "entry_id": "apple-health",
    "grade": "A",
    "reason": "clean across all scanners that ran, 96 package(s) checked; 4 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:00.468429+00:00",
+   "scanned_at": "2026-11-15T15:55:08.335740+00:00",
    "version": "0.8.0"
   },
   {
@@ -126,7 +126,7 @@
    "entry_id": "apple-maps",
    "grade": "D",
    "reason": "2 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:32:17.328179+00:00",
+   "scanned_at": "2026-11-15T15:57:35.471782+00:00",
    "version": ""
   },
   {
@@ -135,7 +135,7 @@
    "entry_id": "apple-music",
    "grade": "A",
    "reason": "clean across all scanners that ran, 42 package(s) checked; 6 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:31:18.866467+00:00",
+   "scanned_at": "2026-11-15T15:58:03.869728+00:00",
    "version": "0.22.1"
   },
   {
@@ -144,7 +144,7 @@
    "entry_id": "apple-notes",
    "grade": "?",
    "reason": "not yet assessed: npm resolve: npm ERR! code EBADPLATFORM\nnpm ERR! notsup Unsupported platform for apple-notes-mcp@2.16.4: wanted {\"os\":\"d",
-   "scanned_at": "2026-11-15T15:29:10.290472+00:00",
+   "scanned_at": "2026-11-15T15:55:18.596867+00:00",
    "version": "2.16.4"
   },
   {
@@ -155,7 +155,7 @@
    "entry_id": "argocd",
    "grade": "C",
    "reason": "0 critical, 1 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:54.992141+00:00",
+   "scanned_at": "2026-11-15T15:55:02.696688+00:00",
    "version": "0.9.0"
   },
   {
@@ -169,7 +169,7 @@
    "entry_id": "arxiv",
    "grade": "C",
    "reason": "4 critical, 16 high, 14 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:30:48.644854+00:00",
+   "scanned_at": "2026-11-15T15:57:25.295514+00:00",
    "version": ""
   },
   {
@@ -178,7 +178,7 @@
    "entry_id": "asana",
    "grade": "A",
    "reason": "clean across all scanners that ran, 224 package(s) checked; 3 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:26.102805+00:00",
+   "scanned_at": "2026-11-15T15:55:35.249487+00:00",
    "version": "1.8.0"
   },
   {
@@ -191,7 +191,7 @@
    "entry_id": "astra-db",
    "grade": "C",
    "reason": "0 critical, 21 high, 23 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:31:38.894152+00:00",
+   "scanned_at": "2026-11-15T15:56:59.470920+00:00",
    "version": "1.3.4"
   },
   {
@@ -203,7 +203,7 @@
    "entry_id": "attio",
    "grade": "C",
    "reason": "0 critical, 7 high, 6 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:40.222039+00:00",
+   "scanned_at": "2026-11-15T15:54:48.503551+00:00",
    "version": "1.7.0"
   },
   {
@@ -212,7 +212,7 @@
    "entry_id": "audible",
    "grade": "A",
    "reason": "clean across all scanners that ran, 93 package(s) checked; 5 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:12.357210+00:00",
+   "scanned_at": "2026-11-15T15:55:19.221210+00:00",
    "version": "1.0.1"
   },
   {
@@ -221,7 +221,7 @@
    "entry_id": "aws",
    "grade": "?",
    "reason": "not yet assessed: uv resolve: error: No solution found when resolving dependencies\n  cause: Because awslabs-aws-diagram-mcp-server>=1.0.5 ",
-   "scanned_at": "2026-11-15T15:31:55.833979+00:00",
+   "scanned_at": "2026-11-15T15:57:08.529851+00:00",
    "version": "1.0.27"
   },
   {
@@ -230,7 +230,7 @@
    "entry_id": "aws-s3",
    "grade": "A",
    "reason": "clean across all scanners that ran, 50 package(s) checked; 2 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:57.387614+00:00",
+   "scanned_at": "2026-11-15T15:56:22.518301+00:00",
    "version": ""
   },
   {
@@ -239,7 +239,7 @@
    "entry_id": "azure",
    "grade": "A",
    "reason": "clean across all scanners that ran, 7 package(s) checked; 8 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:28:54.769091+00:00",
+   "scanned_at": "2026-11-15T15:55:02.560839+00:00",
    "version": "4.0.0-beta.6"
   },
   {
@@ -253,7 +253,7 @@
    "entry_id": "backblaze-b2",
    "grade": "D",
    "reason": "4 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:28:12.008357+00:00",
+   "scanned_at": "2026-11-15T15:54:20.794628+00:00",
    "version": "69a07cb9d6e7"
   },
   {
@@ -264,7 +264,7 @@
    "entry_id": "basecamp",
    "grade": "C",
    "reason": "0 critical, 1 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:27.150654+00:00",
+   "scanned_at": "2026-11-15T15:55:35.100913+00:00",
    "version": "1.6.0"
   },
   {
@@ -273,7 +273,7 @@
    "entry_id": "beehiiv",
    "grade": "D",
    "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:31:54.041283+00:00",
+   "scanned_at": "2026-11-15T15:57:32.417163+00:00",
    "version": "0.16.6"
   },
   {
@@ -287,7 +287,7 @@
    "entry_id": "bigcommerce",
    "grade": "D",
    "reason": "2 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:29:19.243793+00:00",
+   "scanned_at": "2026-11-15T15:55:28.188098+00:00",
    "version": ""
   },
   {
@@ -296,7 +296,7 @@
    "entry_id": "bigquery-1",
    "grade": "?",
    "reason": "not yet assessed: uv resolve: error: No solution found when resolving dependencies\n  cause: Because the current Python version (3.12.16) d",
-   "scanned_at": "2026-11-15T15:29:44.528008+00:00",
+   "scanned_at": "2026-11-15T15:55:52.814496+00:00",
    "version": "0.3.3"
   },
   {
@@ -311,7 +311,7 @@
    "entry_id": "bilibili",
    "grade": "C",
    "reason": "20 critical, 110 high, 63 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:31:03.778010+00:00",
+   "scanned_at": "2026-11-15T15:57:34.354204+00:00",
    "version": ""
   },
   {
@@ -323,7 +323,7 @@
    "entry_id": "bitbucket",
    "grade": "C",
    "reason": "0 critical, 3 high, 2 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:47.384546+00:00",
+   "scanned_at": "2026-11-15T15:54:54.708542+00:00",
    "version": "5.0.6"
   },
   {
@@ -332,7 +332,7 @@
    "entry_id": "blender",
    "grade": "A",
    "reason": "clean across all scanners that ran, 31 package(s) checked",
-   "scanned_at": "2026-11-15T15:29:59.212366+00:00",
+   "scanned_at": "2026-11-15T15:56:38.313259+00:00",
    "version": "2.0.0"
   },
   {
@@ -344,7 +344,7 @@
    "entry_id": "bluesky",
    "grade": "C",
    "reason": "0 critical, 8 high, 4 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:30:09.987716+00:00",
+   "scanned_at": "2026-11-15T15:56:24.859644+00:00",
    "version": "0.4.1"
   },
   {
@@ -355,7 +355,7 @@
    "entry_id": "booking-com",
    "grade": "C",
    "reason": "0 critical, 10 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:31:39.151891+00:00",
+   "scanned_at": "2026-11-15T15:58:05.989862+00:00",
    "version": ""
   },
   {
@@ -367,7 +367,7 @@
    "entry_id": "brave-search",
    "grade": "C",
    "reason": "0 critical, 8 high, 4 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:09.889318+00:00",
+   "scanned_at": "2026-11-15T15:54:19.519664+00:00",
    "version": "2.1.4"
   },
   {
@@ -379,7 +379,7 @@
    "entry_id": "brex",
    "grade": "C",
    "reason": "0 critical, 7 high, 4 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:15.615824+00:00",
+   "scanned_at": "2026-11-15T15:55:22.905261+00:00",
    "version": "0.4.0"
   },
   {
@@ -393,7 +393,7 @@
    "entry_id": "bruno",
    "grade": "D",
    "reason": "4 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:28:50.266838+00:00",
+   "scanned_at": "2026-11-15T15:54:58.800603+00:00",
    "version": "0.1.0"
   },
   {
@@ -402,7 +402,7 @@
    "entry_id": "buffer",
    "grade": "D",
    "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:29:05.067199+00:00",
+   "scanned_at": "2026-11-15T15:55:13.784894+00:00",
    "version": "0.16.6"
   },
   {
@@ -411,7 +411,7 @@
    "entry_id": "bulkpublish-hub",
    "grade": "D",
    "reason": "1 strong malicious-code signal(s): threat-process-download-exec",
-   "scanned_at": "2026-11-15T15:30:00.797965+00:00",
+   "scanned_at": "2026-11-15T15:56:38.211764+00:00",
    "version": "1.53.0"
   },
   {
@@ -420,7 +420,7 @@
    "entry_id": "canva",
    "grade": "D",
    "reason": "3 strong malicious-code signal(s): threat-process-download-exec, threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:28:47.946636+00:00",
+   "scanned_at": "2026-11-15T15:54:55.034398+00:00",
    "version": "2.19.0"
   },
   {
@@ -429,7 +429,7 @@
    "entry_id": "cassandra",
    "grade": "?",
    "reason": "not yet assessed: osv-scanner: Scanning dir <work-dir>\nNo package sources found, --help for usage information.",
-   "scanned_at": "2026-11-15T15:28:11.676248+00:00",
+   "scanned_at": "2026-11-15T15:54:19.897579+00:00",
    "version": "ebe20185c06e"
   },
   {
@@ -441,7 +441,7 @@
    "entry_id": "chroma",
    "grade": "C",
    "reason": "6 critical, 21 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:30:00.081534+00:00",
+   "scanned_at": "2026-11-15T15:57:33.806572+00:00",
    "version": "0.2.6"
   },
   {
@@ -453,7 +453,7 @@
    "entry_id": "circleci",
    "grade": "C",
    "reason": "0 critical, 1 high, 2 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:49.897085+00:00",
+   "scanned_at": "2026-11-15T15:54:57.524513+00:00",
    "version": "0.20.0"
   },
   {
@@ -464,7 +464,7 @@
    "entry_id": "clickhouse",
    "grade": "C",
    "reason": "0 critical, 0 high, 4 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:31:26.025104+00:00",
+   "scanned_at": "2026-11-15T15:56:49.321815+00:00",
    "version": "0.7.0"
   },
   {
@@ -475,7 +475,7 @@
    "entry_id": "clickup",
    "grade": "C",
    "reason": "0 critical, 1 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:31.343863+00:00",
+   "scanned_at": "2026-11-15T15:55:39.277751+00:00",
    "version": "0.14.6"
   },
   {
@@ -488,7 +488,7 @@
    "entry_id": "cloudflare",
    "grade": "C",
    "reason": "0 critical, 15 high, 20 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:55.958801+00:00",
+   "scanned_at": "2026-11-15T15:55:04.028410+00:00",
    "version": "0.2.0"
   },
   {
@@ -497,7 +497,7 @@
    "entry_id": "cloudflare-workers",
    "grade": "A",
    "reason": "clean across all scanners that ran, 196 package(s) checked; 4 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:28:50.475335+00:00",
+   "scanned_at": "2026-11-15T15:54:57.996035+00:00",
    "version": "0.0.13"
   },
   {
@@ -508,7 +508,7 @@
    "entry_id": "cloudinary",
    "grade": "D",
    "reason": "1 strong malicious-code signal(s): threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:28:15.164304+00:00",
+   "scanned_at": "2026-11-15T15:54:36.319897+00:00",
    "version": ""
   },
   {
@@ -522,7 +522,7 @@
    "entry_id": "cockroachdb",
    "grade": "C",
    "reason": "0 critical, 16 high, 20 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:31:47.891696+00:00",
+   "scanned_at": "2026-11-15T15:58:07.922918+00:00",
    "version": "v0.1.0"
   },
   {
@@ -535,7 +535,7 @@
    "entry_id": "coda",
    "grade": "C",
    "reason": "0 critical, 25 high, 41 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:37.314252+00:00",
+   "scanned_at": "2026-11-15T15:55:46.713923+00:00",
    "version": "1.7.1"
   },
   {
@@ -544,7 +544,7 @@
    "entry_id": "codeberg",
    "grade": "A",
    "reason": "clean across all scanners that ran, 1 package(s) checked",
-   "scanned_at": "2026-11-15T15:29:58.881831+00:00",
+   "scanned_at": "2026-11-15T15:56:23.588359+00:00",
    "version": ""
   },
   {
@@ -557,7 +557,7 @@
    "entry_id": "coinbase",
    "grade": "C",
    "reason": "0 critical, 12 high, 17 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:36.489580+00:00",
+   "scanned_at": "2026-11-15T15:55:39.103316+00:00",
    "version": "0.2.0"
   },
   {
@@ -566,7 +566,7 @@
    "entry_id": "comfyui",
    "grade": "A",
    "reason": "clean across all scanners that ran, 29 package(s) checked; 3 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:57.933300+00:00",
+   "scanned_at": "2026-11-15T15:56:07.081305+00:00",
    "version": "0.10.0"
   },
   {
@@ -575,7 +575,7 @@
    "entry_id": "confluence",
    "grade": "A",
    "reason": "clean across all scanners that ran, 94 package(s) checked; 6 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:28:49.773181+00:00",
+   "scanned_at": "2026-11-15T15:54:56.545721+00:00",
    "version": "2.0.2"
   },
   {
@@ -588,7 +588,7 @@
    "entry_id": "consul",
    "grade": "C",
    "reason": "0 critical, 7 high, 4 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:31:36.902346+00:00",
+   "scanned_at": "2026-11-15T15:57:24.785099+00:00",
    "version": "0.1.2"
   },
   {
@@ -602,7 +602,7 @@
    "entry_id": "crisp",
    "grade": "D",
    "reason": "2 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:28:09.171392+00:00",
+   "scanned_at": "2026-11-15T15:54:18.501966+00:00",
    "version": "2e850cef9f19"
   },
   {
@@ -611,7 +611,7 @@
    "entry_id": "cronometer",
    "grade": "?",
    "reason": "not yet assessed: uv resolve: error: No solution found when resolving dependencies\n  cause: Because the current Python version (3.12.16) d",
-   "scanned_at": "2026-11-15T15:30:23.436481+00:00",
+   "scanned_at": "2026-11-15T15:57:12.236143+00:00",
    "version": "0.2.6"
   },
   {
@@ -620,7 +620,7 @@
    "entry_id": "customer-io",
    "grade": "D",
    "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:29:05.986423+00:00",
+   "scanned_at": "2026-11-15T15:55:14.633159+00:00",
    "version": "0.16.6"
   },
   {
@@ -632,7 +632,7 @@
    "entry_id": "datadog",
    "grade": "C",
    "reason": "0 critical, 8 high, 6 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:58.933690+00:00",
+   "scanned_at": "2026-11-15T15:55:07.715021+00:00",
    "version": "1.8.0"
   },
   {
@@ -645,7 +645,7 @@
    "entry_id": "dbt",
    "grade": "C",
    "reason": "0 critical, 6 high, 8 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:42.711233+00:00",
+   "scanned_at": "2026-11-15T15:55:51.274149+00:00",
    "version": "2.10.1"
   },
   {
@@ -654,7 +654,7 @@
    "entry_id": "deepgram",
    "grade": "A",
    "reason": "clean across all scanners that ran, 29 package(s) checked; 1 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:40.713490+00:00",
+   "scanned_at": "2026-11-15T15:55:48.100383+00:00",
    "version": "0.1.1"
   },
   {
@@ -667,7 +667,7 @@
    "entry_id": "desktop-commander",
    "grade": "D",
    "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:28:18.726637+00:00",
+   "scanned_at": "2026-11-15T15:54:28.694914+00:00",
    "version": "0.3.3"
   },
   {
@@ -680,7 +680,7 @@
    "entry_id": "discord-dms",
    "grade": "C",
    "reason": "0 critical, 25 high, 26 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:01.121204+00:00",
+   "scanned_at": "2026-11-15T15:54:09.997092+00:00",
    "version": "39622af0333b"
   },
   {
@@ -691,7 +691,7 @@
    "entry_id": "docker",
    "grade": "B",
    "reason": "0 medium, 3 low CVE(s) only",
-   "scanned_at": "2026-11-15T15:28:00.748590+00:00",
+   "scanned_at": "2026-11-15T15:54:09.115070+00:00",
    "version": "0.3.0"
   },
   {
@@ -700,7 +700,7 @@
    "entry_id": "doordash",
    "grade": "?",
    "reason": "not yet assessed: osv-scanner: Scanning dir <work-dir>\nNo package sources found, --help for usage information.",
-   "scanned_at": "2026-11-15T15:29:19.879632+00:00",
+   "scanned_at": "2026-11-15T15:55:28.523629+00:00",
    "version": ""
   },
   {
@@ -709,7 +709,7 @@
    "entry_id": "dropbox",
    "grade": "D",
    "reason": "1 strong malicious-code signal(s): threat-process-download-exec",
-   "scanned_at": "2026-11-15T15:28:39.167996+00:00",
+   "scanned_at": "2026-11-15T15:54:46.338946+00:00",
    "version": "1.0.0"
   },
   {
@@ -718,7 +718,7 @@
    "entry_id": "duckdb",
    "grade": "A",
    "reason": "clean across all scanners that ran, 65 package(s) checked; 3 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:55.870507+00:00",
+   "scanned_at": "2026-11-15T15:56:06.891653+00:00",
    "version": "1.1.0"
   },
   {
@@ -727,7 +727,7 @@
    "entry_id": "duckduckgo",
    "grade": "A",
    "reason": "clean across all scanners that ran, 93 package(s) checked; 3 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:38.845799+00:00",
+   "scanned_at": "2026-11-15T15:55:45.744993+00:00",
    "version": "1.0.1"
   },
   {
@@ -739,7 +739,7 @@
    "entry_id": "dynamodb",
    "grade": "C",
    "reason": "0 critical, 12 high, 13 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:30:15.616305+00:00",
+   "scanned_at": "2026-11-15T15:57:58.720662+00:00",
    "version": "2.1.10"
   },
   {
@@ -750,7 +750,7 @@
    "entry_id": "ebay",
    "grade": "C",
    "reason": "0 critical, 1 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:44.421678+00:00",
+   "scanned_at": "2026-11-15T15:55:53.839190+00:00",
    "version": "2.0.4"
   },
   {
@@ -759,7 +759,7 @@
    "entry_id": "element-matrix",
    "grade": "?",
    "reason": "not yet assessed: osv-scanner: Scanning dir <work-dir>\nNo package sources found, --help for usage information.",
-   "scanned_at": "2026-11-15T15:28:00.713716+00:00",
+   "scanned_at": "2026-11-15T15:54:09.031829+00:00",
    "version": "88719f4da7d3"
   },
   {
@@ -768,7 +768,7 @@
    "entry_id": "elevenlabs-1",
    "grade": "A",
    "reason": "clean across all scanners that ran, 49 package(s) checked; 3 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:59.181936+00:00",
+   "scanned_at": "2026-11-15T15:57:25.055277+00:00",
    "version": "0.12.2"
   },
   {
@@ -777,7 +777,7 @@
    "entry_id": "emby",
    "grade": "?",
    "reason": "not yet assessed: git clone: fatal: could not read Username for 'https://github.com': No such device or address",
-   "scanned_at": "2026-11-15T15:30:30.851105+00:00",
+   "scanned_at": "2026-11-15T15:56:52.118167+00:00",
    "version": ""
   },
   {
@@ -786,7 +786,7 @@
    "entry_id": "evernote",
    "grade": "A",
    "reason": "clean across all scanners that ran, 167 package(s) checked; 10 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:33.135407+00:00",
+   "scanned_at": "2026-11-15T15:55:40.233592+00:00",
    "version": "2.0.0"
   },
   {
@@ -798,7 +798,7 @@
    "entry_id": "exa",
    "grade": "D",
    "reason": "1 strong malicious-code signal(s): threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:29:41.469695+00:00",
+   "scanned_at": "2026-11-15T15:55:50.089211+00:00",
    "version": "3.4.3"
   },
   {
@@ -807,7 +807,7 @@
    "entry_id": "excalidraw",
    "grade": "D",
    "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:28:45.635895+00:00",
+   "scanned_at": "2026-11-15T15:54:52.626672+00:00",
    "version": "0.16.6"
   },
   {
@@ -816,7 +816,7 @@
    "entry_id": "facebook",
    "grade": "?",
    "reason": "not yet assessed: uv resolve: error: No solution found when resolving dependencies\n  cause: Because the current Python version (3.12.16) d",
-   "scanned_at": "2026-11-15T15:29:25.052623+00:00",
+   "scanned_at": "2026-11-15T15:55:34.302795+00:00",
    "version": "0.1.0"
   },
   {
@@ -825,7 +825,7 @@
    "entry_id": "feedly",
    "grade": "?",
    "reason": "not yet assessed: osv-scanner: Scanning dir <work-dir>\nNo package sources found, --help for usage information.",
-   "scanned_at": "2026-11-15T15:30:35.426637+00:00",
+   "scanned_at": "2026-11-15T15:57:13.621353+00:00",
    "version": "32eae0a6f085"
   },
   {
@@ -834,7 +834,7 @@
    "entry_id": "fetch",
    "grade": "A",
    "reason": "clean across all scanners that ran, 46 package(s) checked; 4 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:28:00.540580+00:00",
+   "scanned_at": "2026-11-15T15:54:08.870036+00:00",
    "version": ""
   },
   {
@@ -849,7 +849,7 @@
    "entry_id": "ffmpeg",
    "grade": "D",
    "reason": "31 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:30:00.519881+00:00",
+   "scanned_at": "2026-11-15T15:56:07.635538+00:00",
    "version": "905549bab29c"
   },
   {
@@ -862,7 +862,7 @@
    "entry_id": "fhir-mychart-epic-cerner",
    "grade": "C",
    "reason": "0 critical, 39 high, 30 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:31:04.175686+00:00",
+   "scanned_at": "2026-11-15T15:58:08.939519+00:00",
    "version": "0.11.0"
   },
   {
@@ -871,7 +871,7 @@
    "entry_id": "figma",
    "grade": "D",
    "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:28:46.110366+00:00",
+   "scanned_at": "2026-11-15T15:54:53.199800+00:00",
    "version": "0.16.6"
   },
   {
@@ -880,7 +880,7 @@
    "entry_id": "filesystem",
    "grade": "A",
    "reason": "clean across all scanners that ran, 9 package(s) checked; 4 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:28:08.423418+00:00",
+   "scanned_at": "2026-11-15T15:54:16.006832+00:00",
    "version": "2.2.0"
   },
   {
@@ -892,7 +892,7 @@
    "entry_id": "firebase",
    "grade": "C",
    "reason": "0 critical, 1 high, 1 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:51.923571+00:00",
+   "scanned_at": "2026-11-15T15:54:59.029542+00:00",
    "version": "1.4.9"
   },
   {
@@ -903,7 +903,7 @@
    "entry_id": "firecrawl",
    "grade": "C",
    "reason": "0 critical, 1 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:39.650386+00:00",
+   "scanned_at": "2026-11-15T15:55:47.322740+00:00",
    "version": "3.39.0"
   },
   {
@@ -912,7 +912,7 @@
    "entry_id": "fitbit",
    "grade": "A",
    "reason": "clean across all scanners that ran, 128 package(s) checked; 8 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:00.735580+00:00",
+   "scanned_at": "2026-11-15T15:55:09.403964+00:00",
    "version": "0.7.0"
   },
   {
@@ -923,7 +923,7 @@
    "entry_id": "fivetran",
    "grade": "C",
    "reason": "2 critical, 0 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:41.789438+00:00",
+   "scanned_at": "2026-11-15T15:55:49.503862+00:00",
    "version": "v0.5.1"
   },
   {
@@ -932,7 +932,7 @@
    "entry_id": "flux-black-forest-labs",
    "grade": "D",
    "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:28:10.670166+00:00",
+   "scanned_at": "2026-11-15T15:54:18.112383+00:00",
    "version": "0.16.5"
   },
   {
@@ -943,7 +943,7 @@
    "entry_id": "fly-io",
    "grade": "B",
    "reason": "0 medium, 61 low CVE(s) only",
-   "scanned_at": "2026-11-15T15:31:38.892221+00:00",
+   "scanned_at": "2026-11-15T15:58:08.384496+00:00",
    "version": "25b36d9263a7"
   },
   {
@@ -957,7 +957,7 @@
    "entry_id": "freshbooks",
    "grade": "D",
    "reason": "2 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:28:55.233287+00:00",
+   "scanned_at": "2026-11-15T15:55:02.744089+00:00",
    "version": ""
   },
   {
@@ -966,7 +966,7 @@
    "entry_id": "freshdesk",
    "grade": "A",
    "reason": "clean across all scanners that ran, 43 package(s) checked; 1 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:54.310659+00:00",
+   "scanned_at": "2026-11-15T15:55:57.100821+00:00",
    "version": "1.2.0"
   },
   {
@@ -978,7 +978,7 @@
    "entry_id": "freshservice",
    "grade": "D",
    "reason": "1 strong malicious-code signal(s): threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:28:36.917132+00:00",
+   "scanned_at": "2026-11-15T15:54:44.155383+00:00",
    "version": "0.3.0"
   },
   {
@@ -987,7 +987,7 @@
    "entry_id": "garmin-connect",
    "grade": "A",
    "reason": "clean across all scanners that ran, 112 package(s) checked; 1 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:01.153925+00:00",
+   "scanned_at": "2026-11-15T15:55:10.220541+00:00",
    "version": "0.4.0"
   },
   {
@@ -1001,7 +1001,7 @@
    "entry_id": "gcp",
    "grade": "D",
    "reason": "4 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:31:56.355858+00:00",
+   "scanned_at": "2026-11-15T15:57:27.219294+00:00",
    "version": "1.0.2"
   },
   {
@@ -1010,7 +1010,7 @@
    "entry_id": "git",
    "grade": "A",
    "reason": "clean across all scanners that ran, 32 package(s) checked; 2 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:27:59.388760+00:00",
+   "scanned_at": "2026-11-15T15:54:07.987773+00:00",
    "version": "2026.11.4"
   },
   {
@@ -1022,7 +1022,7 @@
    "entry_id": "gitea",
    "grade": "C",
    "reason": "0 critical, 8 high, 6 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:51.557802+00:00",
+   "scanned_at": "2026-11-15T15:54:57.366968+00:00",
    "version": "0.0.10"
   },
   {
@@ -1036,7 +1036,7 @@
    "entry_id": "github",
    "grade": "C",
    "reason": "0 critical, 3 high, 6 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:27:59.619329+00:00",
+   "scanned_at": "2026-11-15T15:54:08.176900+00:00",
    "version": "v2.1.0"
   },
   {
@@ -1045,7 +1045,7 @@
    "entry_id": "gitlab",
    "grade": "A",
    "reason": "clean across all scanners that ran, 65 package(s) checked; 4 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:28:29.610063+00:00",
+   "scanned_at": "2026-11-15T15:54:33.756460+00:00",
    "version": "0.24.0"
   },
   {
@@ -1058,7 +1058,7 @@
    "entry_id": "gmail",
    "grade": "C",
    "reason": "0 critical, 18 high, 26 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:28.731747+00:00",
+   "scanned_at": "2026-11-15T15:54:38.432192+00:00",
    "version": "1.7.4"
   },
   {
@@ -1067,7 +1067,7 @@
    "entry_id": "google-analytics-ga4",
    "grade": "A",
    "reason": "clean across all scanners that ran, 64 package(s) checked; 1 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:42.078532+00:00",
+   "scanned_at": "2026-11-15T15:55:50.270277+00:00",
    "version": "1.1.0"
   },
   {
@@ -1078,7 +1078,7 @@
    "entry_id": "google-calendar",
    "grade": "C",
    "reason": "0 critical, 0 high, 4 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:29.256821+00:00",
+   "scanned_at": "2026-11-15T15:55:36.947543+00:00",
    "version": "2.8.1"
   },
   {
@@ -1090,7 +1090,7 @@
    "entry_id": "google-chat",
    "grade": "C",
    "reason": "0 critical, 16 high, 12 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:42.514158+00:00",
+   "scanned_at": "2026-11-15T15:55:50.112944+00:00",
    "version": "6abf4f1590c6"
   },
   {
@@ -1102,7 +1102,7 @@
    "entry_id": "google-drive",
    "grade": "C",
    "reason": "0 critical, 4 high, 3 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:41.713743+00:00",
+   "scanned_at": "2026-11-15T15:54:48.215199+00:00",
    "version": "2025.1.14"
   },
   {
@@ -1114,7 +1114,7 @@
    "entry_id": "google-maps",
    "grade": "C",
    "reason": "0 critical, 3 high, 6 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:30:30.343790+00:00",
+   "scanned_at": "2026-11-15T15:56:42.999520+00:00",
    "version": "0.0.69"
   },
   {
@@ -1127,7 +1127,7 @@
    "entry_id": "google-photos",
    "grade": "C",
    "reason": "0 critical, 11 high, 32 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:31:37.009709+00:00",
+   "scanned_at": "2026-11-15T15:58:05.848202+00:00",
    "version": ""
   },
   {
@@ -1141,7 +1141,7 @@
    "entry_id": "google-search",
    "grade": "C",
    "reason": "14 critical, 46 high, 50 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:15.808976+00:00",
+   "scanned_at": "2026-11-15T15:55:24.980488+00:00",
    "version": ""
   },
   {
@@ -1150,7 +1150,7 @@
    "entry_id": "google-workspace",
    "grade": "A",
    "reason": "clean across all scanners that ran, 89 package(s) checked; 7 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:31:26.555656+00:00",
+   "scanned_at": "2026-11-15T15:58:09.831072+00:00",
    "version": "2.4.1"
   },
   {
@@ -1159,7 +1159,7 @@
    "entry_id": "grafana",
    "grade": "A",
    "reason": "clean across all scanners that ran, 1 package(s) checked; 2 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:28:03.091601+00:00",
+   "scanned_at": "2026-11-15T15:54:13.195735+00:00",
    "version": "2.2.0"
   },
   {
@@ -1171,7 +1171,7 @@
    "entry_id": "gtfs-transit-mta-caltrain",
    "grade": "C",
    "reason": "0 critical, 0 high, 8 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:31:36.610142+00:00",
+   "scanned_at": "2026-11-15T15:58:06.120901+00:00",
    "version": ""
   },
   {
@@ -1180,7 +1180,7 @@
    "entry_id": "hacker-news",
    "grade": "A",
    "reason": "clean across all scanners that ran, 41 package(s) checked; 3 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:31:27.514370+00:00",
+   "scanned_at": "2026-11-15T15:58:10.530900+00:00",
    "version": ""
   },
   {
@@ -1192,7 +1192,7 @@
    "entry_id": "helm",
    "grade": "C",
    "reason": "0 critical, 3 high, 30 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:00.106372+00:00",
+   "scanned_at": "2026-11-15T15:55:09.093352+00:00",
    "version": "4.2.1"
   },
   {
@@ -1201,7 +1201,7 @@
    "entry_id": "home-assistant",
    "grade": "?",
    "reason": "not yet assessed: uv resolve: error: No solution found when resolving dependencies\n  cause: Because the current Python version (3.12.16) d",
-   "scanned_at": "2026-11-15T15:30:59.756359+00:00",
+   "scanned_at": "2026-11-15T15:58:14.305596+00:00",
    "version": "8.7.0"
   },
   {
@@ -1210,7 +1210,7 @@
    "entry_id": "hubspot-1",
    "grade": "D",
    "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:31:57.565479+00:00",
+   "scanned_at": "2026-11-15T15:57:23.246921+00:00",
    "version": "0.16.6"
   },
   {
@@ -1221,7 +1221,7 @@
    "entry_id": "hugging-face",
    "grade": "D",
    "reason": "1 strong malicious-code signal(s): threat-process-download-exec",
-   "scanned_at": "2026-11-15T15:28:21.570717+00:00",
+   "scanned_at": "2026-11-15T15:54:30.814251+00:00",
    "version": "0.4.34"
   },
   {
@@ -1234,7 +1234,7 @@
    "entry_id": "ikea-dirigera",
    "grade": "C",
    "reason": "4 critical, 24 high, 27 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:30:30.646070+00:00",
+   "scanned_at": "2026-11-15T15:56:46.266458+00:00",
    "version": ""
   },
   {
@@ -1248,7 +1248,7 @@
    "entry_id": "imdb",
    "grade": "C",
    "reason": "6 critical, 38 high, 33 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:30:33.379573+00:00",
+   "scanned_at": "2026-11-15T15:58:17.521161+00:00",
    "version": "05785b49a1ba"
   },
   {
@@ -1257,7 +1257,7 @@
    "entry_id": "imessage",
    "grade": "?",
    "reason": "not yet assessed: npm resolve: npm WARN EBADENGINE Unsupported engine {\nnpm WARN EBADENGINE   package: 'imessage-mcp@3.3.2',\nnpm WARN EBAD",
-   "scanned_at": "2026-11-15T15:28:11.069018+00:00",
+   "scanned_at": "2026-11-15T15:54:18.198457+00:00",
    "version": "3.3.2"
   },
   {
@@ -1271,7 +1271,7 @@
    "entry_id": "immich",
    "grade": "D",
    "reason": "2 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:31:37.645401+00:00",
+   "scanned_at": "2026-11-15T15:58:04.392490+00:00",
    "version": "ghcr.io/barryw/immichmcp:v3.3.5"
   },
   {
@@ -1280,7 +1280,7 @@
    "entry_id": "instacart",
    "grade": "A",
    "reason": "clean across all scanners that ran, 6 package(s) checked; 5 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:58.086240+00:00",
+   "scanned_at": "2026-11-15T15:57:12.143879+00:00",
    "version": "0.3.0"
   },
   {
@@ -1289,7 +1289,7 @@
    "entry_id": "instagram",
    "grade": "A",
    "reason": "clean across all scanners that ran, 58 package(s) checked; 5 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:31:59.667816+00:00",
+   "scanned_at": "2026-11-15T15:57:31.740739+00:00",
    "version": "1.3.5"
   },
   {
@@ -1303,7 +1303,7 @@
    "entry_id": "instapaper",
    "grade": "D",
    "reason": "2 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:31:29.818513+00:00",
+   "scanned_at": "2026-11-15T15:58:05.695654+00:00",
    "version": ""
   },
   {
@@ -1312,7 +1312,7 @@
    "entry_id": "intercom-1",
    "grade": "D",
    "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:29:06.926146+00:00",
+   "scanned_at": "2026-11-15T15:55:15.668587+00:00",
    "version": "0.16.6"
   },
   {
@@ -1321,7 +1321,7 @@
    "entry_id": "intercom-local",
    "grade": "?",
    "reason": "not yet assessed: osv-scanner: Scanning dir <work-dir>\nNo package sources found, --help for usage information.",
-   "scanned_at": "2026-11-15T15:28:47.943328+00:00",
+   "scanned_at": "2026-11-15T15:54:55.067721+00:00",
    "version": ""
   },
   {
@@ -1330,7 +1330,7 @@
    "entry_id": "iterable",
    "grade": "A",
    "reason": "clean across all scanners that ran, 208 package(s) checked; 5 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:11.638339+00:00",
+   "scanned_at": "2026-11-15T15:55:22.574928+00:00",
    "version": "1.9.1"
   },
   {
@@ -1339,7 +1339,7 @@
    "entry_id": "jellyfin",
    "grade": "A",
    "reason": "clean across all scanners that ran, 73 package(s) checked; 2 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:31:14.092313+00:00",
+   "scanned_at": "2026-11-15T15:58:04.796242+00:00",
    "version": "2.3.8"
   },
   {
@@ -1348,7 +1348,7 @@
    "entry_id": "jira",
    "grade": "A",
    "reason": "clean across all scanners that ran, 99 package(s) checked; 7 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:28:52.488198+00:00",
+   "scanned_at": "2026-11-15T15:54:59.635535+00:00",
    "version": "3.3.0"
   },
   {
@@ -1362,7 +1362,7 @@
    "entry_id": "kakaotalk",
    "grade": "C",
    "reason": "4 critical, 50 high, 24 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:42.908981+00:00",
+   "scanned_at": "2026-11-15T15:55:51.603532+00:00",
    "version": "896a049eba91"
   },
   {
@@ -1376,7 +1376,7 @@
    "entry_id": "keepa-price-tracker",
    "grade": "C",
    "reason": "3 critical, 62 high, 57 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:31:03.956257+00:00",
+   "scanned_at": "2026-11-15T15:57:33.699127+00:00",
    "version": ""
   },
   {
@@ -1385,7 +1385,7 @@
    "entry_id": "kindle",
    "grade": "?",
    "reason": "not yet assessed: osv-scanner: Scanning dir <work-dir>\nNo package sources found, --help for usage information.",
-   "scanned_at": "2026-11-15T15:30:31.786254+00:00",
+   "scanned_at": "2026-11-15T15:57:00.135448+00:00",
    "version": ""
   },
   {
@@ -1394,7 +1394,7 @@
    "entry_id": "kit-formerly-convertkit",
    "grade": "D",
    "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:29:07.070991+00:00",
+   "scanned_at": "2026-11-15T15:55:15.790924+00:00",
    "version": "0.16.6"
   },
   {
@@ -1403,7 +1403,7 @@
    "entry_id": "klaviyo",
    "grade": "?",
    "reason": "not yet assessed: uv resolve: error: No solution found when resolving dependencies\n  cause: Because the current Python version (3.12.16) d",
-   "scanned_at": "2026-11-15T15:28:49.824981+00:00",
+   "scanned_at": "2026-11-15T15:54:56.836342+00:00",
    "version": "0.4.2"
   },
   {
@@ -1415,7 +1415,7 @@
    "entry_id": "kubernetes",
    "grade": "C",
    "reason": "0 critical, 3 high, 30 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:14.874920+00:00",
+   "scanned_at": "2026-11-15T15:54:22.668890+00:00",
    "version": "4.2.1"
   },
   {
@@ -1424,7 +1424,7 @@
    "entry_id": "kustomer",
    "grade": "D",
    "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:28:38.890638+00:00",
+   "scanned_at": "2026-11-15T15:54:46.015920+00:00",
    "version": "0.16.5"
   },
   {
@@ -1436,7 +1436,7 @@
    "entry_id": "lancedb",
    "grade": "C",
    "reason": "0 critical, 6 high, 14 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:31:04.100683+00:00",
+   "scanned_at": "2026-11-15T15:57:21.105584+00:00",
    "version": "0.2.2"
   },
   {
@@ -1445,7 +1445,7 @@
    "entry_id": "last-fm",
    "grade": "D",
    "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:29:12.349278+00:00",
+   "scanned_at": "2026-11-15T15:55:20.398158+00:00",
    "version": "0.16.6"
   },
   {
@@ -1454,7 +1454,7 @@
    "entry_id": "launchdarkly",
    "grade": "D",
    "reason": "1 strong malicious-code signal(s): threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:28:31.672961+00:00",
+   "scanned_at": "2026-11-15T15:54:39.229189+00:00",
    "version": "0.7.2"
   },
   {
@@ -1468,7 +1468,7 @@
    "entry_id": "letterboxd",
    "grade": "D",
    "reason": "2 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:30:33.572101+00:00",
+   "scanned_at": "2026-11-15T15:57:06.657381+00:00",
    "version": ""
   },
   {
@@ -1482,7 +1482,7 @@
    "entry_id": "lifx",
    "grade": "D",
    "reason": "2 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:28:45.826026+00:00",
+   "scanned_at": "2026-11-15T15:54:53.996418+00:00",
    "version": ""
   },
   {
@@ -1495,7 +1495,7 @@
    "entry_id": "line",
    "grade": "C",
    "reason": "0 critical, 7 high, 4 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:31.088138+00:00",
+   "scanned_at": "2026-11-15T15:54:38.105976+00:00",
    "version": "0.5.0"
   },
   {
@@ -1504,7 +1504,7 @@
    "entry_id": "linear",
    "grade": "A",
    "reason": "clean across all scanners that ran, 105 package(s) checked; 4 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:28:53.450703+00:00",
+   "scanned_at": "2026-11-15T15:55:00.723103+00:00",
    "version": "1.2.0"
   },
   {
@@ -1513,7 +1513,7 @@
    "entry_id": "linkedin",
    "grade": "A",
    "reason": "clean across all scanners that ran, 74 package(s) checked; 10 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:31:45.817473+00:00",
+   "scanned_at": "2026-11-15T15:58:16.138273+00:00",
    "version": ""
   },
   {
@@ -1522,7 +1522,7 @@
    "entry_id": "logseq",
    "grade": "A",
    "reason": "clean across all scanners that ran, 94 package(s) checked; 3 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:28.955929+00:00",
+   "scanned_at": "2026-11-15T15:55:36.592195+00:00",
    "version": "0.8.1"
   },
   {
@@ -1536,7 +1536,7 @@
    "entry_id": "loom",
    "grade": "C",
    "reason": "13 critical, 29 high, 46 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:58.301779+00:00",
+   "scanned_at": "2026-11-15T15:56:31.657722+00:00",
    "version": "9d5f0ce5bfad"
   },
   {
@@ -1545,7 +1545,7 @@
    "entry_id": "loops",
    "grade": "D",
    "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:29:07.971548+00:00",
+   "scanned_at": "2026-11-15T15:55:17.042391+00:00",
    "version": "0.16.6"
   },
   {
@@ -1554,7 +1554,7 @@
    "entry_id": "mailchimp",
    "grade": "A",
    "reason": "clean across all scanners that ran, 41 package(s) checked",
-   "scanned_at": "2026-11-15T15:31:07.392716+00:00",
+   "scanned_at": "2026-11-15T15:58:02.305832+00:00",
    "version": "1.2.0"
   },
   {
@@ -1563,7 +1563,7 @@
    "entry_id": "mailgun",
    "grade": "A",
    "reason": "clean across all scanners that ran, 95 package(s) checked; 5 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:10.372843+00:00",
+   "scanned_at": "2026-11-15T15:55:33.179760+00:00",
    "version": "2.3.1"
   },
   {
@@ -1572,7 +1572,7 @@
    "entry_id": "mattermost",
    "grade": "A",
    "reason": "clean across all scanners that ran, 70 package(s) checked; 1 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:42.969852+00:00",
+   "scanned_at": "2026-11-15T15:55:51.250392+00:00",
    "version": "2.4.8"
   },
   {
@@ -1581,7 +1581,7 @@
    "entry_id": "meilisearch",
    "grade": "A",
    "reason": "clean across all scanners that ran, 37 package(s) checked; 1 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:31:37.772340+00:00",
+   "scanned_at": "2026-11-15T15:58:12.667715+00:00",
    "version": "0.7.0"
   },
   {
@@ -1590,7 +1590,7 @@
    "entry_id": "memory",
    "grade": "A",
    "reason": "clean across all scanners that ran, 4 package(s) checked; 6 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:28:06.849669+00:00",
+   "scanned_at": "2026-11-15T15:54:15.969021+00:00",
    "version": "2.1.0"
   },
   {
@@ -1602,7 +1602,7 @@
    "entry_id": "metabase",
    "grade": "C",
    "reason": "0 critical, 3 high, 2 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:22.834369+00:00",
+   "scanned_at": "2026-11-15T15:54:29.712223+00:00",
    "version": "2.2.0"
   },
   {
@@ -1611,7 +1611,7 @@
    "entry_id": "microsoft-365-hub",
    "grade": "A",
    "reason": "clean across all scanners that ran, 206 package(s) checked; 7 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:28:28.896070+00:00",
+   "scanned_at": "2026-11-15T15:54:35.957493+00:00",
    "version": "0.182.2"
   },
   {
@@ -1620,7 +1620,7 @@
    "entry_id": "microsoft-teams-standalone",
    "grade": "A",
    "reason": "clean across all scanners that ran, 221 package(s) checked; 6 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:32:03.259904+00:00",
+   "scanned_at": "2026-11-15T15:58:10.595434+00:00",
    "version": "1.0.1"
   },
   {
@@ -1634,7 +1634,7 @@
    "entry_id": "milvus",
    "grade": "C",
    "reason": "21 critical, 62 high, 66 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:31:16.679953+00:00",
+   "scanned_at": "2026-11-15T15:57:43.095886+00:00",
    "version": ""
   },
   {
@@ -1646,7 +1646,7 @@
    "entry_id": "minio",
    "grade": "C",
    "reason": "0 critical, 3 high, 8 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:40.346727+00:00",
+   "scanned_at": "2026-11-15T15:54:47.807634+00:00",
    "version": "0.1.0"
   },
   {
@@ -1657,7 +1657,7 @@
    "entry_id": "miro",
    "grade": "C",
    "reason": "0 critical, 1 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:47.981204+00:00",
+   "scanned_at": "2026-11-15T15:54:55.604618+00:00",
    "version": "1.0.11"
   },
   {
@@ -1668,7 +1668,7 @@
    "entry_id": "mixpanel",
    "grade": "C",
    "reason": "0 critical, 1 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:17.307889+00:00",
+   "scanned_at": "2026-11-15T15:54:25.940686+00:00",
    "version": "1.0.2"
   },
   {
@@ -1682,7 +1682,7 @@
    "entry_id": "monarch-money",
    "grade": "C",
    "reason": "6 critical, 56 high, 45 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:30:42.579804+00:00",
+   "scanned_at": "2026-11-15T15:57:15.977228+00:00",
    "version": ""
   },
   {
@@ -1694,7 +1694,7 @@
    "entry_id": "monday-com",
    "grade": "C",
    "reason": "0 critical, 12 high, 22 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:38.387616+00:00",
+   "scanned_at": "2026-11-15T15:55:43.932192+00:00",
    "version": "3.3.1"
   },
   {
@@ -1706,7 +1706,7 @@
    "entry_id": "mongodb",
    "grade": "C",
    "reason": "0 critical, 2 high, 4 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:47.300558+00:00",
+   "scanned_at": "2026-11-15T15:54:55.370500+00:00",
    "version": "3.3.0"
   },
   {
@@ -1718,7 +1718,7 @@
    "entry_id": "mongodb-atlas",
    "grade": "C",
    "reason": "0 critical, 2 high, 4 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:31:01.350861+00:00",
+   "scanned_at": "2026-11-15T15:56:53.963707+00:00",
    "version": "3.3.0"
   },
   {
@@ -1732,7 +1732,7 @@
    "entry_id": "myfitnesspal",
    "grade": "D",
    "reason": "2 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:31:27.149581+00:00",
+   "scanned_at": "2026-11-15T15:58:20.220531+00:00",
    "version": ""
   },
   {
@@ -1741,7 +1741,7 @@
    "entry_id": "mysql",
    "grade": "A",
    "reason": "clean across all scanners that ran, 31 package(s) checked; 3 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:56.642502+00:00",
+   "scanned_at": "2026-11-15T15:56:45.557617+00:00",
    "version": "0.4.5"
   },
   {
@@ -1754,7 +1754,7 @@
    "entry_id": "neo4j",
    "grade": "D",
    "reason": "3 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:29:56.345721+00:00",
+   "scanned_at": "2026-11-15T15:56:39.309949+00:00",
    "version": "0.6.0"
   },
   {
@@ -1769,7 +1769,7 @@
    "entry_id": "nest-protect",
    "grade": "D",
    "reason": "35 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:30:32.557907+00:00",
+   "scanned_at": "2026-11-15T15:56:51.894458+00:00",
    "version": "f066a3b25bda"
   },
   {
@@ -1782,7 +1782,7 @@
    "entry_id": "netlify",
    "grade": "C",
    "reason": "0 critical, 21 high, 8 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:57.322698+00:00",
+   "scanned_at": "2026-11-15T15:55:05.239913+00:00",
    "version": "1.21.0"
   },
   {
@@ -1797,7 +1797,7 @@
    "entry_id": "new-york-times",
    "grade": "C",
    "reason": "10 critical, 42 high, 47 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:30:43.229740+00:00",
+   "scanned_at": "2026-11-15T15:58:18.905828+00:00",
    "version": "af6ca850bc4b"
   },
   {
@@ -1806,7 +1806,7 @@
    "entry_id": "news-api-newsapi-org",
    "grade": "?",
    "reason": "not yet assessed: osv-scanner: Scanning dir <work-dir>\nNo package sources found, --help for usage information",
-   "scanned_at": "2026-11-15T15:28:52.602347+00:00",
+   "scanned_at": "2026-11-15T15:54:59.805637+00:00",
    "version": "388e3b00ce19"
   },
   {
@@ -1815,7 +1815,7 @@
    "entry_id": "newsapi-ai-eventregistry",
    "grade": "D",
    "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:31:58.232517+00:00",
+   "scanned_at": "2026-11-15T15:57:46.904882+00:00",
    "version": "2.3.0"
   },
   {
@@ -1829,7 +1829,7 @@
    "entry_id": "noaa-ncei-climate-archive",
    "grade": "C",
    "reason": "4 critical, 17 high, 19 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:31:28.558646+00:00",
+   "scanned_at": "2026-11-15T15:57:41.159540+00:00",
    "version": "ba38e524ae89653c6129cfbc8523415b3266a216"
   },
   {
@@ -1838,7 +1838,7 @@
    "entry_id": "notion",
    "grade": "D",
    "reason": "3 strong malicious-code signal(s): threat-process-download-exec, threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:29:34.389641+00:00",
+   "scanned_at": "2026-11-15T15:55:42.347877+00:00",
    "version": "2.6.1"
   },
   {
@@ -1847,7 +1847,7 @@
    "entry_id": "notion-databases",
    "grade": "D",
    "reason": "3 strong malicious-code signal(s): threat-process-download-exec, threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:28:35.417905+00:00",
+   "scanned_at": "2026-11-15T15:54:52.864139+00:00",
    "version": "2.6.1"
   },
   {
@@ -1858,7 +1858,7 @@
    "entry_id": "npm-registry",
    "grade": "D",
    "reason": "1 strong malicious-code signal(s): threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:28:53.972594+00:00",
+   "scanned_at": "2026-11-15T15:55:01.734228+00:00",
    "version": "2.1.0"
   },
   {
@@ -1867,7 +1867,7 @@
    "entry_id": "ntfy",
    "grade": "A",
    "reason": "clean across all scanners that ran, 37 package(s) checked; 3 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:28:30.209897+00:00",
+   "scanned_at": "2026-11-15T15:54:40.246437+00:00",
    "version": ""
   },
   {
@@ -1876,7 +1876,7 @@
    "entry_id": "nutritionix",
    "grade": "A",
    "reason": "clean across all scanners that ran, 46 package(s) checked",
-   "scanned_at": "2026-11-15T15:30:40.350668+00:00",
+   "scanned_at": "2026-11-15T15:57:58.454627+00:00",
    "version": "0.1.1"
   },
   {
@@ -1885,7 +1885,7 @@
    "entry_id": "obsidian",
    "grade": "A",
    "reason": "clean across all scanners that ran, 5 package(s) checked; 4 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:32.896658+00:00",
+   "scanned_at": "2026-11-15T15:55:41.840760+00:00",
    "version": "2.0.1"
   },
   {
@@ -1894,7 +1894,7 @@
    "entry_id": "onedrive",
    "grade": "A",
    "reason": "clean across all scanners that ran, 206 package(s) checked; 7 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:28:43.929917+00:00",
+   "scanned_at": "2026-11-15T15:54:52.161702+00:00",
    "version": "0.182.2"
   },
   {
@@ -1903,7 +1903,7 @@
    "entry_id": "open-meteo",
    "grade": "?",
    "reason": "not yet assessed: no repository to clone",
-   "scanned_at": "2026-11-15T15:31:10.478928+00:00",
+   "scanned_at": "2026-11-15T15:57:33.807001+00:00",
    "version": "0.6.1"
   },
   {
@@ -1912,7 +1912,7 @@
    "entry_id": "openai-api",
    "grade": "A",
    "reason": "clean across all scanners that ran, 68 package(s) checked; 1 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:40.858165+00:00",
+   "scanned_at": "2026-11-15T15:55:48.706253+00:00",
    "version": "0.1.4"
   },
   {
@@ -1927,7 +1927,7 @@
    "entry_id": "openstreetmap",
    "grade": "D",
    "reason": "3 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:31:42.129613+00:00",
+   "scanned_at": "2026-11-15T15:58:12.837576+00:00",
    "version": "v0.1.2"
   },
   {
@@ -1939,7 +1939,7 @@
    "entry_id": "openweathermap",
    "grade": "C",
    "reason": "0 critical, 2 high, 4 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:30:29.226608+00:00",
+   "scanned_at": "2026-11-15T15:56:40.936903+00:00",
    "version": "0.1.3"
   },
   {
@@ -1948,7 +1948,7 @@
    "entry_id": "oura",
    "grade": "A",
    "reason": "clean across all scanners that ran, 40 package(s) checked",
-   "scanned_at": "2026-11-15T15:30:33.670664+00:00",
+   "scanned_at": "2026-11-15T15:57:58.230587+00:00",
    "version": "0.1.3"
   },
   {
@@ -1957,7 +1957,7 @@
    "entry_id": "outlook",
    "grade": "?",
    "reason": "not yet assessed: uv resolve: error: No solution found when resolving dependencies\n  cause: Because pywin32>=306 has no wheels with a matc",
-   "scanned_at": "2026-11-15T15:29:44.401547+00:00",
+   "scanned_at": "2026-11-15T15:55:52.656659+00:00",
    "version": "0.1.1"
   },
   {
@@ -1970,7 +1970,7 @@
    "entry_id": "paypal",
    "grade": "C",
    "reason": "0 critical, 12 high, 8 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:20.707190+00:00",
+   "scanned_at": "2026-11-15T15:55:30.107399+00:00",
    "version": "1.8.1"
   },
   {
@@ -1979,7 +1979,7 @@
    "entry_id": "peloton",
    "grade": "A",
    "reason": "clean across all scanners that ran, 95 package(s) checked; 2 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:02.617029+00:00",
+   "scanned_at": "2026-11-15T15:55:10.017978+00:00",
    "version": "1.0.1"
   },
   {
@@ -1988,7 +1988,7 @@
    "entry_id": "penpot",
    "grade": "A",
    "reason": "clean across all scanners that ran, 56 package(s) checked; 3 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:31:35.849453+00:00",
+   "scanned_at": "2026-11-15T15:58:11.830761+00:00",
    "version": "0.1.2"
   },
   {
@@ -1999,7 +1999,7 @@
    "entry_id": "perplexity",
    "grade": "C",
    "reason": "0 critical, 1 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:40.899695+00:00",
+   "scanned_at": "2026-11-15T15:55:48.642144+00:00",
    "version": "1.3.0"
   },
   {
@@ -2010,7 +2010,7 @@
    "entry_id": "pexels",
    "grade": "C",
    "reason": "0 critical, 1 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:14.169604+00:00",
+   "scanned_at": "2026-11-15T15:54:22.302493+00:00",
    "version": "1.0.2"
   },
   {
@@ -2019,7 +2019,7 @@
    "entry_id": "pgvector",
    "grade": "A",
    "reason": "clean across all scanners that ran, 30 package(s) checked; 2 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:32:00.780542+00:00",
+   "scanned_at": "2026-11-15T15:58:14.412164+00:00",
    "version": ""
   },
   {
@@ -2031,7 +2031,7 @@
    "entry_id": "philips-hue",
    "grade": "C",
    "reason": "0 critical, 2 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:31:41.605117+00:00",
+   "scanned_at": "2026-11-15T15:58:09.858733+00:00",
    "version": "d4aafaf"
   },
   {
@@ -2042,16 +2042,16 @@
    "entry_id": "photoshop",
    "grade": "C",
    "reason": "0 critical, 3 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:30:30.240084+00:00",
+   "scanned_at": "2026-11-15T15:57:23.401202+00:00",
    "version": "0.1.14"
   },
   {
    "cve_counts": {},
    "ecosystem": "npm",
    "entry_id": "pinecone",
-   "grade": "?",
-   "reason": "partially scanned, not graded: osv-scanner: Scanning dir <work-dir>\nFailed to resolve gitignore for <work-dir>: Rel: can't ma",
-   "scanned_at": "2026-11-15T15:31:24.833836+00:00",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 94 package(s) checked",
+   "scanned_at": "2026-11-15T15:56:44.275862+00:00",
    "version": "0.4.0"
   },
   {
@@ -2065,7 +2065,7 @@
    "entry_id": "pipedrive",
    "grade": "D",
    "reason": "2 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:28:11.192877+00:00",
+   "scanned_at": "2026-11-15T15:54:20.099191+00:00",
    "version": "7ebefcf05f34"
   },
   {
@@ -2076,7 +2076,7 @@
    "entry_id": "plausible",
    "grade": "C",
    "reason": "0 critical, 1 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:19.110000+00:00",
+   "scanned_at": "2026-11-15T15:54:26.429520+00:00",
    "version": "0.1.1"
   },
   {
@@ -2085,7 +2085,7 @@
    "entry_id": "playwright",
    "grade": "A",
    "reason": "clean across all scanners that ran, 3 package(s) checked",
-   "scanned_at": "2026-11-15T15:29:40.472353+00:00",
+   "scanned_at": "2026-11-15T15:55:47.974434+00:00",
    "version": "0.0.85"
   },
   {
@@ -2100,7 +2100,7 @@
    "entry_id": "plex",
    "grade": "D",
    "reason": "5 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:31:36.829285+00:00",
+   "scanned_at": "2026-11-15T15:58:07.790354+00:00",
    "version": "1.5.0"
   },
   {
@@ -2109,7 +2109,7 @@
    "entry_id": "podcast-index",
    "grade": "A",
    "reason": "clean across all scanners that ran, 5 package(s) checked; 2 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:31:59.017988+00:00",
+   "scanned_at": "2026-11-15T15:57:33.403632+00:00",
    "version": "2.0.1"
   },
   {
@@ -2120,7 +2120,7 @@
    "entry_id": "posteverywhere-hub",
    "grade": "C",
    "reason": "0 critical, 1 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:31:36.676118+00:00",
+   "scanned_at": "2026-11-15T15:56:35.626291+00:00",
    "version": "1.14.2"
   },
   {
@@ -2129,7 +2129,7 @@
    "entry_id": "postgres",
    "grade": "?",
    "reason": "not yet assessed: uv resolve: error: No solution found when resolving dependencies\n  cause: Because there is no version of pglast==7.2.0 a",
-   "scanned_at": "2026-11-15T15:27:59.299531+00:00",
+   "scanned_at": "2026-11-15T15:54:07.775080+00:00",
    "version": "0.3.0"
   },
   {
@@ -2138,7 +2138,7 @@
    "entry_id": "posthog",
    "grade": "D",
    "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:28:20.721537+00:00",
+   "scanned_at": "2026-11-15T15:54:28.369831+00:00",
    "version": "0.16.5"
   },
   {
@@ -2152,7 +2152,7 @@
    "entry_id": "postman",
    "grade": "D",
    "reason": "6 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:28:56.256297+00:00",
+   "scanned_at": "2026-11-15T15:55:04.502226+00:00",
    "version": "2.15.0"
   },
   {
@@ -2164,7 +2164,7 @@
    "entry_id": "postmark",
    "grade": "C",
    "reason": "0 critical, 8 high, 6 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:09.731491+00:00",
+   "scanned_at": "2026-11-15T15:55:18.404458+00:00",
    "version": "2.1.1"
   },
   {
@@ -2173,7 +2173,7 @@
    "entry_id": "prometheus",
    "grade": "A",
    "reason": "clean across all scanners that ran, 67 package(s) checked; 2 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:30:41.292638+00:00",
+   "scanned_at": "2026-11-15T15:57:59.563979+00:00",
    "version": "1.6.2"
   },
   {
@@ -2182,7 +2182,7 @@
    "entry_id": "pubmed",
    "grade": "?",
    "reason": "not yet assessed: osv-scanner: Scanning dir <work-dir>\nNo package sources found, --help for usage information.",
-   "scanned_at": "2026-11-15T15:30:49.304197+00:00",
+   "scanned_at": "2026-11-15T15:57:24.185702+00:00",
    "version": ""
   },
   {
@@ -2194,7 +2194,7 @@
    "entry_id": "puppeteer",
    "grade": "C",
    "reason": "0 critical, 10 high, 6 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:26.461509+00:00",
+   "scanned_at": "2026-11-15T15:54:22.262924+00:00",
    "version": "2025.5.12"
   },
   {
@@ -2203,16 +2203,16 @@
    "entry_id": "pushover",
    "grade": "A",
    "reason": "clean across all scanners that ran, 7 package(s) checked; 2 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:28:30.485038+00:00",
+   "scanned_at": "2026-11-15T15:54:38.539837+00:00",
    "version": "2.0.0"
   },
   {
    "cve_counts": {},
    "ecosystem": "pypi",
    "entry_id": "pypi",
-   "grade": "?",
-   "reason": "partially scanned, not graded: osv-scanner: Scanning dir <work-dir>\nFailed to resolve gitignore for <work-dir>: Rel: can't make /work",
-   "scanned_at": "2026-11-15T15:31:09.778059+00:00",
+   "grade": "A",
+   "reason": "clean across all scanners that ran, 74 package(s) checked; 5 capability note(s) listed, none concerning",
+   "scanned_at": "2026-11-15T15:57:49.097179+00:00",
    "version": "4.0.1"
   },
   {
@@ -2225,7 +2225,7 @@
    "entry_id": "qdrant",
    "grade": "D",
    "reason": "3 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:31:38.755455+00:00",
+   "scanned_at": "2026-11-15T15:58:14.058754+00:00",
    "version": "0.8.1"
   },
   {
@@ -2239,7 +2239,7 @@
    "entry_id": "quickbooks-online",
    "grade": "D",
    "reason": "4 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:31:39.277311+00:00",
+   "scanned_at": "2026-11-15T15:58:07.270417+00:00",
    "version": ""
   },
   {
@@ -2252,7 +2252,7 @@
    "entry_id": "railway",
    "grade": "D",
    "reason": "2 critical CVE(s) with a fix available; 1 strong malicious-code signal(s): threat-process-download-exec",
-   "scanned_at": "2026-11-15T15:32:04.756098+00:00",
+   "scanned_at": "2026-11-15T15:58:11.752987+00:00",
    "version": "5.71.0"
   },
   {
@@ -2261,7 +2261,7 @@
    "entry_id": "raindrop",
    "grade": "D",
    "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:29:33.488030+00:00",
+   "scanned_at": "2026-11-15T15:55:42.220742+00:00",
    "version": "0.16.6"
   },
   {
@@ -2270,7 +2270,7 @@
    "entry_id": "rakuten",
    "grade": "D",
    "reason": "1 strong malicious-code signal(s): threat-runtime-obfuscation",
-   "scanned_at": "2026-11-15T15:29:56.014284+00:00",
+   "scanned_at": "2026-11-15T15:56:03.502252+00:00",
    "version": "1.3.0"
   },
   {
@@ -2284,7 +2284,7 @@
    "entry_id": "ramp",
    "grade": "C",
    "reason": "6 critical, 16 high, 14 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:30:44.311883+00:00",
+   "scanned_at": "2026-11-15T15:57:22.541680+00:00",
    "version": "b31c0b4"
   },
   {
@@ -2293,7 +2293,7 @@
    "entry_id": "readwise",
    "grade": "D",
    "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:29:34.888920+00:00",
+   "scanned_at": "2026-11-15T15:55:43.000515+00:00",
    "version": "0.16.6"
   },
   {
@@ -2302,7 +2302,7 @@
    "entry_id": "readwise-reader",
    "grade": "D",
    "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:29:13.703342+00:00",
+   "scanned_at": "2026-11-15T15:55:21.223379+00:00",
    "version": "0.16.6"
   },
   {
@@ -2311,7 +2311,7 @@
    "entry_id": "reddit",
    "grade": "A",
    "reason": "clean across all scanners that ran, 30 package(s) checked; 2 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:32:04.592966+00:00",
+   "scanned_at": "2026-11-15T15:58:11.810154+00:00",
    "version": "0.2.1"
   },
   {
@@ -2320,7 +2320,7 @@
    "entry_id": "redis",
    "grade": "A",
    "reason": "clean across all scanners that ran, 54 package(s) checked; 1 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:28:18.992104+00:00",
+   "scanned_at": "2026-11-15T15:54:26.612370+00:00",
    "version": "0.5.1"
   },
   {
@@ -2329,7 +2329,7 @@
    "entry_id": "redis-stack",
    "grade": "?",
    "reason": "not yet assessed: no repository to clone",
-   "scanned_at": "2026-11-15T15:31:22.750359+00:00",
+   "scanned_at": "2026-11-15T15:57:41.492251+00:00",
    "version": ""
   },
   {
@@ -2338,7 +2338,7 @@
    "entry_id": "reminders-macos",
    "grade": "A",
    "reason": "clean across all scanners that ran, 115 package(s) checked; 9 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:37.290669+00:00",
+   "scanned_at": "2026-11-15T15:55:44.737135+00:00",
    "version": "1.6.2"
   },
   {
@@ -2349,7 +2349,7 @@
    "entry_id": "replicate",
    "grade": "C",
    "reason": "0 critical, 1 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:15.165880+00:00",
+   "scanned_at": "2026-11-15T15:54:22.897295+00:00",
    "version": "0.9.0"
   },
   {
@@ -2361,7 +2361,7 @@
    "entry_id": "resend",
    "grade": "C",
    "reason": "0 critical, 7 high, 6 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:13.999583+00:00",
+   "scanned_at": "2026-11-15T15:55:20.368888+00:00",
    "version": "2.28.1"
   },
   {
@@ -2372,7 +2372,7 @@
    "entry_id": "revolut-business",
    "grade": "C",
    "reason": "0 critical, 1 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:17.848755+00:00",
+   "scanned_at": "2026-11-15T15:55:26.063543+00:00",
    "version": "0.1.6"
   },
   {
@@ -2381,7 +2381,7 @@
    "entry_id": "ring",
    "grade": "?",
    "reason": "not yet assessed: git clone: fatal: could not read Username for 'https://github.com': No such device or address",
-   "scanned_at": "2026-11-15T15:31:27.356580+00:00",
+   "scanned_at": "2026-11-15T15:58:00.203666+00:00",
    "version": ""
   },
   {
@@ -2393,7 +2393,7 @@
    "entry_id": "roam-research",
    "grade": "C",
    "reason": "0 critical, 11 high, 6 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:36.838586+00:00",
+   "scanned_at": "2026-11-15T15:55:45.536163+00:00",
    "version": "5.1.0"
   },
   {
@@ -2402,7 +2402,7 @@
    "entry_id": "robinhood",
    "grade": "?",
    "reason": "not yet assessed: no repository to clone",
-   "scanned_at": "2026-11-15T15:30:42.580227+00:00",
+   "scanned_at": "2026-11-15T15:57:19.030202+00:00",
    "version": ""
   },
   {
@@ -2417,7 +2417,7 @@
    "entry_id": "rocket-chat",
    "grade": "D",
    "reason": "1 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:31:36.892685+00:00",
+   "scanned_at": "2026-11-15T15:58:02.624080+00:00",
    "version": "ghcr.io/enyonee/rocketchat-mcp:latest"
   },
   {
@@ -2430,7 +2430,7 @@
    "entry_id": "rss-atom-json-feed-generic",
    "grade": "C",
    "reason": "0 critical, 6 high, 5 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:31:39.984622+00:00",
+   "scanned_at": "2026-11-15T15:58:09.874678+00:00",
    "version": "v1.8.0"
   },
   {
@@ -2444,7 +2444,7 @@
    "entry_id": "salesforce-dx",
    "grade": "D",
    "reason": "2 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:28:44.580509+00:00",
+   "scanned_at": "2026-11-15T15:54:50.650191+00:00",
    "version": "0.30.15"
   },
   {
@@ -2458,7 +2458,7 @@
    "entry_id": "samsung-smartthings",
    "grade": "C",
    "reason": "4 critical, 31 high, 23 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:30:31.105929+00:00",
+   "scanned_at": "2026-11-15T15:56:47.509911+00:00",
    "version": ""
   },
   {
@@ -2472,7 +2472,7 @@
    "entry_id": "sendgrid",
    "grade": "D",
    "reason": "2 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:28:52.297299+00:00",
+   "scanned_at": "2026-11-15T15:54:59.680147+00:00",
    "version": "aafb827"
   },
   {
@@ -2481,7 +2481,7 @@
    "entry_id": "sentry",
    "grade": "D",
    "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:31:22.749969+00:00",
+   "scanned_at": "2026-11-15T15:57:44.430786+00:00",
    "version": "0.49.0"
   },
   {
@@ -2490,7 +2490,7 @@
    "entry_id": "sequential-thinking",
    "grade": "A",
    "reason": "clean across all scanners that ran, 5 package(s) checked; 1 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:28:06.870639+00:00",
+   "scanned_at": "2026-11-15T15:54:15.880434+00:00",
    "version": "2.1.1"
   },
   {
@@ -2499,7 +2499,7 @@
    "entry_id": "servicenow",
    "grade": "A",
    "reason": "clean across all scanners that ran, 65 package(s) checked",
-   "scanned_at": "2026-11-15T15:29:54.546678+00:00",
+   "scanned_at": "2026-11-15T15:55:53.222415+00:00",
    "version": "0.1.1"
   },
   {
@@ -2511,7 +2511,7 @@
    "entry_id": "shell",
    "grade": "C",
    "reason": "0 critical, 2 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:27:58.671235+00:00",
+   "scanned_at": "2026-11-15T15:54:07.170081+00:00",
    "version": "v1.1.1"
   },
   {
@@ -2520,7 +2520,7 @@
    "entry_id": "signal",
    "grade": "?",
    "reason": "not yet assessed: osv-scanner: Scanning dir <work-dir>\nNo package sources found, --help for usage information.",
-   "scanned_at": "2026-11-15T15:29:42.887987+00:00",
+   "scanned_at": "2026-11-15T15:55:50.966512+00:00",
    "version": "3c5c82bdd63c"
   },
   {
@@ -2532,7 +2532,7 @@
    "entry_id": "slack",
    "grade": "C",
    "reason": "0 critical, 3 high, 2 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:08.721687+00:00",
+   "scanned_at": "2026-11-15T15:54:18.842164+00:00",
    "version": "2025.4.25"
   },
   {
@@ -2546,7 +2546,7 @@
    "entry_id": "snowflake-1",
    "grade": "D",
    "reason": "7 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:30:03.445014+00:00",
+   "scanned_at": "2026-11-15T15:56:44.854138+00:00",
    "version": "1.4.2"
   },
   {
@@ -2560,7 +2560,7 @@
    "entry_id": "sonos-1",
    "grade": "C",
    "reason": "5 critical, 17 high, 14 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:30:36.043547+00:00",
+   "scanned_at": "2026-11-15T15:58:17.966890+00:00",
    "version": "d2a532d3277c"
   },
   {
@@ -2571,7 +2571,7 @@
    "entry_id": "sourcegraph",
    "grade": "C",
    "reason": "0 critical, 1 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:54.521220+00:00",
+   "scanned_at": "2026-11-15T15:55:02.093041+00:00",
    "version": "1.4.2"
   },
   {
@@ -2580,7 +2580,7 @@
    "entry_id": "splitwise",
    "grade": "?",
    "reason": "not yet assessed: osv-scanner: Scanning dir <work-dir>\nNo package sources found, --help for usage information.",
-   "scanned_at": "2026-11-15T15:30:43.572867+00:00",
+   "scanned_at": "2026-11-15T15:57:58.885560+00:00",
    "version": "b171aa9"
   },
   {
@@ -2591,7 +2591,7 @@
    "entry_id": "spotify",
    "grade": "C",
    "reason": "0 critical, 0 high, 4 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:31:35.966866+00:00",
+   "scanned_at": "2026-11-15T15:58:06.131432+00:00",
    "version": ""
   },
   {
@@ -2600,7 +2600,7 @@
    "entry_id": "sqlite",
    "grade": "A",
    "reason": "clean across all scanners that ran, 37 package(s) checked",
-   "scanned_at": "2026-11-15T15:27:59.296790+00:00",
+   "scanned_at": "2026-11-15T15:54:07.690067+00:00",
    "version": "2025.4.25"
   },
   {
@@ -2611,7 +2611,7 @@
    "entry_id": "square",
    "grade": "C",
    "reason": "0 critical, 1 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:57.768279+00:00",
+   "scanned_at": "2026-11-15T15:57:09.337621+00:00",
    "version": "0.1.2"
   },
   {
@@ -2623,7 +2623,7 @@
    "entry_id": "stability-ai",
    "grade": "D",
    "reason": "1 strong malicious-code signal(s): threat-process-download-exec",
-   "scanned_at": "2026-11-15T15:28:20.187041+00:00",
+   "scanned_at": "2026-11-15T15:54:27.430961+00:00",
    "version": "0.2.0"
   },
   {
@@ -2632,7 +2632,7 @@
    "entry_id": "statsig",
    "grade": "A",
    "reason": "clean across all scanners that ran, 34 package(s) checked; 1 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:43.357724+00:00",
+   "scanned_at": "2026-11-15T15:55:51.652928+00:00",
    "version": "1.0.0"
   },
   {
@@ -2646,7 +2646,7 @@
    "entry_id": "steam",
    "grade": "D",
    "reason": "3 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:31:39.194926+00:00",
+   "scanned_at": "2026-11-15T15:58:05.348633+00:00",
    "version": "ghcr.io/dsp/mcp-server-steam:0.2.2"
   },
   {
@@ -2657,7 +2657,7 @@
    "entry_id": "strava",
    "grade": "C",
    "reason": "0 critical, 1 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:02.380341+00:00",
+   "scanned_at": "2026-11-15T15:55:11.798154+00:00",
    "version": "1.2.1"
   },
   {
@@ -2666,7 +2666,7 @@
    "entry_id": "stripe",
    "grade": "A",
    "reason": "clean across all scanners that ran, 94 package(s) checked; 1 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:17.399076+00:00",
+   "scanned_at": "2026-11-15T15:55:26.416436+00:00",
    "version": "0.3.4"
   },
   {
@@ -2678,7 +2678,7 @@
    "entry_id": "substack",
    "grade": "C",
    "reason": "0 critical, 8 high, 4 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:13.902003+00:00",
+   "scanned_at": "2026-11-15T15:55:22.133969+00:00",
    "version": "1.3.2"
   },
   {
@@ -2687,7 +2687,7 @@
    "entry_id": "supabase",
    "grade": "A",
    "reason": "clean across all scanners that ran, 78 package(s) checked; 4 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:30:30.591222+00:00",
+   "scanned_at": "2026-11-15T15:58:09.805550+00:00",
    "version": "0.4"
   },
   {
@@ -2696,7 +2696,7 @@
    "entry_id": "tableau",
    "grade": "D",
    "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:28:22.162949+00:00",
+   "scanned_at": "2026-11-15T15:54:29.394386+00:00",
    "version": "0.16.6"
   },
   {
@@ -2707,7 +2707,7 @@
    "entry_id": "tableau-self-hosted",
    "grade": "D",
    "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:28:26.496348+00:00",
+   "scanned_at": "2026-11-15T15:54:34.167406+00:00",
    "version": "6.0.4"
   },
   {
@@ -2719,7 +2719,7 @@
    "entry_id": "tavily",
    "grade": "C",
    "reason": "0 critical, 7 high, 6 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:41.861002+00:00",
+   "scanned_at": "2026-11-15T15:55:49.845964+00:00",
    "version": "0.2.22"
   },
   {
@@ -2733,7 +2733,7 @@
    "entry_id": "telegram",
    "grade": "C",
    "reason": "14 critical, 35 high, 37 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:31:41.494951+00:00",
+   "scanned_at": "2026-11-15T15:58:12.481521+00:00",
    "version": "52d7991146a5"
   },
   {
@@ -2744,7 +2744,7 @@
    "entry_id": "terraform",
    "grade": "B",
    "reason": "0 medium, 2 low CVE(s) only",
-   "scanned_at": "2026-11-15T15:27:58.823875+00:00",
+   "scanned_at": "2026-11-15T15:54:07.298013+00:00",
    "version": "v1.4.1"
   },
   {
@@ -2758,7 +2758,7 @@
    "entry_id": "tesla",
    "grade": "D",
    "reason": "15 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:31:41.645520+00:00",
+   "scanned_at": "2026-11-15T15:58:12.669543+00:00",
    "version": ""
   },
   {
@@ -2772,7 +2772,7 @@
    "entry_id": "tiktok",
    "grade": "D",
    "reason": "2 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:29:27.832036+00:00",
+   "scanned_at": "2026-11-15T15:55:37.301769+00:00",
    "version": "7b98fd6"
   },
   {
@@ -2781,7 +2781,7 @@
    "entry_id": "time",
    "grade": "A",
    "reason": "clean across all scanners that ran, 31 package(s) checked",
-   "scanned_at": "2026-11-15T15:27:59.169739+00:00",
+   "scanned_at": "2026-11-15T15:54:07.665746+00:00",
    "version": "2026.11.11"
   },
   {
@@ -2795,7 +2795,7 @@
    "entry_id": "tl-dv-hub",
    "grade": "D",
    "reason": "4 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:28:05.977286+00:00",
+   "scanned_at": "2026-11-15T15:54:15.729218+00:00",
    "version": "846483e2f7c4"
   },
   {
@@ -2807,7 +2807,7 @@
    "entry_id": "todoist",
    "grade": "C",
    "reason": "0 critical, 4 high, 3 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:39.460066+00:00",
+   "scanned_at": "2026-11-15T15:55:46.903292+00:00",
    "version": "0.2.5"
   },
   {
@@ -2816,7 +2816,7 @@
    "entry_id": "toggl",
    "grade": "A",
    "reason": "clean across all scanners that ran, 35 package(s) checked; 1 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:13.395657+00:00",
+   "scanned_at": "2026-11-15T15:55:21.657836+00:00",
    "version": "0.1.8.2"
   },
   {
@@ -2825,7 +2825,7 @@
    "entry_id": "tp-link-kasa",
    "grade": "A",
    "reason": "clean across all scanners that ran, 105 package(s) checked; 1 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:06.695349+00:00",
+   "scanned_at": "2026-11-15T15:55:15.053057+00:00",
    "version": "0.2.0"
   },
   {
@@ -2836,7 +2836,7 @@
    "entry_id": "trello",
    "grade": "D",
    "reason": "1 strong malicious-code signal(s): threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:29:38.950786+00:00",
+   "scanned_at": "2026-11-15T15:55:46.416659+00:00",
    "version": "1.8.1"
   },
   {
@@ -2847,7 +2847,7 @@
    "entry_id": "tripit",
    "grade": "C",
    "reason": "0 critical, 1 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:30:30.860174+00:00",
+   "scanned_at": "2026-11-15T15:56:42.058028+00:00",
    "version": "0.3.1"
   },
   {
@@ -2859,7 +2859,7 @@
    "entry_id": "turbopuffer",
    "grade": "C",
    "reason": "0 critical, 1 high, 2 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:30:57.764508+00:00",
+   "scanned_at": "2026-11-15T15:57:08.063021+00:00",
    "version": "2.7.0"
   },
   {
@@ -2868,7 +2868,7 @@
    "entry_id": "turso-libsql",
    "grade": "A",
    "reason": "clean across all scanners that ran, 40 package(s) checked; 3 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:28:45.606820+00:00",
+   "scanned_at": "2026-11-15T15:54:53.931509+00:00",
    "version": "0.0.11"
   },
   {
@@ -2882,7 +2882,7 @@
    "entry_id": "twilio-sms",
    "grade": "D",
    "reason": "5 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:29:55.452906+00:00",
+   "scanned_at": "2026-11-15T15:55:52.917778+00:00",
    "version": "5bff3758bd6c"
   },
   {
@@ -2891,7 +2891,7 @@
    "entry_id": "typesense",
    "grade": "A",
    "reason": "clean across all scanners that ran, 110 package(s) checked; 1 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:31:57.468432+00:00",
+   "scanned_at": "2026-11-15T15:57:08.442677+00:00",
    "version": "1.1.0"
   },
   {
@@ -2902,7 +2902,7 @@
    "entry_id": "uber",
    "grade": "C",
    "reason": "0 critical, 1 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:30:31.373516+00:00",
+   "scanned_at": "2026-11-15T15:56:41.194019+00:00",
    "version": "1.0.2"
   },
   {
@@ -2911,7 +2911,7 @@
    "entry_id": "uber-eats",
    "grade": "A",
    "reason": "clean across all scanners that ran, 6 package(s) checked",
-   "scanned_at": "2026-11-15T15:31:59.591408+00:00",
+   "scanned_at": "2026-11-15T15:57:48.162175+00:00",
    "version": "0.2.1"
   },
   {
@@ -2920,7 +2920,7 @@
    "entry_id": "umami",
    "grade": "A",
    "reason": "clean across all scanners that ran, 93 package(s) checked; 3 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:28:23.828776+00:00",
+   "scanned_at": "2026-11-15T15:54:30.211661+00:00",
    "version": "1.1.0"
   },
   {
@@ -2929,7 +2929,7 @@
    "entry_id": "unity",
    "grade": "?",
    "reason": "not yet assessed: no repository to clone",
-   "scanned_at": "2026-11-15T15:29:57.387954+00:00",
+   "scanned_at": "2026-11-15T15:56:22.518685+00:00",
    "version": ""
   },
   {
@@ -2938,7 +2938,7 @@
    "entry_id": "unsplash",
    "grade": "A",
    "reason": "clean across all scanners that ran, 93 package(s) checked; 3 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:28:15.817949+00:00",
+   "scanned_at": "2026-11-15T15:54:24.426846+00:00",
    "version": "1.0.2"
   },
   {
@@ -2951,7 +2951,7 @@
    "entry_id": "vercel",
    "grade": "C",
    "reason": "0 critical, 3 high, 2 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:32.241543+00:00",
+   "scanned_at": "2026-11-15T15:54:39.763029+00:00",
    "version": ""
   },
   {
@@ -2965,7 +2965,7 @@
    "entry_id": "wahoo-systm",
    "grade": "C",
    "reason": "19 critical, 56 high, 72 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:30:14.217221+00:00",
+   "scanned_at": "2026-11-15T15:56:44.403862+00:00",
    "version": "773ad0d73866"
   },
   {
@@ -2979,7 +2979,7 @@
    "entry_id": "walmart",
    "grade": "D",
    "reason": "5 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:29:23.158105+00:00",
+   "scanned_at": "2026-11-15T15:55:31.418512+00:00",
    "version": ""
   },
   {
@@ -2988,16 +2988,16 @@
    "entry_id": "waze",
    "grade": "?",
    "reason": "not yet assessed: osv-scanner: Scanning dir <work-dir>\nNo package sources found, --help for usage information.",
-   "scanned_at": "2026-11-15T15:31:39.268090+00:00",
+   "scanned_at": "2026-11-15T15:58:05.923305+00:00",
    "version": ""
   },
   {
    "cve_counts": {},
    "ecosystem": "npm",
    "entry_id": "weather-gov-noaa-weather-mcp",
-   "grade": "A",
-   "reason": "clean across all scanners that ran, 159 package(s) checked; 7 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:30:46.334357+00:00",
+   "grade": "?",
+   "reason": "partially scanned, not graded: osv-scanner: Scanning dir <work-dir>\nFailed to resolve gitignore for <work-dir>",
+   "scanned_at": "2026-11-15T15:56:47.510708+00:00",
    "version": "1.35.12"
   },
   {
@@ -3006,7 +3006,7 @@
    "entry_id": "weaviate",
    "grade": "D",
    "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:31:38.939440+00:00",
+   "scanned_at": "2026-11-15T15:57:19.029703+00:00",
    "version": "0.16.6"
   },
   {
@@ -3015,7 +3015,7 @@
    "entry_id": "weibo",
    "grade": "A",
    "reason": "clean across all scanners that ran, 66 package(s) checked; 1 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:31:36.861135+00:00",
+   "scanned_at": "2026-11-15T15:58:13.127124+00:00",
    "version": "1.3.4"
   },
   {
@@ -3030,7 +3030,7 @@
    "entry_id": "whatsapp",
    "grade": "C",
    "reason": "20 critical, 50 high, 60 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:48.080484+00:00",
+   "scanned_at": "2026-11-15T15:55:53.116496+00:00",
    "version": "7d6a06dcdce1"
   },
   {
@@ -3039,7 +3039,7 @@
    "entry_id": "whisper-local-whisper-cpp",
    "grade": "A",
    "reason": "clean across all scanners that ran, 63 package(s) checked; 1 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:28:01.159357+00:00",
+   "scanned_at": "2026-11-15T15:54:09.557757+00:00",
    "version": "1.1.3"
   },
   {
@@ -3050,7 +3050,7 @@
    "entry_id": "whoop",
    "grade": "C",
    "reason": "0 critical, 1 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:31:49.473943+00:00",
+   "scanned_at": "2026-11-15T15:57:22.351773+00:00",
    "version": "0.0.5"
   },
   {
@@ -3059,7 +3059,7 @@
    "entry_id": "wikipedia",
    "grade": "A",
    "reason": "clean across all scanners that ran, 37 package(s) checked; 1 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:42.505799+00:00",
+   "scanned_at": "2026-11-15T15:55:50.753762+00:00",
    "version": "0.3.1"
   },
   {
@@ -3074,7 +3074,7 @@
    "entry_id": "wise",
    "grade": "C",
    "reason": "16 critical, 57 high, 49 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:31:10.478684+00:00",
+   "scanned_at": "2026-11-15T15:57:23.795293+00:00",
    "version": "71615eb"
   },
   {
@@ -3088,7 +3088,7 @@
    "entry_id": "withings",
    "grade": "C",
    "reason": "1 critical, 44 high, 38 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:48.768158+00:00",
+   "scanned_at": "2026-11-15T15:54:54.376891+00:00",
    "version": "e18650965463"
   },
   {
@@ -3097,7 +3097,7 @@
    "entry_id": "wolfram-alpha",
    "grade": "A",
    "reason": "clean across all scanners that ran, 37 package(s) checked; 1 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:31:35.254027+00:00",
+   "scanned_at": "2026-11-15T15:58:11.535801+00:00",
    "version": "0.2.1"
   },
   {
@@ -3111,7 +3111,7 @@
    "entry_id": "woocommerce",
    "grade": "D",
    "reason": "2 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:29:23.365886+00:00",
+   "scanned_at": "2026-11-15T15:55:31.779874+00:00",
    "version": ""
   },
   {
@@ -3122,7 +3122,7 @@
    "entry_id": "world-news-api",
    "grade": "C",
    "reason": "0 critical, 1 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:31:58.014554+00:00",
+   "scanned_at": "2026-11-15T15:57:41.491901+00:00",
    "version": "1.0.0"
   },
   {
@@ -3133,7 +3133,7 @@
    "entry_id": "x-twitter",
    "grade": "C",
    "reason": "0 critical, 1 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:30:11.757006+00:00",
+   "scanned_at": "2026-11-15T15:56:37.516736+00:00",
    "version": "0.1.1"
   },
   {
@@ -3144,7 +3144,7 @@
    "entry_id": "xero",
    "grade": "C",
    "reason": "0 critical, 1 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:28.807435+00:00",
+   "scanned_at": "2026-11-15T15:55:37.551772+00:00",
    "version": "0.0.18"
   },
   {
@@ -3153,7 +3153,7 @@
    "entry_id": "xiaomi-mi-home",
    "grade": "?",
    "reason": "not yet assessed: osv-scanner: Scanning dir <work-dir>\nNo package sources found, --help for usage information.",
-   "scanned_at": "2026-11-15T15:31:39.387549+00:00",
+   "scanned_at": "2026-11-15T15:58:11.360475+00:00",
    "version": ""
   },
   {
@@ -3162,7 +3162,7 @@
    "entry_id": "ynab",
    "grade": "A",
    "reason": "clean across all scanners that ran, 102 package(s) checked; 4 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:29:19.348030+00:00",
+   "scanned_at": "2026-11-15T15:55:28.178695+00:00",
    "version": "0.8.0"
   },
   {
@@ -3173,7 +3173,7 @@
    "entry_id": "youtube-1",
    "grade": "C",
    "reason": "0 critical, 0 high, 4 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:30:29.112683+00:00",
+   "scanned_at": "2026-11-15T15:56:39.202612+00:00",
    "version": "1.0.2"
   },
   {
@@ -3182,7 +3182,7 @@
    "entry_id": "zapier-hub",
    "grade": "D",
    "reason": "2 strong malicious-code signal(s): threat-runtime-obfuscation, threat-runtime-obfuscation-base64exec",
-   "scanned_at": "2026-11-15T15:29:24.003547+00:00",
+   "scanned_at": "2026-11-15T15:55:17.748392+00:00",
    "version": "0.16.6"
   },
   {
@@ -3196,7 +3196,7 @@
    "entry_id": "zendesk",
    "grade": "C",
    "reason": "6 critical, 29 high, 31 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:56.000543+00:00",
+   "scanned_at": "2026-11-15T15:55:53.418711+00:00",
    "version": "806d1ca734b4"
   },
   {
@@ -3207,7 +3207,7 @@
    "entry_id": "zeplin",
    "grade": "C",
    "reason": "0 critical, 1 high, 0 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:28:49.014574+00:00",
+   "scanned_at": "2026-11-15T15:54:56.785267+00:00",
    "version": "1.0.6"
   },
   {
@@ -3216,7 +3216,7 @@
    "entry_id": "zilliz-cloud",
    "grade": "A",
    "reason": "clean across all scanners that ran, 66 package(s) checked; 4 capability note(s) listed, none concerning",
-   "scanned_at": "2026-11-15T15:31:45.099030+00:00",
+   "scanned_at": "2026-11-15T15:58:13.994809+00:00",
    "version": "1.0.0"
   },
   {
@@ -3228,7 +3228,7 @@
    "entry_id": "zoho-crm",
    "grade": "C",
    "reason": "0 critical, 11 high, 8 medium CVE(s)",
-   "scanned_at": "2026-11-15T15:29:55.821923+00:00",
+   "scanned_at": "2026-11-15T15:55:52.920455+00:00",
    "version": "c34151723df2"
   },
   {
@@ -3242,7 +3242,7 @@
    "entry_id": "zoom",
    "grade": "D",
    "reason": "4 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:28:07.845383+00:00",
+   "scanned_at": "2026-11-15T15:54:17.704559+00:00",
    "version": "771471e48c5a"
   },
   {
@@ -3251,7 +3251,7 @@
    "entry_id": "zulip",
    "grade": "?",
    "reason": "not yet assessed: osv-scanner: Scanning dir <work-dir>\nNo package sources found, --help for usage information.",
-   "scanned_at": "2026-11-15T15:29:43.585648+00:00",
+   "scanned_at": "2026-11-15T15:55:51.357830+00:00",
    "version": "72327e76a54a"
   },
   {
@@ -3265,19 +3265,39 @@
    "entry_id": "zwift-workout-generator",
    "grade": "D",
    "reason": "2 critical CVE(s) with a fix available",
-   "scanned_at": "2026-11-15T15:31:27.911697+00:00",
+   "scanned_at": "2026-11-15T15:58:01.783721+00:00",
    "version": ""
   }
  ],
  "meta": {
   "connectors": 300,
-  "generated_at": "2026-11-15T15:49:04+00:00",
+  "generated_at": "2026-11-15T16:08:28+00:00",
   "grade_counts": {
-   "?": 32,
-   "A": 84,
+   "?": 31,
+   "A": 85,
    "B": 4,
    "C": 106,
    "D": 74
+  },
+  "scanner": {
+   "databases": {
+    "trivy-db": {
+     "DownloadedAt": "2026-11-15T15:06:40.373252062Z",
+     "UpdatedAt": "2026-11-15T12:50:30.599818283Z",
+     "Version": 2
+    },
+    "trivy-java-db": {
+     "DownloadedAt": "2026-11-15T15:25:04.909825164Z",
+     "UpdatedAt": "2026-11-15T00:58:42.478589736Z",
+     "Version": 1
+    }
+   },
+   "tools": {
+    "guarddog": "3.2.0",
+    "osv-scanner": "2.0.0",
+    "trivy": "0.58.1",
+    "uv": "0.13.8"
+   }
   }
  }
 }
