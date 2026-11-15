@@ -4,6 +4,6 @@ After=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/proj/mcp-connectors-scanner/deploy/sweep-once.sh
+ExecStart=@REPO@/deploy/sweep-once.sh
 TimeoutStartSec=3h
 Nice=10

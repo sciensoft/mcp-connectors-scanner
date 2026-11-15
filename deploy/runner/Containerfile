@@ -1,0 +1,41 @@
+# Self-hosted GitHub Actions runner for the nightly publish job.
+#
+# Deliberately NOT the stock runner image: no sudo, no docker group, no container
+# engine inside. The job only needs python3, git, curl and the gh CLI to read the
+# scanner's read-only API and publish results. If a job were ever compromised, it
+# would hold a repository-scoped token and nothing else on this machine.
+#
+# The runner tarball is checked against the SHA-256 that GitHub publishes for the
+# release; the build fails on any mismatch.
+
+FROM docker.io/library/ubuntu:24.04
+
+ARG RUNNER_VERSION
+ARG RUNNER_SHA256
+
+ENV DEBIAN_FRONTEND=noninteractive \
+    ACTIONS_RUNNER_PRINT_LOG_TO_STDOUT=1 \
+    RUNNER_MANUALLY_TRAP_SIG=1
+
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends ca-certificates curl git jq python3 python3-yaml tar gzip libicu74 \
+ && rm -rf /var/lib/apt/lists/*
+
+# GitHub CLI from its own apt repository, signed key pinned by the keyring file.
+RUN install -d -m 0755 /etc/apt/keyrings \
+ && curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg -o /etc/apt/keyrings/githubcli-archive-keyring.gpg \
+ && echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" > /etc/apt/sources.list.d/github-cli.list \
+ && apt-get update && apt-get install -y --no-install-recommends gh \
+ && rm -rf /var/lib/apt/lists/*
+
+RUN useradd --create-home --uid 10003 --shell /usr/sbin/nologin runner
+WORKDIR /home/runner/actions-runner
+
+RUN curl -fsSL -o runner.tar.gz "https://github.com/actions/runner/releases/download/v${RUNNER_VERSION}/actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz" \
+ && echo "${RUNNER_SHA256}  runner.tar.gz" | sha256sum -c - \
+ && tar xzf runner.tar.gz && rm runner.tar.gz \
+ && chown -R runner:runner /home/runner
+
+USER runner
+COPY --chown=runner:runner entrypoint.sh /home/runner/entrypoint.sh
+ENTRYPOINT ["/home/runner/entrypoint.sh"]

@@ -11,7 +11,7 @@
 
 set -euo pipefail
 
-ENV_FILE="${SCANNER_ENV_FILE:-/proj/mcp-connectors/.env.scanner}"
+ENV_FILE="${SCANNER_ENV_FILE:-$(dirname "$0")/../.env}"
 IMAGE="${SCANNER_IMAGE:-localhost/mcp-connectors-scanner:latest}"
 NETWORK="${SCANNER_NETWORK:-mcpc_vnet}"
 NAME="mcpc-scanner-sweep"
