@@ -107,8 +107,13 @@ def _add_package(f: Findings, name: str, version: str, source: str) -> None:
 
 
 def _trivy(path, f: Findings, mode="fs"):
+    # --skip-db-update and --skip-java-db-update: both databases are downloaded once by
+    # prepare_databases() before
+    # any worker starts. Letting each worker update them raced, and a burst of parallel
+    # downloads failed 42 scans in one sweep.
     code, out, err = run(["trivy", mode, "--quiet", "--format", "json",
-                          "--scanners", "vuln", "--list-all-pkgs", path])
+                          "--scanners", "vuln", "--list-all-pkgs",
+                          "--skip-db-update", "--skip-java-db-update", path])
     if code not in (0,):
         f.errors.append(f"trivy {mode}: {err.strip()[:200] or code}")
         return
@@ -277,6 +282,74 @@ def _remove_tree(path: str) -> None:
         subprocess.run(["rm", "-rf", path], check=False)
     if os.path.exists(path):
         print(f"WARNING: could not remove work dir {path}", flush=True)
+
+
+DB_ATTEMPTS = int(os.environ.get("SCAN_DB_ATTEMPTS", "4"))
+DB_PAUSE = float(os.environ.get("SCAN_DB_PAUSE", "15"))
+
+
+def _db_scratch():
+    """Disk-backed scratch folder for database downloads, or None to use the default."""
+    base = os.environ.get("SCAN_DB_SCRATCH") or os.path.join(
+        os.environ.get("HOME", "/home/scanner"), ".cache", "scratch")
+    try:
+        _clear_scratch(base)
+        os.makedirs(base, exist_ok=True)
+        return base
+    except OSError:
+        return None
+
+
+def _clear_scratch(path):
+    if path and os.path.isdir(path):
+        shutil.rmtree(path, ignore_errors=True)
+        os.makedirs(path, exist_ok=True)
+
+
+# Everything a scan would otherwise download for itself, fetched once up front.
+# (OSV-Scanner queries an API per package and has no shared database file; GuardDog
+# and uv write per-package caches, so only Trivy's two databases can race.)
+_DB_STEPS = (
+    ("vulnerability database", ["trivy", "image", "--download-db-only", "--quiet"]),
+    ("Java index database", ["trivy", "image", "--download-java-db-only", "--quiet"]),
+)
+
+
+def prepare_databases(runner=None, sleep=time.sleep) -> tuple:
+    """Download Trivy's databases once, before the worker pool starts.
+
+    Returns (ok, message). On failure after the retries the caller must NOT start
+    scanning: with no database every scan would fail and be recorded as not assessed,
+    which looks like a result but is only a missing tool. `runner` and `sleep` are
+    injectable so tests need neither Trivy nor real waiting.
+    """
+    runner = runner or run
+    ready = []
+    # The Java index archive alone is about 1 GB compressed, far more than the small
+    # in-memory /tmp. Trivy writes the archive to $TMPDIR before unpacking, so point
+    # that at a folder on the cache volume, and clear leftovers from a crashed run.
+    scratch = _db_scratch()
+    if scratch:
+        # `env TMPDIR=... trivy ...` scopes the variable to this one command. Setting it
+        # on the whole process would send every later scan's temp files to the volume.
+        steps = tuple((label, ["env", f"TMPDIR={scratch}"] + cmd) for label, cmd in _DB_STEPS)
+    else:
+        steps = _DB_STEPS
+    for label, cmd in steps:
+        last = ""
+        for attempt in range(1, DB_ATTEMPTS + 1):
+            code, _out, err = runner(cmd, timeout=600)
+            if code == 0:
+                ready.append(label if attempt == 1 else f"{label} (attempt {attempt})")
+                break
+            last = (err.strip() or f"exit {code}")[:200]
+            if attempt < DB_ATTEMPTS:
+                sleep(DB_PAUSE * attempt)
+        else:
+            _clear_scratch(scratch)
+            return False, f"{label} unavailable after {DB_ATTEMPTS} attempts: {last}"
+    _clear_scratch(scratch)
+    return True, "databases ready: " + ", ".join(ready)
 
 
 def cleanup_stale(max_age_seconds: int = 3600) -> int:

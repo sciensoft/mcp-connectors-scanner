@@ -41,3 +41,13 @@ The heuristic rules are of two kinds. *Capability* rules say what a package can 
 **Caveat**: the heuristic tool is not perfectly repeatable between runs, so the strong-signal list should be reviewed against more than one sweep.
 **Result (run 4)**: D fell from 215 to 74, matching the replay. A rose from 11 to 86, C from 38 to 106. Not assessed went from 32 to 30. The replay predicted the outcome, so we trust the method as much as the number.
 **Still open**: many of the not-assessed connectors run from a pinned code commit with no lockfile, so the scanner has no package list to examine. Resolving packages from their manifests is the next job.
+
+## Runs 5 to 9: downloading the databases once
+
+**Saw**: a test sweep (run 8) graded only 60 connectors A and left 73 not assessed, against 85 and 33 in run 7. In its first minute 42 scans failed with "failed to download vulnerability DB".
+**Why**: 32 workers each tried to download the same Trivy database at the same moment. The Java index database is also about 1 GB compressed and could never fit the scanner's 512 MB in-memory /tmp, so it had never been downloaded at all.
+**Decided**: the sweep downloads both databases once, before any worker starts, with retries. Scans only read what is there (`--skip-db-update`, `--skip-java-db-update`). The download uses a scratch folder on the cache volume, set for that one command only. If the databases cannot be fetched, the sweep stops before recording anything, so a missing database can never produce a false grade.
+**Result (run 9)**: A 84, B 4, C 106, D 74, not assessed 32, with no download failures, in about five minutes. This matches run 7. The Java database is now present (1.5 GB), so Java connectors get a real vulnerability check for the first time.
+**Also found**: the disk holding the containers was 96% full, mostly from old untagged images. Pruning unused images brought it to 57%.
+**Still open**: connectors with no lockfile still end as not assessed.
+

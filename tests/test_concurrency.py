@@ -157,18 +157,64 @@ class SweepTests(unittest.TestCase):
             def save_result(self, rid, r): saved.append(r["entry_id"])
             def finish_run(self, rid, total, counts): FakeStore.counts = counts
 
-        real = (main.fetch_catalog, main.scan_one, main.store)
+        real = (main.fetch_catalog, main.scan_one, main.store, main.prepare_databases)
         main.fetch_catalog, main.scan_one, main.store = (lambda: entries), fake_scan_one, FakeStore()
+        main.prepare_databases = lambda: (True, "databases ready (fake)")
         os.environ["SCAN_CONCURRENCY"] = "10"
         try:
             main.sweep()
         finally:
-            main.fetch_catalog, main.scan_one, main.store = real
+            main.fetch_catalog, main.scan_one, main.store, main.prepare_databases = real
             os.environ.pop("SCAN_CONCURRENCY", None)
         self.assertEqual(len(saved), 30)
         self.assertEqual(len(set(saved)), 30)
         self.assertEqual(FakeStore.counts, {"A": 28, "?": 2})
         self.assertEqual(active["peak"], 10)
+
+
+class WarmUpOrderTests(unittest.TestCase):
+    """The database is fetched once, first. A missing database stops the sweep cleanly."""
+
+    def _run_sweep(self, warm_up):
+        events = []
+
+        class FakeStore:
+            def start_run(self, t): events.append("start_run"); return 1
+            def save_result(self, rid, r): events.append("save")
+            def finish_run(self, rid, total, counts): events.append("finish")
+
+        def fake_scan_one(entry):
+            events.append("scan")
+            return {"entry_id": entry["id"], "grade": "A", "reason": "x"}
+
+        def fake_warm_up():
+            events.append("warm_up")
+            return warm_up
+
+        real = (main.fetch_catalog, main.scan_one, main.store, main.prepare_databases)
+        main.fetch_catalog = lambda: [{"id": "a"}, {"id": "b"}]
+        main.scan_one, main.store, main.prepare_databases = fake_scan_one, FakeStore(), fake_warm_up
+        try:
+            main.sweep()
+            error = None
+        except RuntimeError as e:
+            error = str(e)
+        finally:
+            main.fetch_catalog, main.scan_one, main.store, main.prepare_databases = real
+        return events, error
+
+    def test_warm_up_runs_once_before_any_scan_or_record(self):
+        events, error = self._run_sweep((True, "databases ready"))
+        self.assertIsNone(error)
+        self.assertEqual(events.count("warm_up"), 1)
+        self.assertEqual(events[0], "warm_up")
+        self.assertLess(events.index("warm_up"), events.index("start_run"))
+        self.assertLess(events.index("warm_up"), events.index("scan"))
+
+    def test_missing_database_stops_before_recording_anything(self):
+        events, error = self._run_sweep((False, "vulnerability database unavailable after 4 attempts"))
+        self.assertIn("unavailable", error)
+        self.assertEqual(events, ["warm_up"])  # no run row, no scans, no false results
 
 
 if __name__ == "__main__":

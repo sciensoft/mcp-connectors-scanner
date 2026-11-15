@@ -33,7 +33,7 @@ from .coverage import matrix
 from .extract import extract
 from .grade import grade
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from .scan import cleanup_stale, scan
+from .scan import cleanup_stale, prepare_databases, scan
 
 
 def log(msg: str):
@@ -80,6 +80,13 @@ def sweep():
     stale = cleanup_stale(max_age_seconds=0)
     if stale:
         log(f"removed {stale} stale work dir(s) from a previous run")
+
+    # One download, before any worker exists. If it cannot be had, stop here rather than
+    # record hundreds of scans that only failed because a tool was missing.
+    ok, msg = prepare_databases()
+    log(msg)
+    if not ok:
+        raise RuntimeError(msg)
 
     entries = fetch_catalog()
     run_id = store.start_run(started)

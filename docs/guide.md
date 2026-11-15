@@ -43,6 +43,8 @@ Each result is saved the moment it is graded, so a crash never loses finished wo
 | **OSV-Scanner** | Known vulnerabilities and known-malicious versions |
 | **GuardDog** | Suspicious code patterns (npm and PyPI only) |
 
+A sweep starts by downloading the vulnerability databases once, with retries, into the cache volume. The parallel workers only read them. If the download fails, the sweep stops without recording a run, so a missing database never turns into a grade.
+
 ## How a grade is decided
 
 ```mermaid
