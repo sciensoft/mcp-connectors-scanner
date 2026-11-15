@@ -42,3 +42,10 @@ podman run --rm --name "$NAME" \
   -e SCANNER_API_ADDR=127.0.0.1:9091 \
   -e SCANNER_DATABASE_URL="postgres://scanner:${SCANNER_DB_PASSWORD}@mcp-db:5432/scanner?sslmode=disable" \
   "$IMAGE"
+
+# Tidy up after the sweep. Rebuilding the scanner image leaves untagged older layers
+# behind, and the container disk once reached 96% full because of them. This removes
+# only images that no container uses and that carry no tag, so tagged images, running
+# containers and volumes (the databases, the scan cache) are never touched. A failed
+# prune must not turn a good sweep into a failed one, hence the `|| true`.
+podman image prune -f > /dev/null 2>&1 || true

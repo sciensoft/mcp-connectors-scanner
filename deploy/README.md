@@ -1,12 +1,12 @@
-# Nightly scan and publishing
+# Weekly scan and publishing
 
 How the scanner runs on a schedule, and how its results reach this public repository.
 
 ```mermaid
 flowchart LR
-    T[systemd timer<br/>02:30 on the maintainer's machine] --> S[sweep-once.sh<br/>one-shot scanner container]
+    T[systemd timer<br/>Mondays 02:30 on the maintainer's machine] --> S[sweep-once.sh<br/>one-shot scanner container]
     S --> DB[(scanner database)]
-    G[GitHub schedule<br/>04:30] --> R[self-hosted runner<br/>same machine]
+    G[GitHub schedule<br/>Mondays 04:30] --> R[self-hosted runner<br/>same machine]
     R -->|read-only API| API[scanner API]
     API --> DB
     R --> C[collect.py<br/>scrub, then guard]
@@ -27,7 +27,7 @@ The workflow never scans and never starts containers. The runner has no access t
 ## What is published
 
 - **Release** `scan-YYYY-MM-DD`: `full.json`, the full evidence for every connector.
-- **Branch** `scan-results`: `summary.json`, grades and reasons only. A commit every night also counts as repository activity, so GitHub does not switch the schedule off after 60 days of quiet.
+- **Branch** `scan-results`: `summary.json`, grades and reasons only. A commit every week also counts as repository activity, so GitHub does not switch the schedule off after 60 days of quiet.
 
 Internal paths, host names, private addresses and anything shaped like a credential are removed first. A second check then refuses to write the files at all if anything suspicious is left. The rules are covered by `tests/test_collect.py`, in both directions: what must go, and the public package names that must stay.
 
@@ -38,7 +38,7 @@ The job runs on a production machine from a public repository.
 - Triggers are only the schedule and a manual run. Never add `pull_request`, `push` or issue triggers to a workflow that uses this runner.
 - The job refuses to run on forks and on anything but `main`.
 - Outside contributors' workflow runs need approval every time, and actions must be pinned to a full commit hash.
-- The scan is skipped, not published as new, when the newest scan is more than 30 hours old.
+- The scan is skipped, not published as new, when the newest scan is more than 9 days old.
 
 ## Setup
 

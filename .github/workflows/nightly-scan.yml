@@ -1,4 +1,4 @@
-# Nightly scan: collect the grades and publish them.
+# Weekly scan: collect the grades and publish them (Mondays).
 #
 # WHERE THINGS RUN
 #   The scan itself runs on the maintainer's own machine, on a systemd timer
@@ -23,7 +23,7 @@ name: nightly-scan
 
 on:
   schedule:
-    - cron: "30 4 * * *"   # after the 02:30 scan has finished; GitHub may start a few minutes late
+    - cron: "30 4 * * 1"   # Mondays, after the 02:30 sweep has finished; GitHub may start a few minutes late
   workflow_dispatch: {}
 
 permissions: {}
@@ -67,8 +67,8 @@ jobs:
           newest = max(datetime.fromisoformat(x["scanned_at"]) for x in rows)
           age = datetime.now(timezone.utc) - newest
           print(f"{len(rows)} connectors, newest scan {age} ago")
-          if age > timedelta(hours=30):
-              sys.exit("newest scan is older than 30 hours: the nightly sweep did not run. Not publishing stale data as new.")
+          if age > timedelta(days=9):
+              sys.exit("newest scan is older than 9 days: the weekly sweep did not run. Not publishing stale data as new.")
           PY
 
       - name: Collect and scrub

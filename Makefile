@@ -47,7 +47,7 @@ help:
 	@echo "  Service (systemd user unit; keeps the scanner running)"
 	@echo "  make service-install  Install and enable the service"
 	@echo "  make service-start | service-stop | service-status | service-uninstall"
-	@echo "  make timer-install    Enable the nightly sweep timer | timer-uninstall"
+	@echo "  make timer-install    Enable the weekly sweep timer (Mondays) | timer-uninstall"
 
 # ── Development ───────────────────────────────────────────────────────────────
 

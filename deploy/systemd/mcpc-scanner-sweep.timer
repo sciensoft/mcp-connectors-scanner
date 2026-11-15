@@ -1,8 +1,8 @@
 [Unit]
-Description=Nightly scanner sweep
+Description=Weekly scanner sweep (Mondays)
 
 [Timer]
-OnCalendar=*-*-* 02:30:00
+OnCalendar=Mon *-*-* 02:30:00
 RandomizedDelaySec=10m
 Persistent=true
 
