@@ -13,7 +13,11 @@ set -euo pipefail
 
 ENV_FILE="${SCANNER_ENV_FILE:-$(dirname "$0")/../.env}"
 IMAGE="${SCANNER_IMAGE:-localhost/mcp-connectors-scanner:latest}"
-NETWORK="${SCANNER_NETWORK:-mcpc_vnet}"
+# Same three networks as the scanner service: private database, private scan network (to
+# reach the server feed), and its own route out. See docker-compose.yaml.
+NET_DB="${SCANNER_NET_DB:-mcpc_db}"
+NET_SCAN="${SCANNER_NET_SCAN:-mcpc_scan}"
+NET_OUT="${SCANNER_NET_OUT:-scanner_out}"
 NAME="mcpc-scanner-sweep"
 CONCURRENCY="${SCAN_CONCURRENCY:-32}"
 
@@ -29,7 +33,7 @@ podman rm -f "$NAME" >/dev/null 2>&1 || true
 set -a; . "$ENV_FILE"; set +a
 
 podman run --rm --name "$NAME" \
-  --network "$NETWORK" \
+  --network "$NET_DB" --network "$NET_SCAN" --network "$NET_OUT" \
   --read-only --cap-drop ALL -u 10002:10002 \
   --tmpfs /work:size=6g,mode=1777 --tmpfs /tmp:size=512m,mode=1777 \
   -v mcp-connectors_mcpc_scanner_cache:/home/scanner \

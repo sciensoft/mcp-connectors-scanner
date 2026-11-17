@@ -17,10 +17,14 @@
 ENV_FILE   ?= .env
 IMAGE      ?= localhost/mcp-connectors-scanner:latest
 NAME       ?= mcpc-scanner
-NETWORK    ?= mcpc_vnet
+# Three networks, each with one job (see docs): the shared Postgres (private), the scan API
+# where the server and the runner reach this container (private), and this container's own
+# route out. The first two are created by the main application's compose file.
+NET_DB     ?= mcpc_db
+NET_SCAN   ?= mcpc_scan
+NET_OUT    ?= scanner_out
 CACHE_VOL  ?= mcp-connectors_mcpc_scanner_cache
 ALIAS      ?= mcp-scanner
-SCANNER_IP ?= 10.89.1.12
 SYSTEMD_DIR := $(HOME)/.config/systemd/user
 
 help:
@@ -87,7 +91,7 @@ define RUN_SCANNER
 	@test -r $(ENV_FILE) || { echo "missing $(ENV_FILE): copy .env.example and fill it in"; exit 2; }
 	@set -a; . ./$(ENV_FILE); set +a; \
 	podman run $(RUN_MODE) --name $(NAME) $(RESTART_FLAG) \
-	  --network $(NETWORK) --network-alias $(ALIAS) --ip $(SCANNER_IP) \
+	  --network $(NET_DB) --network $(NET_SCAN):alias=$(ALIAS) --network $(NET_OUT) \
 	  --read-only --cap-drop ALL --security-opt no-new-privileges -u 10002:10002 \
 	  --tmpfs /work:size=6g,mode=1777 --tmpfs /tmp:size=512m,mode=1777 \
 	  -v $(CACHE_VOL):/home/scanner \

@@ -1,9 +1,12 @@
 # mcp-connectors-scanner: standalone compose file.
 #
 # The scanner shares an existing Postgres rather than running its own, so the
-# database service below is commented out. It joins the same external network as
-# the main application, so the two stacks reach each other by name: the scanner
-# reads the connector catalog from the server and the server reads grades back.
+# database service below is commented out. It joins two networks created by the main
+# application's compose file (both internal: no route to the host, the LAN or the
+# internet), so the stacks reach each other by name: the scanner reads the connector
+# catalog from the server and the server reads grades back. Start the main stack first.
+# The scanner also has its own network, scanner_out, for the internet access it needs.
+# See docs/security/audits/2026-11-17-network-isolation.md in the main repository.
 #
 # Start (secrets from a gitignored env file, never committed):
 #
@@ -32,7 +35,7 @@ services:
   #     POSTGRES_DB: scanner
   #   volumes:
   #     - scanner_pgdata:/var/lib/postgresql/data
-  #   networks: [mcpc_vnet]
+  #   networks: [mcpc_db]
 
   # One-shot and idempotent: creates the scanner's own role and database inside the
   # shared Postgres, then exits. Needs the Postgres ADMIN login, which the scanner
@@ -50,7 +53,7 @@ services:
       - ./init-db.sh:/init-db.sh:ro
     entrypoint: ["sh", "/init-db.sh"]
     networks:
-      - mcpc_vnet
+      - mcpc_db
 
   scanner:
     build:
@@ -84,14 +87,31 @@ services:
       - ALL
     security_opt:
       - no-new-privileges:true
+    # Three networks, each with one job:
+    #   mcpc_db      - private, to the shared Postgres (its own database only)
+    #   mcpc_scan    - private, where the server and the runner reach the scanner API
+    #   scanner_out  - the scanner's own route out (package registries, vulnerability
+    #                  databases). Not shared with the server, so a compromised server
+    #                  cannot borrow this egress.
+    # No fixed addresses: podman-compose turns one ipv4_address into a single `--ip`, which
+    # podman rejects on a multi-network container. Peers are reached by name.
     networks:
-      - mcpc_vnet
+      - mcpc_db
+      - mcpc_scan
+      - scanner_out
 
 networks:
-  # The network the main application already created. Joined, not created, so both
-  # stacks can talk. Name matches the main repo's compose network.
-  mcpc_vnet:
+  # Created by the main application's compose file; joined here, not created, so both
+  # stacks can talk. Both are internal: no route to the host, the LAN or the internet.
+  mcpc_db:
     external: true
+  mcpc_scan:
+    external: true
+  # The scanner's own outbound network (has internet, shared with nothing else but the
+  # CI runner).
+  scanner_out:
+    name: scanner_out
+    driver: bridge
 
 volumes:
   scanner_cache:
