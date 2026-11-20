@@ -1,0 +1,37 @@
+# MCP Connectors Scanner — systemd unit
+# Installs to /etc/systemd/system/mcp-connectors-scanner.service, the same way the application's
+# host/mcp-connectors.service does. `make host-install` checks the unit, fills in the two
+# placeholders below (the user who owns the checkout, and the checkout itself) and installs and
+# enables it, so this file carries no user name and no path.
+#
+# Runs `make serve` from the repo root at boot. The scanner container stays in the foreground under
+# systemd, so `systemctl status` says whether the scanner is really running, a crash is restarted,
+# and `systemctl stop` really stops it.
+#
+# The scanner joins networks that the application's own stack creates, so it starts after
+# mcp-connectors.service. It is only ordered after it and does not pull it in: starting the scanner
+# by hand must never recreate the application's containers.
+
+[Unit]
+Description=MCP Connectors — Scanner
+Documentation=https://github.com/sciensoft/mcp-connectors-scanner
+After=network-online.target mcp-connectors.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=@USER@
+Group=@USER@
+WorkingDirectory=@REPO@
+# At boot the application's stack may still be coming up; wait (up to two minutes) for its networks.
+ExecStartPre=/usr/bin/make --no-print-directory wait-for-networks
+ExecStart=/usr/bin/make --no-print-directory serve
+ExecStop=/usr/bin/podman stop -t 30 mcpc-scanner
+Restart=on-failure
+RestartSec=10
+TimeoutStopSec=60
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

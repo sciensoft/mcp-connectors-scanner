@@ -45,3 +45,30 @@ The job runs on a production machine from a public repository.
 1. Copy `systemd/*` to `~/.config/systemd/user/` and run `systemctl --user enable --now mcpc-scanner-sweep.timer`.
 2. Add the repository secret `SCANNER_API_TOKEN` (same value as the scanner's).
 3. Register the self-hosted runner with the labels `self-hosted`, `linux`, `scanner`, on the scanner's container network.
+
+## Keeping the scanner running
+
+The application shows a grade only while the scanner's API container is up, and a reboot stops it. So the
+scanner runs as a system service, started at boot the same way the application's own
+`host/mcp-connectors.service` starts the application:
+
+    make host-install                                  # checks the unit, installs it and enables it
+    sudo systemctl start mcp-connectors-scanner
+    systemctl status mcp-connectors-scanner
+
+- The unit file is `host/mcp-connectors-scanner.service`. It carries placeholders for the user and the
+  checkout, which `make host-install` fills in, so the public repository holds no user name or path.
+  `make host-verify` runs `systemd-analyze verify` on the filled-in unit without installing anything.
+- It runs as the person who owns the checkout, not as root, and reads its secrets from the gitignored `.env`.
+- It starts after the application's service and waits up to two minutes for the networks that service
+  creates. It is ordered after it but does not pull it in, because starting the application's unit runs
+  `make up`, which recreates the application's containers.
+- The container stays in the foreground under systemd (`make serve`), so `systemctl status` says whether the
+  scanner is really running, a crash is restarted after ten seconds, and `systemctl stop` stops it.
+- Every start runs one sweep first (about five minutes for 300 connectors) and then sleeps for
+  `SCAN_INTERVAL_HOURS`, so a reboot costs one extra sweep.
+
+Use this or the user service from `make service-install`, never both: both would run the same container,
+and `make host-install` refuses to continue while the user service is enabled. The user service suits a machine
+where you have no root. The weekly sweep timer above is separate and works with either.
+
