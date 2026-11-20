@@ -1,0 +1,15 @@
+# MCP Connectors Scanner — weekly sweep timer (system unit)
+# Mondays at 02:30 with up to ten minutes of random delay. A missed run (host off) is made up at the
+# next boot. The sweep can take hours, so the Monday 04:30 publish may see results from the sweep
+# before it, not from this one.
+
+[Unit]
+Description=MCP Connectors — Scanner, weekly sweep (Mondays)
+
+[Timer]
+OnCalendar=Mon *-*-* 02:30:00
+RandomizedDelaySec=10m
+Persistent=true
+
+[Install]
+WantedBy=timers.target

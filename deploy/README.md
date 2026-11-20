@@ -52,8 +52,9 @@ The application shows a grade only while the scanner's API container is up, and 
 scanner runs as a system service, started at boot the same way the application's own
 `host/mcp-connectors.service` starts the application:
 
-    make host-install                                  # checks the unit, installs it and enables it
+    make host-install                                  # checks the units, installs them, enables the scanner
     sudo systemctl start mcp-connectors-scanner
+    make host-timer-enable                             # turns on the weekly sweep (off until you ask)
     systemctl status mcp-connectors-scanner
 
 - The unit file is `host/mcp-connectors-scanner.service`. It carries placeholders for the user and the
@@ -68,7 +69,17 @@ scanner runs as a system service, started at boot the same way the application's
 - Every start runs one sweep first (about five minutes for 300 connectors) and then sleeps for
   `SCAN_INTERVAL_HOURS`, so a reboot costs one extra sweep.
 
-Use this or the user service from `make service-install`, never both: both would run the same container,
-and `make host-install` refuses to continue while the user service is enabled. The user service suits a machine
-where you have no root. The weekly sweep timer above is separate and works with either.
+The weekly sweep is installed by the same command, as `host/mcp-connectors-scanner-sweep.service` and `.timer`
+(Mondays 02:30, plus up to ten minutes of random delay, with a missed run made up at the next boot). The sweep
+unit runs as the same user as the scanner, because the containers belong to that user's rootless podman; a
+unit without `User=` would run as root and look in an empty podman. Start one by hand with
+`sudo systemctl start mcp-connectors-scanner-sweep`.
+
+Use this or the user units from `make service-install` and `make timer-install`, never both: they would run
+the same container and the same sweep twice, and `make host-install` refuses to continue while a user unit is
+enabled (`make service-uninstall`, `make timer-uninstall`). The user units suit a machine where you have no root.
+
+Stopping is quick: the container runs with `--init`, so SIGTERM reaches the scanner and `systemctl stop` takes
+a second instead of waiting out 30 seconds for a SIGKILL. A stop during a sweep keeps the connectors already
+saved and leaves that run without a finish time.
 

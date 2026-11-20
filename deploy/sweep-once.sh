@@ -6,7 +6,7 @@
 # flight. This container has its own work area (tmpfs), so the two never touch.
 # Results land in the same database; the latest grade per connector wins by time.
 #
-# Secrets come from an env file that is NOT in this repo (default ../.env.scanner,
+# Secrets come from an env file that is NOT in this repo (default ../.env,
 # override with SCANNER_ENV_FILE). Nothing here prints them.
 
 set -euo pipefail
@@ -32,7 +32,7 @@ podman rm -f "$NAME" >/dev/null 2>&1 || true
 
 set -a; . "$ENV_FILE"; set +a
 
-podman run --rm --name "$NAME" \
+podman run --rm --init --name "$NAME" \
   --network "$NET_DB" --network "$NET_SCAN" --network "$NET_OUT" \
   --read-only --cap-drop ALL -u 10002:10002 \
   --tmpfs /work:size=6g,mode=1777 --tmpfs /tmp:size=512m,mode=1777 \

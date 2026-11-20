@@ -12,7 +12,7 @@
         build up serve down restart rebuild logs ps sweep \
         service-install service-start service-stop service-status service-uninstall \
         timer-install timer-uninstall \
-        wait-for-networks host-verify host-install host-uninstall
+        wait-for-networks host-verify host-install host-timer-enable host-uninstall
 
 # ── Container settings (override on the command line or in the shell) ──────────
 ENV_FILE   ?= .env
@@ -56,7 +56,8 @@ help:
 	@echo ""
 	@echo "  Host service (system unit like the application's; starts the scanner at boot, needs sudo)"
 	@echo "  make host-verify      Check the unit with systemd-analyze, install nothing"
-	@echo "  make host-install     Verify, install and enable it | host-uninstall"
+	@echo "  make host-install     Verify, install and enable it (plus the sweep units) | host-uninstall"
+	@echo "  make host-timer-enable  Turn on the weekly sweep timer"
 	@echo "                        Use this or the user service above, never both"
 
 # ── Development ───────────────────────────────────────────────────────────────
@@ -93,10 +94,12 @@ build:
 # container in the foreground so systemd can supervise it.
 RUN_MODE ?= -d
 RESTART_FLAG ?= --restart unless-stopped
+# --init puts a tiny init (catatonit) in front as PID 1. Python as PID 1 gets no default SIGTERM
+# handler, so without it every stop waited out the timeout and ended in SIGKILL (exit 137).
 define RUN_SCANNER
 	@test -r $(ENV_FILE) || { echo "missing $(ENV_FILE): copy .env.example and fill it in"; exit 2; }
 	@set -a; . ./$(ENV_FILE); set +a; \
-	podman run $(RUN_MODE) --name $(NAME) $(RESTART_FLAG) \
+	podman run $(RUN_MODE) --name $(NAME) $(RESTART_FLAG) --init \
 	  --network $(NET_DB) --network $(NET_SCAN):alias=$(ALIAS) --network $(NET_OUT) \
 	  --read-only --cap-drop ALL --security-opt no-new-privileges -u 10002:10002 \
 	  --tmpfs /work:size=6g,mode=1777 --tmpfs /tmp:size=512m,mode=1777 \
@@ -184,6 +187,7 @@ service-uninstall:
 # service above, never together with it, because both would run the same container.
 
 HOST_UNIT := mcp-connectors-scanner.service
+HOST_UNITS := mcp-connectors-scanner.service mcp-connectors-scanner-sweep.service mcp-connectors-scanner-sweep.timer
 
 # Waits up to two minutes for the networks the application's stack creates, so the unit can be
 # ordered after that stack at boot without needing it to be fully up.
@@ -193,20 +197,30 @@ wait-for-networks:
 	done; echo "the application's networks $(NET_DB) and $(NET_SCAN) do not exist yet" >&2; exit 1
 
 host-verify:
-	@test "$$(id -u)" != 0 || { echo "run this as your normal user, not root: the unit runs the scanner as you"; exit 2; }
-	@d=$$(mktemp -d) && sed -e "s#@REPO@#$(CURDIR)#g" -e "s#@USER@#$$(id -un)#g" host/$(HOST_UNIT) > $$d/$(HOST_UNIT) \
-	  && systemd-analyze verify $$d/$(HOST_UNIT) && echo "$(HOST_UNIT): the unit is valid"; rc=$$?; rm -rf $$d; exit $$rc
+	@test "$$(id -u)" != 0 || { echo "run this as your normal user, not root: the units run the scanner as you"; exit 2; }
+	@d=$$(mktemp -d) && for u in $(HOST_UNITS); do \
+	  sed -e "s#@REPO@#$(CURDIR)#g" -e "s#@USER@#$$(id -un)#g" host/$$u > $$d/$$u; done \
+	  && systemd-analyze verify $(addprefix $$d/,$(HOST_UNITS)) && echo "the units are valid: $(HOST_UNITS)"; rc=$$?; rm -rf $$d; exit $$rc
 
+# Installs the scanner service and enables it, and installs the sweep service and timer. The weekly
+# timer stays off until you ask for it with `make host-timer-enable`.
 host-install: host-verify
 	@! systemctl --user is-enabled mcpc-scanner.service > /dev/null 2>&1 || { echo "the user service is enabled; run 'make service-uninstall' first, so two units do not fight over one container"; exit 2; }
-	@sed -e "s#@REPO@#$(CURDIR)#g" -e "s#@USER@#$$(id -un)#g" host/$(HOST_UNIT) | sudo tee /etc/systemd/system/$(HOST_UNIT) > /dev/null
+	@! systemctl --user is-enabled mcpc-scanner-sweep.timer > /dev/null 2>&1 || { echo "the user sweep timer is enabled; run 'make timer-uninstall' first, so two timers do not run two sweeps"; exit 2; }
+	@for u in $(HOST_UNITS); do \
+	  sed -e "s#@REPO@#$(CURDIR)#g" -e "s#@USER@#$$(id -un)#g" host/$$u | sudo tee /etc/systemd/system/$$u > /dev/null; done
 	@sudo systemctl daemon-reload
 	@sudo systemctl enable $(HOST_UNIT)
-	@echo "installed and enabled. Start it with: sudo systemctl start $(HOST_UNIT)"
+	@echo "installed. Start the scanner with: sudo systemctl start $(HOST_UNIT)"
+	@echo "weekly sweep: make host-timer-enable (off until you run it)"
+
+host-timer-enable:
+	@sudo systemctl enable --now mcp-connectors-scanner-sweep.timer
+	@systemctl list-timers mcp-connectors-scanner-sweep.timer --no-pager | head -n 3
 
 host-uninstall:
-	@sudo systemctl disable --now $(HOST_UNIT) 2>/dev/null || true
-	@sudo rm -f /etc/systemd/system/$(HOST_UNIT)
+	@sudo systemctl disable --now mcp-connectors-scanner-sweep.timer $(HOST_UNIT) 2>/dev/null || true
+	@for u in $(HOST_UNITS); do sudo rm -f /etc/systemd/system/$$u; done
 	@sudo systemctl daemon-reload
 
 timer-install:
