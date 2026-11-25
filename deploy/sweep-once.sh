@@ -14,7 +14,7 @@ set -euo pipefail
 ENV_FILE="${SCANNER_ENV_FILE:-$(dirname "$0")/../.env}"
 IMAGE="${SCANNER_IMAGE:-localhost/mcp-connectors-scanner:latest}"
 # Same three networks as the scanner service: private database, private scan network (to
-# reach the server feed), and its own route out. See docker-compose.yaml.
+# reach the server feed), and its own route out. See compose.yaml.
 NET_DB="${SCANNER_NET_DB:-mcpc_db}"
 NET_SCAN="${SCANNER_NET_SCAN:-mcpc_scan}"
 NET_OUT="${SCANNER_NET_OUT:-scanner_out}"

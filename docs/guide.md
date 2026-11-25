@@ -79,7 +79,7 @@ Secrets live in `.env.scanner` (gitignored). Back up the database first, because
 ```bash
 cd /proj/mcp-connectors
 set -a; . ./.env.scanner; set +a
-podman-compose -f docker-compose.yaml -f docker-compose.scanner.yaml up -d mcp-scanner-init mcp-scanner
+podman-compose -f compose.yaml -f docker-compose.scanner.yaml up -d mcp-scanner-init mcp-scanner
 podman logs --tail 20 mcpc-scanner
 ```
 

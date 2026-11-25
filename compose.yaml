@@ -12,7 +12,7 @@
 #
 #   cp .env.example .env.scanner      # then fill in real values
 #   set -a; . ./.env.scanner; set +a
-#   podman-compose -f docker-compose.yaml up -d scanner-init scanner
+#   podman-compose -f compose.yaml up -d scanner-init scanner
 #
 # Needs SCANNER_DB_PASSWORD, SCANNER_API_TOKEN and SCAN_FEED_TOKEN.
 #
@@ -100,6 +100,45 @@ services:
       - mcpc_scan
       - scanner_out
 
+  # Self-hosted GitHub Actions runner for the weekly publish job (deploy/runner).
+  # It must share a network with the scanner API, or the job fails with
+  # "Name or service not known". mcpc_scan is where it reaches mcp-scanner:9090;
+  # scanner_out is its route to github.com. It holds no database or scan secrets.
+  # The registration lives in a volume, so a restart reuses it instead of
+  # registering again, which is what caused "a session for this runner already exists".
+  # First start needs a one-hour registration token (Settings, Actions, Runners):
+  #   RUNNER_REG_TOKEN=... podman-compose -f compose.yaml up -d scanner-runner
+  scanner-runner:
+    build:
+      context: ./deploy/runner
+      dockerfile: Containerfile
+      args:
+        RUNNER_VERSION: ${RUNNER_VERSION:?set RUNNER_VERSION}
+        RUNNER_SHA256: ${RUNNER_SHA256:?set RUNNER_SHA256}
+    image: localhost/mcp-connectors-scanner-runner:latest
+    pull_policy: never
+    container_name: mcpc-scanner-runner
+    restart: unless-stopped
+    environment:
+      RUNNER_REPO_URL: ${RUNNER_REPO_URL:-https://github.com/sciensoft/mcp-connectors-scanner}
+      RUNNER_NAME: ${RUNNER_NAME:-scanner-runner}
+      RUNNER_LABELS: ${RUNNER_LABELS:-self-hosted,linux,scanner}
+      RUNNER_REG_TOKEN: ${RUNNER_REG_TOKEN:-unused-after-first-registration}
+    volumes:
+      # The whole runner folder: its registration files (.runner, .credentials,
+      # .credentials_rsaparams) sit beside the binaries, not in a subfolder. Podman
+      # fills an empty volume from the image on first use. Trade-off: a newer runner
+      # version in a rebuilt image only takes effect after `podman volume rm`, which
+      # also means registering again with a fresh token.
+      - runner_state:/home/runner/actions-runner
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - mcpc_scan
+      - scanner_out
+
 networks:
   # Created by the main application's compose file; joined here, not created, so both
   # stacks can talk. Both are internal: no route to the host, the LAN or the internet.
@@ -115,4 +154,5 @@ networks:
 
 volumes:
   scanner_cache:
+  runner_state:
   # scanner_pgdata:   # only if the commented-out scanner-db above is enabled
